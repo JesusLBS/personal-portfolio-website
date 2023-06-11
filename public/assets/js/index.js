@@ -52,18 +52,28 @@ const contactForm = document.getElementById('contact-form'),
     contactMessage = document.getElementById('contact-message');
 
 const sendEmail = e => {
-    e.preventDefault()
-    //Service EmailJs
-    emailjs.sendForm('service_bg7an1z', 'template_2t3mopu', '#contact-form', 'XvcnQAO5d2cfOGG9h')
-        .then(() => {
-            contactMessage.textContent = 'Message send successfully ✔️';
-            setTimeout(() => { contactMessage.textContent = '' }, 5000);
-            contactForm.reset();
-        }, () => {
-            contactMessage.textContent = 'Message not sent (service error)';
-        });
+    e.preventDefault();
+
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+
+    // Evento load para asegurarse de que la biblioteca se haya cargado correctamente
+    script.addEventListener('load', function () {
+        // Código que utiliza emailjs
+        emailjs.sendForm('service_bg7an1z', 'template_2t3mopu', '#contact-form', 'XvcnQAO5d2cfOGG9h')
+            .then(() => {
+                contactMessage.textContent = 'Message sent successfully ✔️';
+                setTimeout(() => { contactMessage.textContent = '' }, 5000);
+                contactForm.reset();
+            }, () => {
+                contactMessage.textContent = 'Message not sent (service error) ❌';
+            });
+    });
+
+    document.body.appendChild(script);
 }
-contactForm.addEventListener('submit', sendEmail)
+
+contactForm.addEventListener('submit', sendEmail);
 
 const footerYear = document.getElementById('footer__year');
 footerYear.textContent = `${new Date().getFullYear()}`

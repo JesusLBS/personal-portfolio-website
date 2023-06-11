@@ -31,6 +31,12 @@
     --z-fixed: 100;
 }
 
+@font-face {
+    font-family: "Poppins";
+    font-display: swap;
+    src: url('../fonts/poppins/poppins-regular.ttf') format('truetype');
+}
+
 /*  Responsive typography */
 @media screen and (min-width: 1152px) {
     :root {
@@ -259,6 +265,7 @@ svg {
 .home__subtitle,
 .home__education {
     font-size: var(--bigger-font-size);
+    color: var(--title-color);
 }
 
 .home__subtitle span,
@@ -284,20 +291,36 @@ svg {
 
 .home__social-link {
     display: flex;
-    background-color: var(--first-color-alt);
+    flex-direction: column;
+    align-items: center;
     padding: .5rem;
     color: var(--title-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: .4s;
 }
 
+.home__social-link i {
+    margin-bottom: .5rem;
+}
+
+.social-link-description {
+    font-size: .5rem;
+}
+
+
 .home__social-link:hover {
     transform: translateY(-.25rem);
+    background-color: var(--first-color-alt);
 }
 
 .home__image {
     justify-self: center;
+}
+
+.social-link-description {
+    font-size: .8rem;
+    font-family: var(--body-font);
 }
 
 .home__blob {
@@ -905,7 +928,6 @@ svg {
     }
 }
 
-
 .float {
     text-align: center;
     font-size: 30px;
@@ -927,11 +949,13 @@ svg {
     background-color: rgb(255, 255, 255);
 }
 
-
 .my-float {
     margin-top: 16px;
 }
 
+.float-whatsapp {
+    margin-bottom: .5rem;
+}
 
 .FloatPhone {
     text-align: center;
@@ -941,7 +965,7 @@ svg {
     width: 60px;
     height: 60px;
     right: 40px;
-    bottom: 200px;
+    bottom: 220px;
     background: #25d366;
     color: #fff;
     border-radius: 50%;
@@ -953,6 +977,18 @@ svg {
     text-decoration: none;
     color: #26c407;
     background-color: rgb(255, 255, 255);
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-text {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
 }
 
 @media(max-width: 767px) {

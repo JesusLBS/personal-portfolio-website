@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jesus Chicho Hernández, Ingeniero en desarrollo y gestión de software.
+                                    Portafolio Web Personal.">
+    <meta name="keywords"
+        content="desarrollador web, desarrollo de software, desarrollo full stack, diseño de aplicaciones web, diseño de aplicaciones móviles, HTML, CSS, JavaScript, Vue.js, React, Laravel, Node.js, PHP, Python, API, bases de datos, Git, GitHub, Bitbucket, Postman">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jesus Chicho Hernández">
     <title>Jesus Chicho Hernández</title>
+    <link rel="icon" type="image/x-icon" href="public/assets/icons/star.ico">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="public/assets/css/style.css">
 </head>
@@ -52,9 +59,9 @@
             <div class="home__container container grid">
                 <div class="home__content">
                     <div class="home__data">
-                        <h3 class="home__subtitle">
+                        <p class="home__subtitle ">
                             Hola ,<span>soy </span>
-                        </h3>
+                        </p>
                         <h1 class="home__title">Jesus Chicho</h1>
                         <h3 class="homme__education">Ingeniero en desarrollo y gestión de software</h3>
                         <p class="home__description">
@@ -66,14 +73,18 @@
                         <a href="#contact" class="button">Hablemos</a>
                     </div>
                     <div class="home__social">
-                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link"
+                            aria-label="facebook">
                             <i class="ri-facebook-circle-fill"></i>
+                            <p class="social-link-description">Facebook</p>
                         </a>
                         <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
                             <i class="ri-instagram-line"></i>
+                            <p class="social-link-description">Instagram</p>
                         </a>
                         <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
                             <i class="ri-linkedin-fill"></i>
+                            <p class="social-link-description">Linkedin</p>
                         </a>
                     </div>
                 </div>
@@ -108,8 +119,8 @@
                 </div>
                 <div class="about__image">
                     <picture>
-                        <img src="public/assets/images/about-me.png" id="imageBorder" class="about__img" width="640"
-                            height="940" alt="...">
+                        <img data-src="public/assets/images/about-me.webp" id="imageBorder" class="about__img lazyload "
+                            width="640" height="940" alt="...">
                     </picture>
                 </div>
             </div>
@@ -204,7 +215,8 @@
             </h2>
             <div class="projects__container container grid">
                 <article class="projects__card">
-                    <img src="public/assets/images/programing.jpg" alt="projects-img" class="projects__img">
+                    <img data-src="public/assets/images/programing.webp" alt="projects-img"
+                        class="projects__img lazyload ">
                     <div class="projects__modal">
                         <span class="projects__subtitle">Web</span>
                         <h2 class="projects__title">Clinica Dental</h2>
@@ -214,7 +226,8 @@
                     </div>
                 </article>
                 <article class="projects__card">
-                    <img src="public/assets/images/programing.jpg" alt="projects-img" class="projects__img">
+                    <img data-src="public/assets/images/programing.webp" alt="projects-img"
+                        class="projects__img lazyload ">
                     <div class="projects__modal">
                         <span class="projects__subtitle">Web</span>
                         <h2 class="projects__title">Recursos Humanos</h2>
@@ -224,7 +237,8 @@
                     </div>
                 </article>
                 <article class="projects__card">
-                    <img src="public/assets/images/programing.jpg" alt="projects-img" class="projects__img">
+                    <img data-src="public/assets/images/programing.webp" alt="projects-img"
+                        class="projects__img lazyload ">
                     <div class="projects__modal">
                         <span class="projects__subtitle">Web</span>
                         <h2 class="projects__title">Página web</h2>
@@ -243,7 +257,7 @@
                 Contáctame
             </h2>
             <div class="contact__container container grid">
-                <form action="" class="contact__form" id="contact-form">
+                <form class="contact__form" id="contact-form">
                     <div class="contact__group">
                         <input class="contact__input" type="text" name="user_name" required
                             placeholder="Ingresa tu nombre">
@@ -253,7 +267,7 @@
                     <textarea class="contact__input" name="user_description" required
                         placeholder="Ingresa tu mensaje"></textarea>
                     <p class="contact__message" id="contact-message"></p>
-                    <button type="submit" class="button contact__button">
+                    <button type="submit" class="button contact__button" id="sendEmailBtn">
                         Enviar Mensaje
                     </button>
                 </form>
@@ -262,14 +276,18 @@
                 title="Teléfono: 5529983634">
                 <a href="tel:5529983634" class="FloatPhone" target="_blank">
                     <i class="ri-phone-fill my-float"></i>
+                    <p class="icon-text">Teléfono</p>
                 </a>
             </div>
             <div class="cursor-pointer" data-toggle="tooltip" data-placement="bottom" title="Teléfono:5529983634">
                 <link rel="stylesheet"
                     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-                <a href="https://api.whatsapp.com/send?phone=5529983634&text=Hola me gustaría comunicarme con usted"
+                <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola%20me%20gustaría%20comunicarme%20con%20usted"
                     class="float" target="_blank">
-                    <i class="fa fa-whatsapp my-float"></i>
+                    <div class="icon-container">
+                        <i class="fa fa-whatsapp my-float float-whatsapp"></i>
+                        <p class="icon-text">WhatsApp</p>
+                    </div>
                 </a>
             </div>
         </section>
@@ -286,14 +304,17 @@
                 </h2>
             </div>
             <div class="footer__social">
-                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                <a href="https://www.facebook.com/" target="_blank" class="home__social-link" aria-label="facebook">
                     <i class="ri-facebook-circle-fill"></i>
+                    <p class="social-link-description">Facebook</p>
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
-                    <i class="ri-instagram-fill"></i>
+                <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                    <i class="ri-instagram-line"></i>
+                    <p class="social-link-description">Instagram</p>
                 </a>
                 <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
                     <i class="ri-linkedin-fill"></i>
+                    <p class="social-link-description">Linkedin</p>
                 </a>
             </div>
             <span class="footer__copy">
@@ -309,14 +330,14 @@
                         </a>
                     </li>
                     <li class="footer__item">
-                        <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola me gustaría comunicarme con usted"
+                        <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola%20me%20gustaría%20comunicarme%20con%20usted"
                             target="_blank">
                             <i class="ri-whatsapp-line"></i>
                             <span class="mb-4">WhatsApp + 5529983634</span>
                         </a>
                     </li>
                     <li class="footer__item">
-                        <a href="mailto: al221710026@gmail.com">
+                        <a href="mailto:al221710026@gmail.com">
                             <i class="ri-mail-line"></i>
                             <span class="mb-4">Enviar Correo: al2217100266@gmail.com</span>
                         </a>
@@ -330,8 +351,8 @@
     </a>
 
     <script src="public/assets/js/scrollreveal.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="public/assets/js/index.js"></script>
+    <script src="public/assets/js/lazysizes.min.js" async></script>
 </body>
 
 </html>
