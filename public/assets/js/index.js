@@ -20,7 +20,7 @@ document.addEventListener('click', (event) => {
     const targetElement = event.target;
     const isMenuOpen = navMenu.classList.contains('show-menu');
 
-    // Comprueba si el clic ocurrió fuera del menú o el botón de activación del menú
+    // Check if the click happened outside the menu or menu trigger button
     if (isMenuOpen && !navMenu.contains(targetElement) && !targetElement.matches('#nav-toogle')) {
         navMenu.classList.remove('show-menu');
     }
@@ -38,7 +38,6 @@ navLink.forEach(value => value.addEventListener('click', linkAction));
 
 
 // Add blur to header
-
 const blurHeader = () => {
     const header = document.getElementById('header');
     this.scrollY >= 50 ? header.classList.add('blur-header')
@@ -57,9 +56,9 @@ const sendEmail = e => {
     var script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
 
-    // Evento load para asegurarse de que la biblioteca se haya cargado correctamente
+    // Load event to make sure the library was loaded correctly
     script.addEventListener('load', function () {
-        // Código que utiliza emailjs
+        //emailjs
         emailjs.sendForm('service_bg7an1z', 'template_2t3mopu', '#contact-form', 'XvcnQAO5d2cfOGG9h')
             .then(() => {
                 contactMessage.textContent = 'Message sent successfully ✔️';
@@ -86,7 +85,7 @@ const scrollUp = () => {
 }
 window.addEventListener('scroll', scrollUp);
 
-//SCROLL SECTIONS ACTIVE LINK
+//Scroll sections active link
 const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () => {
@@ -128,7 +127,7 @@ hideFloatingIcons = () => {
     }
 }
 
-// Función para mostrar los iconos flotantes cuando no hay scroll
+// Function to show floating icons when there is no scroll
 showFloatingIcons = () => {
     const floatingIcons = document.querySelectorAll('.FloatPhone, .float');
     for (let i = 0; i < floatingIcons.length; i++) {
@@ -136,7 +135,7 @@ showFloatingIcons = () => {
     }
 }
 
-// Evento que se dispara al hacer scroll
+// Event fired when scrolling
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
@@ -157,15 +156,6 @@ downloadCv = async () => {
     downloadLink.download = 'jesus_chicho_hernandez_cv.pdf';
     downloadLink.target = '_blank';
     downloadLink.click();
-
-    /*  const response = await fetch(url);
-    console.log(response)
-    if (!response?.ok) { return console.log('Error al generar descarga del archivo.') }
-    const blob = await response.blob();
-    const downloadLink = document.createElement("a");
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = 'jesus_chicho_hernandez_cv.pdf';
-    downloadLink.click(); */
 }
 
 
@@ -188,3 +178,19 @@ const typeWriter = () => {
 }
 
 typeWriter();
+
+const handleAnimationHover = element => {
+    element.addEventListener('mouseenter', () => {
+        element.classList.add('no-animation');
+    });
+
+    element.addEventListener('mouseleave', () => {
+        element.classList.remove('no-animation');
+    });
+}
+
+const floatPhone = document.querySelector('.FloatPhone');
+const floatWhatsapp = document.querySelector('.FloatWhatsapp');
+
+handleAnimationHover(floatPhone);
+handleAnimationHover(floatWhatsapp);

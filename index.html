@@ -66,11 +66,16 @@
                         <h3 class="homme__education">Ingeniero en desarrollo y gestión de software</h3>
                         <p class="home__description">
                             Bienvenido a mi portafolio personal, donde transformo ideas en realidades digitales. Con
-                            habilidades en desarrollo web full stack y creación de APIs, diseño y desarrollo
+                            habilidades en
+                            <a href="https://www.google.com/search?q=qué+es+un+desarrollador+full+stack"
+                                target="_blank">
+                                desarrollo web full stack
+                            </a>
+                            y creación de APIs, diseño y desarrollo
                             aplicaciones web y móviles de alta calidad. Explora mi trabajo y descubre cómo puedo
                             ayudarte a alcanzar tus objetivos digitales.
                         </p>
-                        <a href="#contact" class="button">Hablemos</a>
+                        <a href="#contact" class="button"><span></span>Hablemos</a>
                     </div>
                     <div class="home__social">
                         <a href="https://www.facebook.com/" target="_blank" class="home__social-link"
@@ -98,12 +103,16 @@
         <section class="about section" id="about">
             <div class="about__container container grid">
                 <div class="about__data">
-                    <h3 class="section__subtitle"> </h3>
+                    <h3 class="section__subtitle">Jesus Chicho</h3>
                     <h2 class="section__title">
                         Acerca de mí
                     </h2>
                     <p class="about__description">
-                        Soy un desarrollador full stack con experiencia en diversas tecnologías web. Mi pasión por la
+                        Soy un
+                        <a href="https://www.google.com/search?q=qué+es+un+desarrollador+full+stack" target="_blank">
+                            desarrollador full stack
+                        </a>
+                        con experiencia en diversas tecnologías web. Mi pasión por la
                         programación y el diseño me impulsa a crear soluciones innovadoras y funcionales. Con
                         habilidades en HTML, CSS, JavaScript, y frameworks como
                         <a href="https://vuejs.org/" target="_blank">Vue.js</a>,
@@ -112,15 +121,15 @@
                         <a href="https://nodejs.org/en" target="_blank">Node.js</a>,
                         estoy comprometido a ofrecer resultados de calidad que superen las expectativas de mis clientes.
                     </p>
-                    <a href="#contact" class="button">Contáctame</a>
-                    <button type="button" class="button contact__button" onclick="downloadCv()">
-                        Descargar CV <i class="ri-download-2-line"></i>
-                    </button>
+                    <a href="#contact" class="contact__button"><span></span>Contáctame</a>
+                    <a type="button" class="contact__button" onclick="downloadCv()">
+                        <span></span> Descargar CV <i class="ri-download-2-line"></i>
+                    </a>
                 </div>
                 <div class="about__image">
                     <picture>
                         <img data-src="public/assets/images/about-me.webp" id="imageBorder" class="about__img lazyload "
-                            width="640" height="940" alt="...">
+                            width="640" height="940" alt="about-me-img">
                     </picture>
                 </div>
             </div>
@@ -141,7 +150,7 @@
                         con bases de datos SQL y NoSQL. Experto en Postman y colaborando en plataformas como GitHub y
                         Bitbucket. Listo para enfrentar desafíos y ofrecer soluciones web de alta calidad.
                     </p>
-                    <a href="#projects" class="button">Ver proyectos</a>
+                    <a href="#projects" class="button"><span></span>Ver proyectos</a>
                 </div>
                 <div class="skills__content">
                     <ol class="skills__group">
@@ -259,34 +268,46 @@
             <div class="contact__container container grid">
                 <form class="contact__form" id="contact-form">
                     <div class="contact__group">
-                        <input class="contact__input" type="text" name="user_name" required
+                        <label for="user_name" class="contact__label">Nombre:</label>
+                        <input class="contact__input" type="text" name="user_name" id="user_name" required
                             placeholder="Ingresa tu nombre">
-                        <input class="contact__input" type="email" name="user_email" required
+                    </div>
+
+                    <div class="contact__group">
+                        <label for="user_email" class="contact__label">Correo:</label>
+                        <input class="contact__input" type="email" name="user_email" id="user_email" required
                             placeholder="Ingresa tu correo">
                     </div>
-                    <textarea class="contact__input" name="user_description" required
+
+                    <label for="user_description" class="contact__label">Mensaje:</label>
+                    <textarea class="contact__input" name="user_description" id="user_description" required
                         placeholder="Ingresa tu mensaje"></textarea>
+
                     <p class="contact__message" id="contact-message"></p>
+
                     <button type="submit" class="button contact__button" id="sendEmailBtn">
-                        Enviar Mensaje
+                        <span></span>Enviar Mensaje
                     </button>
                 </form>
             </div>
-            <div class="cursor-pointer" data-toggle="tooltip" data-placement="left" data-html="true"
-                title="Teléfono: 5529983634">
+
+
+            <div class="cursor-pointer float-icons">
                 <a href="tel:5529983634" class="FloatPhone" target="_blank">
                     <i class="ri-phone-fill my-float"></i>
                     <p class="icon-text">Teléfono</p>
+                    <span class="tooltip">Teléfono: 5529983634</span>
                 </a>
             </div>
-            <div class="cursor-pointer" data-toggle="tooltip" data-placement="bottom" title="Teléfono:5529983634">
+            <div class="cursor-pointer float-icons">
                 <link rel="stylesheet"
                     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
                 <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola%20me%20gustaría%20comunicarme%20con%20usted"
-                    class="float" target="_blank">
+                    class="float FloatWhatsapp" target="_blank">
                     <div class="icon-container">
                         <i class="fa fa-whatsapp my-float float-whatsapp"></i>
                         <p class="icon-text">WhatsApp</p>
+                        <span class="tooltip">WhatsApp: 5529983634</span>
                     </div>
                 </a>
             </div>
@@ -346,7 +367,7 @@
             </div>
         </div>
     </footer>
-    <a href="#" class="scrollup" id="scroll-up">
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Volver arriba">
         <i class="ri-arrow-up-line"></i>
     </a>
 
