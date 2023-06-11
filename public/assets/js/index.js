@@ -1,19 +1,31 @@
 //Show menu
-const navMenu = document.getElementById('nav-menu'),
-    navToggle = document.getElementById('nav-toogle'),
-    navClose = document.getElementById('nav-close');
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toogle');
+const navClose = document.getElementById('nav-close');
 
 if (navToggle) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
         navMenu.classList.add('show-menu');
     });
 }
 
 if (navClose) {
     navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
+        navMenu.classList.remove('show-menu');
     });
 }
+
+document.addEventListener('click', (event) => {
+    const targetElement = event.target;
+    const isMenuOpen = navMenu.classList.contains('show-menu');
+
+    // Comprueba si el clic ocurrió fuera del menú o el botón de activación del menú
+    if (isMenuOpen && !navMenu.contains(targetElement) && !targetElement.matches('#nav-toogle')) {
+        navMenu.classList.remove('show-menu');
+    }
+});
+
 //Remove menu mobile
 const navLink = document.querySelectorAll('.nav__link');
 
@@ -166,6 +178,3 @@ const typeWriter = () => {
 }
 
 typeWriter();
-
-
-//https://www.youtube.com/watch?v=Y4-xMb-eHOQ&list=PL07efmqYWHZ_rVeQ1ws0ER9eL6cxo-d5V

@@ -335,6 +335,11 @@ svg {
     text-align: justify;
 }
 
+.about__description a {
+    text-decoration: none;
+    color: #FFF;
+}
+
 .about__image {
     justify-self: center;
 }
@@ -354,7 +359,7 @@ svg {
 
 .skills__container {
     padding-bottom: 2rem;
-    row-gap: 3.5rem;
+    row-gap: 2.5rem;
 }
 
 .skills__data {
@@ -668,6 +673,14 @@ svg {
     }
 }
 
+@media screen and (max-width: 550px) {
+
+    .skills__content {
+        grid-template-columns: max-content;
+        row-gap: 1rem;
+    }
+}
+
 @media screen and (min-width: 576px) {
 
     .home__container,
@@ -760,6 +773,11 @@ svg {
         margin-inline: auto;
     }
 
+    #home {
+        min-height: 100vh;
+        display: flex;
+    }
+
     .home__container {
         grid-template-columns: 445px 550px;
         column-gap: 7rem;
@@ -797,8 +815,8 @@ svg {
     }
 
     .skills__container {
-        grid-template-columns: 340px 425px;
-        column-gap: 10rem;
+        grid-template-columns: 490px 425px;
+        column-gap: 12rem;
         padding-bottom: 4rem;
     }
 
@@ -889,6 +907,9 @@ svg {
 
 
 .float {
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
     position: fixed;
     width: 60px;
     height: 60px;
@@ -897,10 +918,7 @@ svg {
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
+    z-index: 9;
 }
 
 .float:hover {
@@ -914,31 +932,6 @@ svg {
     margin-top: 16px;
 }
 
-.float-test {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-}
-
-.FloatWhats {
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    background: #25d366;
-    color: #fff !important;
-    padding: 10px 14px;
-    border-radius: 50%;
-    z-index: 9
-}
 
 .FloatPhone {
     text-align: center;
@@ -951,9 +944,9 @@ svg {
     bottom: 200px;
     background: #25d366;
     color: #fff;
-    padding: 8px;
     border-radius: 50%;
-    z-index: 9
+    z-index: 9;
+    padding: 8px;
 }
 
 .FloatPhone:hover {
@@ -964,7 +957,6 @@ svg {
 
 @media(max-width: 767px) {
 
-    .FloatWhats i,
     .FloatPhone i {
         font-size: 1em !important
     }
@@ -973,5 +965,11 @@ svg {
         padding: 10px 13px;
         right: 40px;
         bottom: 220px
+    }
+}
+
+@media (max-width: 600px) {
+    .button {
+        margin-bottom: 10px;
     }
 }
