@@ -150,7 +150,7 @@ window.addEventListener('scroll', () => {
 
 
 downloadCv = async () => {
-    const url = 'https://firebasestorage.googleapis.com/v0/b/lbs66-de0d2.appspot.com/o/cv_jesus_chicho_hernandez.pdf?alt=media&token=6945c8f9-da99-418f-98cb-01ad3ba57f68';
+    const url = 'https://firebasestorage.googleapis.com/v0/b/lbs66-de0d2.appspot.com/o/cv_jesus_chicho_hernandez.pdf?alt=media&token=11867c77-fa79-4ac2-892d-a5c65a2e452e&_gl=1*16q651s*_ga*MTcyNTY2MTM1Ny4xNjg0ODcwMzQz*_ga_CW55HF8NVT*MTY5Njk2OTk2NC44LjEuMTY5Njk2OTk4Ny4zNy4wLjA.';
     const downloadLink = document.createElement("a");
     downloadLink.href = url;
     downloadLink.download = 'jesus_chicho_hernandez_cv.pdf';
@@ -194,3 +194,70 @@ const floatWhatsapp = document.querySelector('.FloatWhatsapp');
 
 handleAnimationHover(floatPhone);
 handleAnimationHover(floatWhatsapp);
+
+// Get the service container
+const servicesContainer = document.getElementById("services-container");
+
+// Dynamically generate services
+servicesData.forEach(servicio => {
+    const article = document.createElement("article");
+    article.className = "services__card";
+
+    const icono = document.createElement("i");
+    icono.className = servicio.icono + " services__icon";
+
+    const titulo = document.createElement("h2");
+    titulo.className = "services__title";
+    titulo.textContent = servicio.titulo;
+
+    const descripcion = document.createElement("p");
+    descripcion.className = "services__description";
+    descripcion.textContent = servicio.descripcion;
+
+    article.appendChild(icono);
+    article.appendChild(titulo);
+    article.appendChild(descripcion);
+
+    servicesContainer.appendChild(article);
+});
+
+const projectsContainer = document.getElementById('projects-container');
+
+projects.forEach(project => {
+    const article = document.createElement('article');
+    article.className = 'projects__card';
+
+    const img = document.createElement('img');
+    img.setAttribute('data-src', project.imgSrc);
+    img.alt = 'projects-img';
+    img.className = 'projects__img lazyload';
+
+    const modalDiv = document.createElement('div');
+    modalDiv.className = 'projects__modal';
+
+    const subtitle = document.createElement('span');
+    subtitle.className = 'projects__subtitle';
+    subtitle.textContent = project.subtitle;
+
+    const title = document.createElement('h2');
+    title.className = 'projects__title';
+    title.textContent = project.title;
+
+    const demoLink = document.createElement('a');
+    demoLink.href = project.demoLink;
+    demoLink.className = 'projects__button';
+    demoLink.textContent = 'Ver demo ';
+
+    const externalLinkIcon = document.createElement('i');
+    externalLinkIcon.className = 'ri-external-link-line';
+    demoLink.appendChild(externalLinkIcon);
+
+    modalDiv.appendChild(subtitle);
+    modalDiv.appendChild(title);
+    modalDiv.appendChild(demoLink);
+
+    article.appendChild(img);
+    article.appendChild(modalDiv);
+
+    projectsContainer.appendChild(article);
+});
