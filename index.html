@@ -13,17 +13,13 @@
     <meta name="author" content="Jesus Chicho Hernández">
     <title>Jesus Chicho Hernández</title>
     <link rel="icon" type="image/x-icon" href="public/assets/icons/star.ico">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        media="print" onload="this.media='all'">
     <link rel="stylesheet" href="public/assets/css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG6S6Z4TNZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WG6S6Z4TNZ');
-    </script>
+    <!-- Google tag -->
+    <script src="public/assets/js/google/gtag-loader.js" async></script>
 </head>
 
 <body>
@@ -72,13 +68,13 @@
                             Hola ,<span>soy </span>
                         </p>
                         <h1 class="home__title">Jesus Chicho</h1>
-                        <h3 class="homme__education">Ingeniero en desarrollo y gestión de software</h3>
+                        <h2 class="homme__education">Ingeniero en desarrollo y gestión de software</h2>
                         <p class="home__description">
                             Bienvenido a mi portafolio personal, donde transformo ideas en realidades digitales. Con
                             habilidades en
                             <a href="https://www.google.com/search?q=qué+es+un+desarrollador+full+stack"
                                 target="_blank">
-                                desarrollo web full stack
+                                <strong> desarrollo web full stack</strong>
                             </a>
                             y creación de APIs, diseño y desarrollo
                             aplicaciones web y móviles de alta calidad. Explora mi trabajo y descubre cómo puedo
@@ -132,9 +128,9 @@
                         estoy comprometido a ofrecer resultados de calidad que superen las expectativas de mis clientes.
                     </p>
                     <a href="#contact" class="contact__button"><span></span>Contáctame</a>
-                    <a type="button" class="contact__button" onclick="downloadCv()">
+                    <button type="button" class="contact__button" onclick="downloadCv()">
                         <span></span> Descargar CV <i class="ri-download-2-line"></i>
-                    </a>
+                    </button>
                 </div>
                 <div class="about__image">
                     <picture>
@@ -148,7 +144,7 @@
             <div class="skills__container container grid">
                 <div class="skills__data">
                     <h3 class="section__subtitle">
-                        Habilidades <span>favoritas</span>
+                        Habilidades <span>técnicas</span>
                     </h3>
                     <h2 class="section__title">
                         Mis habilidades
@@ -246,8 +242,6 @@
                 </a>
             </div>
             <div class="cursor-pointer float-icons">
-                <link rel="stylesheet"
-                    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
                 <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola%20me%20gustaría%20comunicarme%20con%20usted"
                     class="float FloatWhatsapp" target="_blank">
                     <div class="icon-container">
