@@ -629,9 +629,6 @@ svg {
     }
 }
 
-
-
-
 .contact__button {
     justify-self: center;
     cursor: pointer;
@@ -642,6 +639,7 @@ svg {
     color: var(--title-color);
     font-weight: var(--font-medium);
     transition: box-shadow .4s;
+    margin-top: 1rem;
 }
 
 .contact__button:hover {
