@@ -164,7 +164,7 @@ svg {
     font-weight: var(--font-medium);
 }
 
-.nav__logo span {
+#typingText{
     color: var(--first-color);
 }
 
@@ -267,10 +267,17 @@ svg {
     font-size: var(--bigger-font-size);
     color: var(--title-color);
 }
+#helloText {
+    color: var(--title-color);
+}
 
+.home__subtitle,
 .home__subtitle span,
 .home__title {
     color: var(--first-color);
+}
+#developmentText {
+    color: var(--title-color);
 }
 
 .home__title {
@@ -1053,7 +1060,19 @@ svg {
     z-index: 9;
     padding: 8px;
 }
-
+.languageIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background: #25d366; */
+    z-index: 100;
+    margin-top: 0.7%;
+}
+@media only screen and (max-width: 1014px) {
+    .languageIcon {
+        display: none; /* Hide on small screens */
+    }
+}
 .FloatPhone:hover {
     text-decoration: none;
     color: #26c407;

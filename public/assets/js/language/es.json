@@ -1,0 +1,205 @@
+{
+    "header": {
+        "logoText": "Jesus",
+        "typingText": "Chicho Hernández",
+        "menuItems": [
+            {
+                "id": "menuHome",
+                "text": "Inicio"
+            },
+            {
+                "id": "menuAbout",
+                "text": "Acerca de mí"
+            },
+            {
+                "id": "menuSkills",
+                "text": "Habilidades"
+            },
+            {
+                "id": "menuServices",
+                "text": "Servicios"
+            },
+            {
+                "id": "menuProjects",
+                "text": "Proyectos"
+            },
+            {
+                "id": "menuContact",
+                "text": "Contacto"
+            }
+        ]
+    },
+    "sections": {
+        "homeSection": {
+            "home": {
+                "hello": "Hola,",
+                "soy": "soy"
+            },
+            "title": "Jesus Chicho",
+            "education": "Ingeniero en desarrollo y gestión de software",
+            "description": "Bienvenido a mi portafolio personal, donde transformo ideas en realidades digitales. Con habilidades en desarrollo web full stack y creación de APIs, diseño y desarrollo de aplicaciones web y móviles de alta calidad. Explora mi trabajo y descubre cómo puedo ayudarte a alcanzar tus objetivos digitales.",
+            "button": "Hablemos",
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "linkedin": "Linkedin",
+            "developmentText": "Desarrollo e ",
+            "innovationText": "Innovación"
+        },
+        "aboutSection": {
+            "subtitle": "Jesus Chicho",
+            "title": "Acerca de mí",
+            "description": [
+                {
+                    "id": "aboutSpan1",
+                    "text": "Soy un"
+                },
+                {
+                    "id": "aboutLink1",
+                    "text": "desarrollador web full stack",
+                    "url": "https://www.google.com/search?q=qué+es+un+desarrollador+full+stack"
+                },
+                {
+                    "id": "aboutSpan2",
+                    "text": "con experiencia en diversas tecnologías web. Mi pasión por la programación y el diseño me impulsa a crear soluciones innovadoras y funcionales de calidad. Con habilidades en HTML, CSS, JavaScript, y frameworks como"
+                },
+                {
+                    "id": "aboutVueLink",
+                    "text": "Vue.js",
+                    "url": "https://vuejs.org/"
+                },
+                {
+                    "id": "aboutReactLink",
+                    "text": "React",
+                    "url": "https://react.dev/"
+                },
+                {
+                    "id": "aboutLaravelLink",
+                    "text": "Laravel",
+                    "url": "https://laravel.com/"
+                },
+                {
+                    "id": "aboutNodeLink",
+                    "text": "Node.js",
+                    "url": "https://nodejs.org/en/about"
+                },
+                {
+                    "id": "aboutSpan3",
+                    "text": "Me comprometo a ofrecer resultados de calidad que superen las expectativas de mis clientes."
+                }
+            ],
+            "contactButton": "Contáctame",
+            "downloadButton": {
+                "text": "Descargar CV"
+            }
+        },
+        "skillsSection": {
+            "subtitle": "Habilidades",
+            "title": "Mis habilidades",
+            "description": "Desarrollador Web Full Stack con experiencia en HTML, CSS, JavaScript, PHP, Node.js, Python etc. Competente en marcos como Laravel, Flask y creación de interfaces usando Vue.js, Angular y React. Amplia experiencia en diseño y consumo de APIs, control de versiones con Git y trabajo con bases de datos SQL y NoSQL. Experto en Postman y colaborando en plataformas como GitHub y Bitbucket. Listo para enfrentar desafíos y ofrecer soluciones web de alta calidad.",
+            "button": "Ver proyectos",
+            "groups": [
+                {
+                    "start": 1,
+                    "items": [
+                        "HTML & CSS",
+                        "JavaScript",
+                        "Bootstrap",
+                        "Tailwind CSS",
+                        "PHP (Laravel, Codeigniter)",
+                        "Node.js",
+                        "Python (Flask)",
+                        "Typescript"
+                    ]
+                },
+                {
+                    "start": 9,
+                    "items": [
+                        "Vue.js",
+                        "Angular",
+                        "React",
+                        "Git & GitHub",
+                        "Bitbucket",
+                        "Postman",
+                        "Data Base (Sql & No Sql)",
+                        "API"
+                    ]
+                }
+            ]
+        },
+        "servicesSection": {
+            "subtitle": "Mis",
+            "subtitleSpan": "servicios",
+            "title": "Lo que hago",
+            "dataServices": [
+                {
+                    "icon": "ri-layout-3-line",
+                    "title": "Desarrollo Web",
+                    "description": "Como desarrollador web full stack, ofrezco soluciones creativas y personalizadas para diseñar y desarrollar sitios web de alto rendimiento. Con mi experiencia en HTML, CSS, JavaScript y frameworks como Vue.js, React y Angular, puedo crear interfaces intuitivas y atractivas que brinden una excelente experiencia de usuario."
+                },
+                {
+                    "icon": "ri-code-box-line",
+                    "title": "Desarrollo de API Rest",
+                    "description": "Con mi experiencia en desarrollo de API Rest, puedo diseñar y construir interfaces de programación de aplicaciones confiables y eficientes. Utilizando tecnologías como PHP, Python y Node.js, puedo desarrollar APIs escalables y seguras que facilitan la comunicación fluida entre diferentes sistemas y aplicaciones."
+                },
+                {
+                    "icon": "ri-smartphone-line",
+                    "title": "Desarrollo de aplicaciones móviles",
+                    "description": "Como desarrollador full stack, puedo crear aplicaciones móviles intuitivas y funcionales. Utilizando tecnologías como Kotlin, Flutter y frameworks nativos de iOS y Android, puedo diseñar y desarrollar aplicaciones móviles robustas que se ajusten a tus necesidades y brinden una experiencia de usuario excepcional."
+                }
+            ]
+        },
+        "projectsSection": {
+            "subtitle": "Mis",
+            "subtitleSpan": "Trabajos",
+            "title": "Proyectos recientes",
+            "dataProjects": [
+                {
+                    "imgSrc": "public/assets/images/programing.webp",
+                    "subtitle": "Web",
+                    "title": "Clinica Dental",
+                    "demoLink": "javascript:void(0);"
+                },
+                {
+                    "imgSrc": "public/assets/images/programing.webp",
+                    "subtitle": "Web",
+                    "title": "Recursos Humanos",
+                    "demoLink": "javascript:void(0);"
+                },
+                {
+                    "imgSrc": "public/assets/images/programing.webp",
+                    "subtitle": "Web",
+                    "title": "Página web",
+                    "demoLink": "javascript:void(0);"
+                }
+            ]
+        },
+        "contactSection": {
+            "subtitle": "Ponerse en",
+            "subtitleSpan": "contacto",
+            "title": "Contáctame",
+            "form": {
+                "nameLabel": "Nombre:",
+                "emailLabel": "Correo:",
+                "messageLabel": "Mensaje:",
+                "namePlaceholder": "Ingresa tu nombre",
+                "emailPlaceholder": "Ingresa tu correo",
+                "messagePlaceholder": "Ingresa tu mensaje",
+                "messageSuccess": "Mensaje enviado exitosamente.",
+                "messageError": "Error al enviar el mensaje."
+            },
+            "submitButton": "Enviar Mensaje"
+        },
+        "floatIconsSection": {
+            "phone": {
+                "text": "Teléfono",
+                "tooltip": "Teléfono: 5529983634"
+            }
+        }
+    },
+    "footer": {
+        "footerEducation":"Ingeniero en desarrollo y gestión de software",
+        "copyright":"Derechos de autor Jesus Chicho Hernández. Reservados todos los derechos.",
+        "lastUpdatedText":"Última actualización:",
+        "emailText":"Correo: al221710026@gmail.com"
+    }
+}

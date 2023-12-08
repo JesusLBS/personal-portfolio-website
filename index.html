@@ -38,29 +38,36 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">
-                Jesus <span id="typing-span"></span>
+                <span id="logoText">Jesus</span> <span id="typingText"></span>
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">Inicio</a>
+                        <a href="#home" class="nav__link active-link" id="menuHome">Inicio</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">Acerca de mí</a>
+                        <a href="#about" class="nav__link" id="menuAbout">Acerca de mí</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#skills" class="nav__link">Habilidades</a>
+                        <a href="#skills" class="nav__link" id="menuSkills">Habilidades</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#services" class="nav__link">Servicios</a>
+                        <a href="#services" class="nav__link" id="menuServices">Servicios</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#projects" class="nav__link">Proyectos</a>
+                        <a href="#projects" class="nav__link" id="menuProjects">Proyectos</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contacto</a>
+                        <a href="#contact" class="nav__link" id="menuContact">Contacto</a>
                     </li>
                 </ul>
+                <div class="cursor-pointer languageIcon">
+                    <picture>
+                        <img data-src="public/assets/images/language.png" id="languaje" class="about__img lazyload"
+                            width="30" height="30" alt="languaje">
+                    </picture>
+                    <select id="language"></select>
+                </div>
                 <div class="nav__close" id="nav-close">
                     <i class="ri-close-circle-fill"></i>
                 </div>
@@ -72,16 +79,19 @@
     </header>
 
     <main class="main">
+        <!-- Home section -->
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content">
                     <div class="home__data">
-                        <p class="home__subtitle ">
-                            Hola ,<span>soy </span>
+                        <p class="home__subtitle" id="homeSubtitle">
+                            <span id="helloText">Hola,</span> <span id="soyText">soy</span>
                         </p>
-                        <h1 class="home__title">Jesus Chicho</h1>
-                        <h2 class="homme__education">Ingeniero en desarrollo y gestión de software</h2>
-                        <p class="home__description">
+
+                        <h1 id="homeTitle" class="home__title">Jesus Chicho</h1>
+                        <h2 id="homeEducation" class="homme__education">Ingeniero en desarrollo y gestión de software
+                        </h2>
+                        <p id="homeDescription" class="home__description">
                             Bienvenido a mi portafolio personal, donde transformo ideas en realidades digitales. Con
                             habilidades en
                             <a target="_blank" rel="noopener nofollow noreferrer"
@@ -93,21 +103,24 @@
                             aplicaciones web y móviles de alta calidad. Explora mi trabajo y descubre cómo puedo
                             ayudarte a alcanzar tus objetivos digitales.
                         </p>
-                        <a href="#contact" class="button"><span></span>Hablemos</a>
+                        <a href="#contact" class="button"><span></span>
+                            <p id="homeButton">Hablemos</p>
+                        </a>
                     </div>
                     <div class="home__social">
                         <a href="https://www.facebook.com/" target="_blank" rel="noopener nofollow noreferrer"
-                            class="home__social-link" aria-label="facebook">
+                            class="home__social-link" aria-label="facebook" id="facebookLink">
                             <i class="ri-facebook-circle-fill"></i>
                             <p class="social-link-description">Facebook</p>
                         </a>
                         <a href="https://www.instagram.com/" target="_blank" rel="noopener nofollow noreferrer"
-                            class="home__social-link">
+                            class="home__social-link" id="instagramLink">
                             <i class="ri-instagram-line"></i>
                             <p class="social-link-description">Instagram</p>
                         </a>
                         <a href="https://mx.linkedin.com/in/jesus-chicho-hern%C3%A1ndez?original_referer="
-                            target="_blank" rel="noopener nofollow noreferrer" class="home__social-link">
+                            target="_blank" rel="noopener nofollow noreferrer" class="home__social-link"
+                            id="linkedinLink">
                             <i class="ri-linkedin-fill"></i>
                             <p class="social-link-description">Linkedin</p>
                         </a>
@@ -115,48 +128,60 @@
                 </div>
                 <div class="home__image">
                     <h3 class="home__subtitle">
-                        Desarrollo e <span>Innovación</span>
+                        <span id="developmentText">Desarrollo e</span> <span id="innovationText">Innovación</span>
                     </h3>
                 </div>
             </div>
         </section>
+        <!-- About section -->
         <section class="about section" id="about">
             <div class="about__container container grid">
                 <div class="about__data">
-                    <h3 class="section__subtitle">Jesus Chicho</h3>
-                    <h2 class="section__title">
+                    <h3 class="section__subtitle" id="aboutSubtitle">Jesus Chicho</h3>
+                    <h2 class="section__title" id="aboutTitle">
                         Acerca de mí
                     </h2>
                     <p class="about__description">
-                        Soy un
-                        <a target="_blank" rel="noopener nofollow noreferrer"
-                            href="https://www.google.com/search?q=qué+es+un+desarrollador+full+stack">
-                            <span><strong> desarrollador web full stack</strong></span>
+                        <span id="aboutSpan1">
+                            Soy un
+                        </span>
+                        <a id="aboutLink1" target="_blank" rel="noopener nofollow noreferrer"
+                            href="https://www.google.com/search?q=what+is+a+full+stack+developer">
+                            <span><strong>desarrollador web full stack</strong></span>
                             <i class="ri-external-link-line"></i>
                         </a>
-                        con experiencia en diversas tecnologías web. Mi pasión por la
-                        programación y el diseño me impulsa a crear soluciones innovadoras y funcionales de calidad. Con
-                        habilidades en HTML, CSS, JavaScript, y frameworks como
-                        <a href="https://vuejs.org/" target="_blank" rel="noopener nofollow noreferrer">
+                        <span id="aboutSpan2">
+                            con experiencia en diversas tecnologías web. Mi pasión por la
+                            programación y el diseño me impulsa a crear soluciones innovadoras y funcionales de calidad.
+                            Con habilidades en HTML, CSS, JavaScript, y frameworks como
+                        </span>
+                        <a id="aboutVueLink" href="https://vuejs.org/" target="_blank"
+                            rel="noopener nofollow noreferrer">
                             Vue.js
                             <i class="ri-external-link-line"></i>
                         </a>,
-                        <a href="https://react.dev/" target="_blank" rel="noopener nofollow noreferrer">
+                        <a id="aboutReactLink" href="https://react.dev/" target="_blank"
+                            rel="noopener nofollow noreferrer">
                             React
                             <i class="ri-external-link-line"></i>
                         </a>,
-                        <a href="https://laravel.com/" target="_blank" rel="noopener nofollow noreferrer">
+                        <a id="aboutLaravelLink" href="https://laravel.com/" target="_blank"
+                            rel="noopener nofollow noreferrer">
                             Laravel
                             <i class="ri-external-link-line"></i>
                         </a>,
-                        <a href="https://nodejs.org/en/about" target="_blank" rel="noopener nofollow noreferrer">
+                        <a id="aboutNodeLink" href="https://nodejs.org/en/about" target="_blank"
+                            rel="noopener nofollow noreferrer">
                             Node.js
                             <i class="ri-external-link-line"></i>
                         </a>,
-                        estoy comprometido a ofrecer resultados de calidad que superen las expectativas de mis clientes.
+                        <span id="aboutSpan3">
+                            estoy comprometido a ofrecer resultados de calidad que superen las expectativas de mis
+                            clientes.
+                        </span>
                     </p>
-                    <a href="#contact" class="contact__button"><span></span>Contáctame</a>
-                    <button type="button" class="contact__button" onclick="downloadCv()">
+                    <a href="#contact" class="contact__button" id="contactButton"><span></span>Contáctame</a>
+                    <button type="button" class="contact__button" id="downloadButton" onclick="downloadCv()">
                         <span></span> Descargar CV <i class="ri-download-2-line"></i>
                     </button>
                 </div>
@@ -168,127 +193,118 @@
                 </div>
             </div>
         </section>
+        <!-- Skills section -->
         <section class="skills section" id="skills">
             <div class="skills__container container grid">
                 <div class="skills__data">
-                    <h3 class="section__subtitle">
-                        Habilidades <span>técnicas</span>
+                    <h3 class="section__subtitle" id="skillsSubtitle">
+                        <p>Habilidades</p> <span>técnicas</span>
                     </h3>
-                    <h2 class="section__title">
+                    <h2 class="section__title" id="skillsTitle">
                         Mis habilidades
                     </h2>
-                    <p class="skills__description">
+                    <p class="skills__description" id="skillsDescription">
                         Desarrollador Web Full Stack con experiencia en HTML, CSS, JavaScript, PHP, Node.js, Python etc.
                         Competente en marcos como Laravel, Flask y creación de interfaces usando Vue.js, Angular y
                         React. Amplia experiencia en diseño y consumo de APIs, control de versiones con Git y trabajo
                         con bases de datos SQL y NoSQL. Experto en Postman y colaborando en plataformas como GitHub y
                         Bitbucket. Listo para enfrentar desafíos y ofrecer soluciones web de alta calidad.
                     </p>
-                    <a href="#projects" class="button"><span></span>Ver proyectos</a>
+                    <a href="#projects" class="button"><span></span>
+                        <p id="skillsButton">Ver proyectos</p>
+                    </a>
                 </div>
                 <div class="skills__content">
-                    <ol class="skills__group">
-                        <li class="skills__item">HTML & CSS</li>
-                        <li class="skills__item">JavaScript</li>
-                        <li class="skills__item">Bootstrap</li>
-                        <li class="skills__item">Tailwind CSS</li>
-                        <li class="skills__item">PHP (Laravel, Codeigniter)</li>
-                        <li class="skills__item">Node.js</li>
-                        <li class="skills__item">Python (Flask)</li>
-                        <li class="skills__item">Typescript</li>
+                    <ol class="skills__group" id="skillsGroup1">
                     </ol>
-                    <ol class="skills__group" start="9">
-                        <li class="skills__item">Vue.js</li>
-                        <li class="skills__item">Angular</li>
-                        <li class="skills__item">React</li>
-                        <li class="skills__item">Git & GitHub</li>
-                        <li class="skills__item">Bitbucket</li>
-                        <li class="skills__item">Postman</li>
-                        <li class="skills__item">Data Base (Sql & No Sql)</li>
-                        <li class="skills__item">API</li>
+                    <ol class="skills__group" id="skillsGroup2" start="9">
                     </ol>
                 </div>
             </div>
         </section>
+        <!-- Services section -->
         <section class="services section" id="services">
-            <h3 class="section__subtitle">
-                Mis <span>servicios</span>
+            <h3 id="" class="section__subtitle">
+                <p id="servicesSubtitleText">Mis</p> <span id="servicesSubtitleSpan">servicios</span>
             </h3>
-            <h2 class="section__title">
-                Lo que hago
+            <h2 id="servicesTitle" class="section__title">
+                <span id="servicesTitleText">Lo que hago</span>
             </h2>
             <div class="services__container container grid" id="services-container"></div>
-
         </section>
+        <!-- Projects section -->
         <section class="projects section" id="projects">
-            <h3 class="section__subtitle">
-                Mis <span>trabajos</span>
+            <h3 id="projectsSubtitle" class="section__subtitle">
+                <p id="projectsSubtitleText">Mis</p> <span id="projectsSubtitleSpan">trabajos</span>
             </h3>
-            <h2 class="section__title">
+            <h2 id="projectsTitle" class="section__title">
                 Proyectos recientes
             </h2>
             <div class="projects__container container grid" id="projects-container"></div>
         </section>
+        <!-- Contact section -->
         <section class="contact section" id="contact">
-            <h3 class="section__subtitle">
-                Ponerse en <span>contacto</span>
+            <h3 id="contactSubtitle" class="section__subtitle">
+                <p id="contactSubtitleText">Ponerse en</p> <span id="contactSubtitleSpan">contacto</span>
             </h3>
-            <h2 class="section__title">
+            <h2 id="contactTitle" class="section__title">
                 Contáctame
             </h2>
             <div class="contact__container container grid">
                 <form class="contact__form" id="contact-form">
                     <div class="contact__group">
-                        <label for="user_name" class="contact__label">Nombre:</label>
+                        <label for="user_name" class="contact__label" id="nameLabel">Nombre:</label>
                         <input class="contact__input" type="text" name="user_name" id="user_name" required
                             placeholder="Ingresa tu nombre">
                     </div>
 
                     <div class="contact__group">
-                        <label for="user_email" class="contact__label">Correo:</label>
+                        <label for="user_email" class="contact__label" id="emailLabel">Correo:</label>
                         <input class="contact__input" type="email" name="user_email" id="user_email" required
                             placeholder="Ingresa tu correo">
                     </div>
 
-                    <label for="user_description" class="contact__label">Mensaje:</label>
+                    <label for="user_description" class="contact__label" id="messageLabel">Mensaje:</label>
                     <textarea class="contact__input" name="user_description" id="user_description" required
                         placeholder="Ingresa tu mensaje"></textarea>
 
                     <p class="contact__message" id="contact-message"></p>
 
                     <button type="submit" class="button contact__button" id="sendEmailBtn">
-                        <span></span>Enviar Mensaje
+                        <span></span>
+                        <p id="submitButton">Enviar Mensaje</p>
                     </button>
                 </form>
             </div>
-
-            <div class="cursor-pointer float-icons">
-                <a href="tel:5529983634" class="FloatPhone" target="_blank">
-                    <i class="ri-phone-fill my-float"></i>
-                    <p class="icon-text">Teléfono</p>
-                    <span class="tooltip">Teléfono: 5529983634</span>
+        </section>
+        <!-- Float Icons -->
+        <div id="floatIcons">
+            <div class="cursor-pointer float-icons" id="phoneIconContainer">
+                <a href="#" class="float FloatPhone" target="_blank">
+                    <i id="phoneIcon" class="ri-phone-fill my-float"></i>
+                    <p id="phoneIconText" class="icon-text">Teléfono</p>
+                    <span id="phoneIconTooltip" class="tooltip">Teléfono: 5529983634</span>
                 </a>
             </div>
-            <div class="cursor-pointer float-icons">
-                <a href="https://api.whatsapp.com/send?phone=525529983634&text=Hola%20me%20gustaría%20comunicarme%20con%20usted"
-                    class="float FloatWhatsapp" target="_blank">
+            <div class="cursor-pointer float-icons" id="whatsappIconContainer">
+                <a href="#" class="float FloatWhatsapp" target="_blank">
                     <div class="icon-container">
-                        <i class="fa fa-whatsapp my-float float-whatsapp"></i>
-                        <p class="icon-text">WhatsApp</p>
-                        <span class="tooltip">WhatsApp: 5529983634</span>
+                        <i id="whatsappIcon" class="fa fa-whatsapp my-float float-whatsapp"></i>
+                        <p id="whatsappIconText" class="icon-text">WhatsApp</p>
+                        <span id="whatsappIconTooltip" class="tooltip">WhatsApp: 5529983634</span>
                     </div>
                 </a>
             </div>
-        </section>
+        </div>
     </main>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__container container grid">
             <div>
                 <h1 class="footer__title">
                     Jesus <span>Chicho</span> Hernández
                 </h1>
-                <h2 class="footer__education">
+                <h2 id="footerEducation" class="footer__education">
                     Ingeniero en desarrollo y gestión de software
                 </h2>
             </div>
@@ -311,7 +327,16 @@
             </div>
             <span class="footer__copy">
                 &#169; <strong><span id="footer__year"></span></strong>
-                Derechos de autor Jesus Chicho Hernández. Reservados todos los derechos.
+                <p id="copyright">Derechos de autor Jesus Chicho Hernández. Reservados todos los derechos.</p>
+                <br>
+                <span>
+                    <strong>
+                        <p id="lastUpdatedText">
+                            Última actualización:
+                        </p>
+                    </strong>
+                </span>
+                <span id="last-updated"></span>
             </span>
             <div class="footer__info">
                 <ul class="footer__list">
@@ -331,7 +356,7 @@
                     <li class="footer__item">
                         <a href="mailto:al221710026@gmail.com">
                             <i class="ri-mail-line"></i>
-                            <span class="mb-4">Enviar Correo: al221710026@gmail.com</span>
+                            <span id="emailText" class="mb-4">Correo: al221710026@gmail.com</span>
                         </a>
                     </li>
                 </ul>
