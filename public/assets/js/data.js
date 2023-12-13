@@ -1,4 +1,5 @@
-const lastUpdated = '2023-12-07';
+//"YYYY-MM-DD"
+const lastUpdated = '2023-12-13';
 
 const languages = [
     {

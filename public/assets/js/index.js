@@ -466,7 +466,17 @@ const onChangeLanguage = async () => {
     }
 };
 
-// Llamada inicial para cargar el contenido en el idioma actual
+// Initial call to load content in current language
 onChangeLanguage();
-// Escuchar cambios en el selector de idioma
+// Listen for changes in the language selector
 languageSelect.addEventListener('change', onChangeLanguage);
+
+// Function to detect if the device has a small screen
+const isSmallScreen = () => (window.matchMedia("(max-width: 767px)").matches);
+
+// Show the button only if you are on a mobile device or small screen
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || isSmallScreen();
+
+if (isMobile) {
+    document.getElementById('callBtn').style.display = 'block';
+}
