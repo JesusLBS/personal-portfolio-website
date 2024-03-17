@@ -150,10 +150,10 @@ window.addEventListener('scroll', () => {
 
 
 downloadCv = async () => {
-    const url = 'https://firebasestorage.googleapis.com/v0/b/lbs66-de0d2.appspot.com/o/cv_jesus_chicho_hernandez.pdf?alt=media&token=11867c77-fa79-4ac2-892d-a5c65a2e452e&_gl=1*16q651s*_ga*MTcyNTY2MTM1Ny4xNjg0ODcwMzQz*_ga_CW55HF8NVT*MTY5Njk2OTk2NC44LjEuMTY5Njk2OTk4Ny4zNy4wLjA.';
+    const url = urlCv;
     const downloadLink = document.createElement("a");
     downloadLink.href = url;
-    downloadLink.download = 'jesus_chicho_hernandez_cv.pdf';
+    downloadLink.download = 'cv_jesus_chicho_hernandez.pdf';
     downloadLink.target = '_blank';
     downloadLink.click();
 }
