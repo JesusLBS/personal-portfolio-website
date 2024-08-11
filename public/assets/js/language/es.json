@@ -39,9 +39,18 @@
             "education": "Ingeniero en desarrollo y gestión de software",
             "description": "Bienvenido a mi portafolio personal, donde transformo ideas en realidades digitales. Con habilidades en desarrollo web full stack y creación de APIs, diseño y desarrollo de aplicaciones web y móviles de alta calidad. Explora mi trabajo y descubre cómo puedo ayudarte a alcanzar tus objetivos digitales.",
             "button": "Hablemos",
-            "facebook": "Facebook",
-            "instagram": "Instagram",
-            "linkedin": "Linkedin",
+            "socialMedia": [
+                {
+                    "icon": "ri-github-fill",
+                    "text": "GitHub",
+                    "url": "https://github.com/JesusLBS"
+                },
+                {
+                    "icon": "ri-linkedin-fill",
+                    "text": "Linkedin",
+                    "url": "https://mx.linkedin.com/in/jesus-chicho-hern%C3%A1ndez?original_referer="
+                }
+            ],
             "developmentText": "Desarrollo e ",
             "innovationText": "Innovación"
         },
@@ -197,9 +206,9 @@
         }
     },
     "footer": {
-        "footerEducation":"Ingeniero en desarrollo y gestión de software",
-        "copyright":"Derechos de autor Jesus Chicho Hernández. Reservados todos los derechos.",
-        "lastUpdatedText":"Última actualización:",
-        "emailText":"Correo: chichohdzjesus@gmail.com"
+        "footerEducation": "Ingeniero en desarrollo y gestión de software",
+        "copyright": "Derechos de autor Jesus Chicho Hernández. Reservados todos los derechos.",
+        "lastUpdatedText": "Última actualización:",
+        "emailText": "Correo: chichohdzjesus@gmail.com"
     }
 }

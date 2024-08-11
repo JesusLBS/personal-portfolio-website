@@ -39,9 +39,18 @@
             "education": "Software Development and Management Engineer",
             "description": "Welcome to my personal portfolio, where I turn ideas into digital realities. With skills in full-stack web development and creating APIs, designing and developing high-quality web and mobile applications. Explore my work and discover how I can help you achieve your digital goals.",
             "button": "Let's talk",
-            "facebook": "Facebook",
-            "instagram": "Instagram",
-            "linkedin": "Linkedin",
+            "socialMedia": [
+                {
+                    "icon": "ri-github-fill",
+                    "text": "GitHub",
+                    "url": "https://github.com/JesusLBS"
+                },
+                {
+                    "icon": "ri-linkedin-fill",
+                    "text": "Linkedin",
+                    "url": "https://mx.linkedin.com/in/jesus-chicho-hern%C3%A1ndez?original_referer="
+                }
+            ],
             "developmentText": "Development and ",
             "innovationText": "Innovation"
         },

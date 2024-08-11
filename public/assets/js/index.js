@@ -255,6 +255,29 @@ updateLanguageContent = async (dataLanguage) => {
 
         document.getElementById('developmentText').textContent = dataLanguage.sections.homeSection.developmentText;
         document.getElementById('innovationText').textContent = dataLanguage.sections.homeSection.innovationText;
+        const homeSocialDivs = document.querySelectorAll('.home__social');
+        const socialMedia = dataLanguage.sections.homeSection.socialMedia;
+        homeSocialDivs.forEach(homeSocialDiv => {
+            // Recorre el array para crear y agregar dinámicamente las etiquetas <a>
+            socialMedia.forEach(social => {
+                const link = document.createElement('a');
+                link.href = social.url;
+                link.target = "_blank";
+                link.rel = "noopener nofollow noreferrer";
+                link.className = "home__social-link";
+
+                const icon = document.createElement('i');
+                icon.className = social.icon;
+
+                const description = document.createElement('p');
+                description.className = "social-link-description";
+                description.textContent = social.text;
+
+                link.appendChild(icon);
+                link.appendChild(description);
+                homeSocialDiv.appendChild(link);
+            });
+        });
         //
         document.getElementById('aboutSubtitle').textContent = dataLanguage.sections.aboutSection.subtitle;
         document.getElementById('aboutTitle').textContent = dataLanguage.sections.aboutSection.title;
