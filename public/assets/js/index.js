@@ -278,7 +278,7 @@ updateLanguageContent = async (dataLanguage) => {
                 homeSocialDiv.appendChild(link);
             });
         });
-        //
+        //About
         document.getElementById('aboutSubtitle').textContent = dataLanguage.sections.aboutSection.subtitle;
         document.getElementById('aboutTitle').textContent = dataLanguage.sections.aboutSection.title;
         dataLanguage.sections.aboutSection.description.forEach(({ id, text, url }) => {
@@ -313,7 +313,7 @@ updateLanguageContent = async (dataLanguage) => {
             }
         });
         document.getElementById('contactButton').textContent = dataLanguage.sections.aboutSection.contactButton;
-
+        document.getElementById('emailTextAbout').textContent = dataLanguage.sections.aboutSection.emailText;
         const downloadButton = document.getElementById('downloadButton');
         if (downloadButton) {
             downloadButton.textContent = dataLanguage.sections.aboutSection.downloadButton.text;
@@ -502,4 +502,21 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || isSmal
 
 if (isMobile) {
     document.getElementById('callBtn').style.display = 'block';
+}
+
+const copyTextToClipboard = (buttonElement) => {
+    // Get the sibling span with the email text
+    const copyText = buttonElement.previousElementSibling.querySelector('.emailText');
+    const email = copyText.textContent.trim().split(' ')[1];
+
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email).then(function () {
+        // Change tooltip text
+        buttonElement.setAttribute('data-tooltip', 'Has been copied: ' + email);
+
+        // Return to original text after a few seconds
+        setTimeout(() => {
+            buttonElement.setAttribute('data-tooltip', 'Copy email');
+        }, 2000);
+    });
 }

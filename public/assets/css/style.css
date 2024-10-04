@@ -164,7 +164,7 @@ svg {
     font-weight: var(--font-medium);
 }
 
-#typingText{
+#typingText {
     color: var(--first-color);
 }
 
@@ -267,6 +267,7 @@ svg {
     font-size: var(--bigger-font-size);
     color: var(--title-color);
 }
+
 #helloText {
     color: var(--title-color);
 }
@@ -276,6 +277,7 @@ svg {
 .home__title {
     color: var(--first-color);
 }
+
 #developmentText {
     color: var(--title-color);
 }
@@ -572,7 +574,7 @@ svg {
     position: relative;
 }
 
-.contact__form label{
+.contact__form label {
     color: #FFF;
 }
 
@@ -1060,6 +1062,7 @@ svg {
     z-index: 9;
     padding: 8px;
 }
+
 .languageIcon {
     position: absolute;
     top: 0;
@@ -1068,11 +1071,14 @@ svg {
     z-index: 100;
     margin-top: 0.7%;
 }
+
 @media only screen and (max-width: 1014px) {
     .languageIcon {
-        display: none; /* Hide on small screens */
+        display: none;
+        /* Hide on small screens */
     }
 }
+
 .FloatPhone:hover {
     text-decoration: none;
     color: #26c407;
@@ -1178,6 +1184,63 @@ svg {
     }
 }
 
-#callBtn{
+#callBtn {
     display: none;
+}
+
+.copy-button i {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.copy-button:hover i {
+    color: #ccc;
+}
+
+.copy-button {
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.copy-button::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.copy-button:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.copy-button i {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.copy-button:hover i {
+    color: #ccc;
+}
+
+.a-references {
+    text-decoration: none;
+    color: white;
+}
+
+.a-icons {
+    margin-right: 8px;
 }
