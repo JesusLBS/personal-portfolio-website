@@ -189,7 +189,9 @@
             "title": "Contáctame",
             "form": {
                 "nameLabel": "Nombre:",
+                "lastNameLabel": "Apellido:",
                 "emailLabel": "Correo:",
+                "phoneLabel": "Número de teléfono:",
                 "messageLabel": "Mensaje:",
                 "namePlaceholder": "Ingresa tu nombre",
                 "emailPlaceholder": "Ingresa tu correo",

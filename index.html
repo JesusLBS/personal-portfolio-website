@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         media="print" onload="this.media='all'">
     <link rel="stylesheet" href="public/assets/css/style.css">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google tag -->
     <script src="public/assets/js/google/gtag-loader.js" async></script>
 </head>
@@ -236,37 +236,85 @@
         </section>
         <!-- Contact section -->
         <section class="contact section" id="contact">
-            <h3 id="contactSubtitle" class="section__subtitle">
-                <p id="contactSubtitleText">Ponerse en</p> <span id="contactSubtitleSpan">contacto</span>
-            </h3>
-            <h2 id="contactTitle" class="section__title">
-                Contáctame
-            </h2>
-            <div class="contact__container container grid">
-                <form class="contact__form" id="contact-form">
-                    <div class="contact__group">
-                        <label for="user_name" class="contact__label" id="nameLabel">Nombre:</label>
-                        <input class="contact__input" type="text" name="user_name" id="user_name" required
-                            placeholder="Ingresa tu nombre">
+            <div class="form-container max-w-4xl mx-auto px-4 py-8">
+                <div class="form-wrapper">
+                    <div class="form-header text-center mb-6">
+                        <h3 id="contactSubtitle" class="section__subtitle text-lg">
+                            <p id="contactSubtitleText">Ponerse en</p>
+                            <span id="contactSubtitleSpan">contacto</span>
+                        </h3>
+                        <h2 id="contactTitle" class="section__title text-2xl font-bold">
+                            Contáctame
+                        </h2>
                     </div>
+                    <div class="form-body">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="form"
+                            class="needs-validation space-y-6" novalidate>
+                            <input type="hidden" name="access_key" value="ed1bee0e-231c-4f2e-9aac-1b7e04249126" />
+                            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
 
-                    <div class="contact__group">
-                        <label for="user_email" class="contact__label" id="emailLabel">Correo:</label>
-                        <input class="contact__input" type="email" name="user_email" id="user_email" required
-                            placeholder="Ingresa tu correo">
+                            <div class="form-row grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="form-group">
+                                    <label for="fname" id="nameLabel"
+                                        class="block mb-1 text-sm font-medium">Nombre:</label>
+                                    <input type="text" name="name" id="first_name"
+                                        class="w-full p-2 border border-gray-300 rounded-md" placeholder="Your name"
+                                        required />
+                                    <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">Please
+                                        provide your first name.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname" id="lastNameLabel"
+                                        class="block mb-1 text-sm font-medium">Apellido:</label>
+                                    <input type="text" name="last_name" id="lname"
+                                        class="w-full p-2 border border-gray-300 rounded-md"
+                                        placeholder="Your last name" required />
+                                    <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">Please
+                                        provide your last name.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-row grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="form-group">
+                                    <label for="email" id="emailLabel"
+                                        class="block mb-1 text-sm font-medium">Correo:</label>
+                                    <input type="email" name="email" id="email"
+                                        class="w-full p-2 border border-gray-300 rounded-md"
+                                        placeholder="you@company.com" required />
+                                    <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">Please
+                                        provide a valid email address.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" id="phoneLabel" class="block mb-1 text-sm font-medium">Número de
+                                        teléfono:</label>
+                                    <input type="text" name="phone" id="phone"
+                                        class="w-full p-2 border border-gray-300 rounded-md"
+                                        placeholder="+1 (555) 1234-567" required />
+                                    <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">Please
+                                        provide your phone number.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" id="messageLabel"
+                                    class="block mb-1 text-sm font-medium">Mensaje:</label>
+                                <textarea rows="5" name="message" id="message"
+                                    class="w-full p-2 border border-gray-300 rounded-md" placeholder="Your Message"
+                                    required></textarea>
+                                <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">Please enter your
+                                    message.</div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" id="submitButton"
+                                    class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Enviar
+                                    Mensaje</button>
+                            </div>
+                            <p class="form-result text-center text-gray-500 text-sm" id="result"></p>
+                        </form>
                     </div>
-
-                    <label for="user_description" class="contact__label" id="messageLabel">Mensaje:</label>
-                    <textarea class="contact__input" name="user_description" id="user_description" required
-                        placeholder="Ingresa tu mensaje"></textarea>
-
-                    <p class="contact__message" id="contact-message"></p>
-
-                    <button type="submit" class="button contact__button" id="sendEmailBtn">
-                        <span></span>
-                        <p id="submitButton">Enviar Mensaje</p>
-                    </button>
-                </form>
+                </div>
             </div>
         </section>
         <!-- Float Icons -->
@@ -340,8 +388,7 @@
                             <i class="ri-mail-line a-icons"></i>
                             <span id="emailText" class="emailText mb-4">Correo: chichohdzjesus@gmail.com</span>
                         </a>
-                        <button class="copy-button" onclick="copyTextToClipboard(this)"
-                             data-tooltip="Copy email">
+                        <button class="copy-button" onclick="copyTextToClipboard(this)" data-tooltip="Copy email">
                             <i class="ri-file-copy-line a-icons"></i>
                         </button>
                     </li>

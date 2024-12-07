@@ -46,33 +46,6 @@ const blurHeader = () => {
 
 window.addEventListener('scroll', blurHeader);
 
-//Email Js
-const contactForm = document.getElementById('contact-form'),
-    contactMessage = document.getElementById('contact-message');
-
-const sendEmail = e => {
-    e.preventDefault();
-
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-
-    // Load event to make sure the library was loaded correctly
-    script.addEventListener('load', function () {
-        //emailjs
-        emailjs.sendForm('service_bg7an1z', 'template_2t3mopu', '#contact-form', 'XvcnQAO5d2cfOGG9h')
-            .then(() => {
-                contactMessage.textContent = 'Message sent successfully ✔️';
-                setTimeout(() => { contactMessage.textContent = '' }, 5000);
-                contactForm.reset();
-            }, () => {
-                contactMessage.textContent = 'Message not sent (service error) ❌';
-            });
-    });
-
-    document.body.appendChild(script);
-}
-
-contactForm.addEventListener('submit', sendEmail);
 
 const footerYear = document.getElementById('footer__year');
 footerYear.textContent = `${new Date().getFullYear()}`
@@ -434,17 +407,22 @@ updateLanguageContent = async (dataLanguage) => {
             });
         }
 
-
+        /* Contact section */
+        console.log(document.getElementById('phoneLabel'))
         document.getElementById('contactSubtitleText').textContent = dataLanguage.sections.contactSection.subtitle;
         document.getElementById('contactSubtitleSpan').textContent = dataLanguage.sections.contactSection.subtitleSpan;
         document.getElementById('contactTitle').textContent = dataLanguage.sections.contactSection.title;
         document.getElementById('nameLabel').textContent = dataLanguage.sections.contactSection.form.nameLabel;
+        document.getElementById('lastNameLabel').textContent = dataLanguage.sections.contactSection.form.lastNameLabel;
         document.getElementById('emailLabel').textContent = dataLanguage.sections.contactSection.form.emailLabel;
+        document.getElementById('phoneLabel').textContent = dataLanguage.sections.contactSection.form.phoneLabel;
         document.getElementById('messageLabel').textContent = dataLanguage.sections.contactSection.form.messageLabel;
-        document.getElementById('user_name').placeholder = dataLanguage.sections.contactSection.form.namePlaceholder;
+        /* document.getElementById('user_name').placeholder = dataLanguage.sections.contactSection.form.namePlaceholder;
         document.getElementById('user_email').placeholder = dataLanguage.sections.contactSection.form.emailPlaceholder;
-        document.getElementById('user_description').placeholder = dataLanguage.sections.contactSection.form.messagePlaceholder;
+        document.getElementById('user_description').placeholder = dataLanguage.sections.contactSection.form.messagePlaceholder; */
         document.getElementById('submitButton').textContent = dataLanguage.sections.contactSection.submitButton;
+
+
 
 
         // Actualizar contenido de la sección de íconos flotantes
@@ -520,3 +498,78 @@ const copyTextToClipboard = (buttonElement) => {
         }, 2000);
     });
 }
+//Email Js
+
+(function () {
+    "use strict";
+    /*
+     * Form Validation
+     */
+
+    // Fetch all the forms we want to apply custom validation styles to
+    const forms = document.querySelectorAll(".needs-validation");
+    const result = document.getElementById("result");
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+            "submit",
+            function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    form.querySelectorAll(":invalid")[0].focus();
+                } else {
+                    /*
+                     * Form Submission using fetch()
+                     */
+
+                    const formData = new FormData(form);
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const object = {};
+                    formData.forEach((value, key) => {
+                        object[key] = value;
+                    });
+                    const json = JSON.stringify(object);
+                    result.innerHTML = "Please wait...";
+
+                    fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json"
+                        },
+                        body: json
+                    })
+                        .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                                result.innerHTML = json.message;
+                                result.classList.remove("text-gray-500");
+                                result.classList.add("text-green-500");
+                            } else {
+                                console.log(response);
+                                result.innerHTML = json.message;
+                                result.classList.remove("text-gray-500");
+                                result.classList.add("text-red-500");
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            result.innerHTML = "Something went wrong!";
+                        })
+                        .then(function () {
+                            form.reset();
+                            form.classList.remove("was-validated");
+                            setTimeout(() => {
+                                result.style.display = "none";
+                            }, 5000);
+                        });
+                }
+                form.classList.add("was-validated");
+            },
+            false
+        );
+    });
+})();

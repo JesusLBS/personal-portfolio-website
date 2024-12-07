@@ -189,7 +189,9 @@
             "title": "Contact Me",
             "form": {
                 "nameLabel": "Name:",
+                "lastNameLabel": "Last Name:",
                 "emailLabel": "Email:",
+                "phoneLabel": "Phone number:",
                 "messageLabel": "Message:",
                 "namePlaceholder": "Enter your name",
                 "emailPlaceholder": "Enter your email",
