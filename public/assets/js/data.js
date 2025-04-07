@@ -12,4 +12,4 @@ const languages = [
     }
 ];
 
-const urlCv = "https://firebasestorage.googleapis.com/v0/b/lbs66-de0d2.appspot.com/o/cv_jesus_chicho_hernandez.pdf?alt=media&token=67788fc4-0551-482d-a2f3-8abcaa9f444e";
+const urlCv = "https://firebasestorage.googleapis.com/v0/b/lbs66-de0d2.appspot.com/o/cv_jesus_chicho_hernandez.pdf?alt=media&token=cb7b618a-cbbb-4c76-b2fc-5e9204b5a152";
