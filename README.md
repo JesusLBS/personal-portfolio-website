@@ -6,15 +6,11 @@ personal-portfolio-website
 
 My personal web portfolio is a dynamic showcase of my web development skills and knowledge. Developed with HTML, CSS and JavaScript, this project features a responsive design and attractive animations, creating a captivating user experience. I implemented good SEO and web analytics practices to ensure your online visibility. Hosted on Netlify, my portfolio is a digital reflection of my creativity and professionalism, designed to highlight and share my career and projects.
 
-# Demo
+# Web
 
-https://jesus-chicho-hernandez.com
+https://jesus-chicho-hernandez.netlify.app
 
-<div style="background-color: white; padding: 10px; display: inline-block;">
-  <picture>
-    <img src="./public/assets/images/qr.png" alt="qr-image" width="160"/>
-  </picture>
-</div>
+<img src="./public/assets/images/qr-code.png" width="350" style="border-radius:8px; margin-bottom:16px;"/>
 
 # Used technology
 - HTML
