@@ -122,14 +122,17 @@ window.addEventListener('scroll', () => {
 });
 
 
-downloadCv = async () => {
-    const url = urlCv;
-    const downloadLink = document.createElement("a");
-    downloadLink.href = url;
+const downloadCv = () => {
+    const downloadLink = document.createElement('a');
+
+    downloadLink.href = 'public/files/cv_jesus_chicho_hernandez.pdf';
     downloadLink.download = 'cv_jesus_chicho_hernandez.pdf';
     downloadLink.target = '_blank';
+
+    document.body.appendChild(downloadLink);
     downloadLink.click();
-}
+    document.body.removeChild(downloadLink);
+};
 
 
 const textElement = document.getElementById('typing-text');
