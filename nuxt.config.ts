@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon'],
   nitro: {
-    preset: 'netlify',
+    preset: 'netlify_builder',
   },
   app: {
     head: {
