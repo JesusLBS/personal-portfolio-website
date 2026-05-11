@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon'],
-
+  nitro: {
+    preset: 'netlify',
+  },
   app: {
     head: {
       title: 'Jesus Chicho Hernández | Software Engineer',
