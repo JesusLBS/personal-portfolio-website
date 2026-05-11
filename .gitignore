@@ -13,7 +13,6 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
@@ -50,7 +49,6 @@ dist/
 *.jar
 # Maven
 target/
-dist/
 # JetBrains IDE
 .idea/
 # Unit test reports
@@ -102,3 +100,25 @@ htmlcov/
 *,cover
 linux/*
 macos/*
+
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
