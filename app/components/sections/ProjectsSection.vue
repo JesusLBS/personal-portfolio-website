@@ -22,13 +22,13 @@ const projects = [
         title: 'Water System Backend',
         type: 'Backend',
         description:
-            'API REST escalable con autenticación JWT, arquitectura modular y conexión a MySQL con Sequelize.',
+            'API REST escalable con JWT, arquitectura modular y MySQL con Sequelize.',
         role: 'Backend Developer',
         stack: ['Node.js', 'Express', 'MySQL', 'Sequelize', 'JWT'],
         highlights: [
-            'Arquitectura por módulos (Clean-ish)',
+            'Arquitectura por módulos',
             'Autenticación JWT segura',
-            'Diseño de API REST estructurada',
+            'API REST estructurada',
         ],
         repo: 'https://github.com/JesusLBS/water-system-back',
         images: [
@@ -44,7 +44,7 @@ const projects = [
         <div class="mx-auto max-w-7xl">
 
             <div class="mb-16">
-                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
+                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
                     Projects
                 </p>
                 <h2 class="text-4xl font-bold text-white">
@@ -55,7 +55,7 @@ const projects = [
             <div class="grid gap-8 md:grid-cols-2">
                 <article v-for="project in projects" :key="project.title"
                     class="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-6">
-                    <p class="text-xs uppercase text-zinc-500">
+                    <p class="text-xs uppercase text-zinc-400">
                         {{ project.type }}
                     </p>
 
@@ -67,7 +67,7 @@ const projects = [
                         {{ project.description }}
                     </p>
 
-                    <p class="mt-2 text-xs text-zinc-500">
+                    <p class="mt-2 text-xs text-zinc-400">
                         Role: {{ project.role }}
                     </p>
 
@@ -86,17 +86,19 @@ const projects = [
                         </li>
                     </ul>
 
-                    <!-- links -->
                     <div class="mt-5 flex gap-4 text-sm">
-                        <a :href="project.repo" target="_blank" class="text-blue-400 hover:underline">
-                            GitHub
+                        <a :href="project.repo" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 transition"
+                            aria-label="Abrir repositorio de GitHub en nueva pestaña">
+                            Ver código
+                            <Icon name="ri:external-link-line" class="text-sm" />
                         </a>
                     </div>
 
-                    <!-- images -->
                     <div class="mt-6 grid gap-2">
-                        <img v-for="img in project.images" :key="img" :src="img"
-                            class="rounded-xl border border-zinc-800" alt="project" />
+                        <NuxtImg v-for="img in project.images" :key="img" :src="img" width="312" height="225"
+                            loading="lazy" format="webp" densities="1x 2x" class="rounded-xl border border-zinc-800"
+                            :alt="`Screenshot del proyecto ${project.title}`" />
                     </div>
                 </article>
             </div>

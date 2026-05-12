@@ -24,7 +24,7 @@ const socialLinks = [
     },
     {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/jesus-chicho-hern%C3%A1ndez/',
+        href: 'https://www.linkedin.com/in/jesus-chicho-hernandez',
         icon: 'i-simple-icons-linkedin',
     },
 ];
@@ -52,6 +52,10 @@ const socialLinks = [
                 <div class="flex items-center gap-4">
                     <a v-for="social in socialLinks" :key="social.name" :href="social.href" target="_blank"
                         rel="noopener noreferrer" class="text-zinc-400 transition hover:text-cyan-400">
+                        <span class="sr-only">
+                            {{ social.name }}
+                        </span>
+
                         <Icon :name="social.icon" class="h-5 w-5" />
                     </a>
                 </div>
@@ -76,7 +80,7 @@ const socialLinks = [
 
         <div class="border-t border-zinc-800">
             <div
-                class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-xs text-zinc-500 md:flex-row md:items-center md:justify-between">
+                class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-xs text-zinc-400 md:flex-row md:items-center md:justify-between">
 
                 <p>
                     © {{ currentYear }} Jesus Chicho Hernández. Todos los derechos reservados.

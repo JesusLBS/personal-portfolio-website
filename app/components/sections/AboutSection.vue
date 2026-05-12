@@ -3,7 +3,7 @@
         <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
             <div class="space-y-6">
                 <div>
-                    <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
+                    <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
                         Sobre mí
                     </p>
 

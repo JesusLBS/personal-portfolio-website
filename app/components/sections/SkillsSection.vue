@@ -49,7 +49,7 @@ const skillGroups = [
   <section id="skills" class="border-b border-zinc-900 px-6 py-24">
     <div class="mx-auto max-w-7xl">
       <div class="mb-16">
-        <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
+        <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
           Skills
         </p>
 
