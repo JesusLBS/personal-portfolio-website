@@ -2,7 +2,7 @@
   <section id="contact" class="px-6 py-24 border-b border-zinc-900">
     <div class="mx-auto max-w-3xl text-center">
 
-      <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
+      <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
         Contacto
       </p>
 
