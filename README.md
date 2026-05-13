@@ -1,48 +1,93 @@
-# Title of the project
+# Portafolio Personal (Nuxt 4)
 
-personal-portfolio-website
+## Descripción
 
-# Description
+Este proyecto es un portafolio personal desarrollado con **Nuxt 4, Vue 3 y TailwindCSS**, enfocado en mostrar experiencia profesional, proyectos y habilidades como Ingeniero de Software Full Stack.
 
-My personal web portfolio is a dynamic showcase of my web development skills and knowledge. Developed with HTML, CSS and JavaScript, this project features a responsive design and attractive animations, creating a captivating user experience. I implemented good SEO and web analytics practices to ensure your online visibility. Hosted on Netlify, my portfolio is a digital reflection of my creativity and professionalism, designed to highlight and share my career and projects.
+Representa una evolución desde una versión previa en HTML/CSS/JavaScript hacia una arquitectura moderna basada en componentes, mejorando escalabilidad, mantenibilidad y rendimiento.
 
-# Web
+## Sitio en vivo
 
 https://jesus-chicho-hernandez.netlify.app
 
-<img src="./public/assets/images/qr-code.png" width="350" style="border-radius:8px; margin-bottom:16px;"/>
+## Stack tecnológico
 
-# Used technology
-- HTML
-- CSS
-- JavaScript
+- Nuxt 4
+- Vue 3
+- TypeScript
+- TailwindCSS
+- Netlify
 
-# Characteristics
+## Características principales
 
-- Responsive Design: Ensures a seamless user experience on mobile and desktop devices.
+- Arquitectura modular basada en componentes reutilizables
+- Diseño responsive (mobile-first)
+- Optimización SEO (meta tags, Open Graph, Twitter Cards)
+- Mejora en performance y organización del proyecto
+- UI limpia enfocada en UX
+- Deploy automático en Netlify (CI/CD)
 
-- Immersive Animations: Use dynamic animations and effects to capture the visitor's attention in a subtle and attractive way.
+## Estructura del proyecto
 
-- SEO and Web Analytics: Implement strategies to improve visibility in search engines and understand user behavior.
-
-- Deploy on Netlify: Hosted on Netlify, it offers reliable performance and continuous deployment without interruptions.
-
-- Animation Libraries: Integrate modern libraries to improve the aesthetics and interactivity of the website.
-
-- Efficient Code: Written clearly and efficiently, the underlying code ensures long-term readability and maintainability.
-
-
-## Installation
-
-Clone the repo locally:
-
-```sh
-git clone https://JesusLBS@bitbucket.org/jesuslbs/personal-portfolio-website.git
+```
+app/
+├── components/
+│   ├── layout/
+│   ├── sections/
+│   └── ui/
+├── pages/
+├── layouts/
+├── assets/
+└── app.vue
 ```
 
-## License
+## Objetivo del rediseño
 
-All rights reserved.
-Copyright (c) 2023 Jesus Chicho Hernández.
+- Migrar de HTML/CSS/JS a un framework moderno (Nuxt)
+- Mejorar mantenibilidad y escalabilidad del código
+- Optimizar estructura de componentes
+- Mejorar experiencia de usuario y consistencia visual
 
-The software and its related documentation are protected by copyright and other intellectual property laws. Reproduction, modification or distribution of the software and its documentation is strictly prohibited without the prior written permission of the copyright holder.
+## Capturas del proyecto
+
+### Antes (versión HTML/CSS/JS)
+<img src="./docs/screenshots/before.png" width="700" style="border-radius:8px; margin-bottom:16px;"/>
+
+### Después (Nuxt 4)
+<img src="./docs/screenshots/after.png" width="700" style="border-radius:8px; margin-bottom:16px;"/>
+<img src="./docs/screenshots/analysis.png" width="700" style="border-radius:8px; margin-bottom:16px;"/>
+
+## Verificar rendimiento
+
+https://pagespeed.web.dev/analysis/https-jesus-chicho-hernandez-netlify-app/12dbil87sn?hl=es&form_factor=desktop
+
+
+## Versión en inglés
+
+La documentación en inglés se encuentra en:
+
+- [Readme](./docs/README.en.md)
+
+## Instalación
+
+```bash
+git clone https://github.com/JesusLBS/personal-portfolio-website.git
+cd personal-portfolio-website
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Despliegue
+
+Deploy automático mediante Netlify CI/CD.
+
+## Licencia
+
+All rights reserved. Proyecto personal sin fines de redistribución o uso comercial sin autorización.
