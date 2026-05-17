@@ -1,15 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-
-onMounted(async () => {
-    const { Fancybox } = await import('@fancyapps/ui');
-
-    requestAnimationFrame(() => {
-        Fancybox.bind('[data-fancybox]', {
-            groupAll: false,
-        });
-    });
-});
 
 const projects = [
     {
@@ -107,12 +96,14 @@ const projects = [
                         </a>
                     </div>
 
-                    <div class="mt-6 grid gap-2">
-                        <NuxtImg v-for="img in project.images" :key="img" :src="img" width="312" height="225"
-                            loading="lazy" format="webp" densities="1x 2x"
-                            class="rounded-xl border border-zinc-800 cursor-pointer hover:opacity-80 transition"
-                            :data-fancybox="'project-' + project.title.replace(/\s+/g, '-').toLowerCase()"
-                            :alt="`Screenshot del proyecto ${project.title}`" :data-src="img" />
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <a v-for="img in project.images" :key="img" :href="img"
+                            :data-fancybox="'project-' + project.title.toLowerCase().replace(/\s+/g, '-')"
+                            class="inline-block overflow-hidden rounded-xl border border-zinc-800">
+                            <NuxtImg :src="img" width="312" height="225" loading="lazy" format="webp" densities="1x 2x"
+                                :alt="`Screenshot del proyecto ${project.title}`"
+                                class="object-cover transition duration-300 hover:scale-[1.02]" />
+                        </a>
                     </div>
                 </article>
             </div>
