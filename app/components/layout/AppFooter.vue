@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const currentYear = new Date().getFullYear();
 
-const lastUpdated = '2026-05-10';
+const lastUpdated = '2026-05-16';
 
 const formattedLastUpdated = computed(() => {
     const date = new Date(`${lastUpdated}T00:00:00`);
@@ -19,12 +19,12 @@ const formattedLastUpdated = computed(() => {
 const socialLinks = [
     {
         name: 'GitHub',
-        href: 'https://github.com/JesusLBS',
+        href: 'https://github.com/JesusLBS/',
         icon: 'i-simple-icons-github',
     },
     {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/jesus-chicho-hernandez',
+        href: 'https://www.linkedin.com/in/jesus-chicho-hernandez/',
         icon: 'i-simple-icons-linkedin',
     },
 ];
