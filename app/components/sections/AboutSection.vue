@@ -38,7 +38,7 @@
             <div class="flex items-center justify-center">
                 <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
                     <NuxtImg src="/images/logo.webp" alt="Jesus Chicho" width="705" height="500" format="webp"
-                        densities="1x 2x" class="h-[500px] w-full object-cover" />
+                        sizes="(max-width: 768px) 100vw, 705px" class="h-[500px] w-full object-cover" />
                 </div>
             </div>
         </div>

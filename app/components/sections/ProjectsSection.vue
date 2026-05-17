@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+
+onMounted(async () => {
+    const { Fancybox } = await import('@fancyapps/ui');
+
+    requestAnimationFrame(() => {
+        Fancybox.bind('[data-fancybox]', {
+            groupAll: false,
+        });
+    });
+});
+
 const projects = [
     {
         title: 'Water System Frontend',
@@ -97,8 +109,10 @@ const projects = [
 
                     <div class="mt-6 grid gap-2">
                         <NuxtImg v-for="img in project.images" :key="img" :src="img" width="312" height="225"
-                            loading="lazy" format="webp" densities="1x 2x" class="rounded-xl border border-zinc-800"
-                            :alt="`Screenshot del proyecto ${project.title}`" />
+                            loading="lazy" format="webp" densities="1x 2x"
+                            class="rounded-xl border border-zinc-800 cursor-pointer hover:opacity-80 transition"
+                            :data-fancybox="'project-' + project.title.replace(/\s+/g, '-').toLowerCase()"
+                            :alt="`Screenshot del proyecto ${project.title}`" :data-src="img" />
                     </div>
                 </article>
             </div>
