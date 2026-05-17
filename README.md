@@ -90,4 +90,8 @@ Deploy automático mediante Netlify CI/CD.
 
 ## Licencia
 
-All rights reserved. Proyecto personal sin fines de redistribución o uso comercial sin autorización.
+Todos los derechos reservados. Copyright © 2026 Jesus Chicho Hernández.
+
+Este proyecto es de uso personal. No está permitido copiar, modificar, distribuir, sublicenciar, vender ni utilizar el código, diseño, recursos o documentación con fines comerciales o de redistribución sin autorización previa y por escrito del autor.
+
+El software y su contenido están protegidos por las leyes de derechos de autor y propiedad intelectual aplicables.

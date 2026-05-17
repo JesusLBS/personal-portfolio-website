@@ -28,7 +28,7 @@
           <p class="text-white">+52 55 2998 3634</p>
         </a>
 
-        <a href="http://github.com/JesusLBS" target="_blank"
+        <a href="https://github.com/JesusLBS/" target="_blank"
           class="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-zinc-600">
           <p class="text-sm text-zinc-400">GitHub</p>
           <p class="text-white">Ver repositorios</p>

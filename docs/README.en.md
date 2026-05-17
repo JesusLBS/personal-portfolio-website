@@ -51,10 +51,14 @@ app/
 ## Screenshots
 
 ### Before (HTML/CSS/JS version)
-> Add screenshot: /public/screenshots/before.png
+<img src="./screenshots/before.png" width="700" style="border-radius:8px; margin-bottom:16px;"/>
 
 ### After (Nuxt 4 version)
-> Add screenshots: /public/screenshots/after.png
+<img src="./screenshots/after.png" width="700" style="border-radius:8px; margin-bottom:16px;"/>
+
+## Check performance
+
+https://pagespeed.web.dev/analysis/https-jesus-chicho-hernandez-netlify-app/12dbil87sn?hl=es&form_factor=desktop
 
 ## Spanish Documentation
 
@@ -84,4 +88,8 @@ Automatically deployed using Netlify CI/CD pipeline.
 
 ## License
 
-All rights reserved. This project is part of a personal portfolio and is not intended for redistribution or commercial use without permission.
+All rights reserved. Copyright © 2026 Jesús Chicho Hernández.
+
+This project is for personal use only. It is not permitted to copy, modify, distribute, sublicense, sell, or use the code, design, resources, or documentation for commercial or redistribution purposes without the author's prior written authorization.
+
+The software and its content are protected by applicable copyright and intellectual property laws.
