@@ -37,10 +37,10 @@ const experiences = [
 </script>
 
 <template>
-    <section id="experience" class="border-b border-zinc-900 px-6 py-24">
+    <section id="experience" class="border-b border-zinc-900 px-6 py-24 bg-zinc-950">
         <div class="mx-auto max-w-7xl">
             <div class="mb-16">
-                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
+                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-300 font-mono">
                     Experiencia
                 </p>
 
@@ -51,7 +51,7 @@ const experiences = [
 
             <div class="space-y-8">
                 <article v-for="experience in experiences" :key="experience.company"
-                    class="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 transition hover:border-zinc-700">
+                    class="rounded-3xl border border-zinc-800 bg-zinc-900 p-8 transition hover:border-zinc-700 shadow-md">
 
                     <div class="mb-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                         <div>
@@ -59,23 +59,21 @@ const experiences = [
                                 {{ experience.role }}
                             </h3>
 
-                            <p class="mt-1 text-zinc-400">
+                            <p class="mt-1 text-zinc-300 font-medium">
                                 {{ experience.company }}
                             </p>
                         </div>
 
-                        <span class="w-fit rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-400">
+                        <span
+                            class="w-fit rounded-full border border-zinc-700 bg-zinc-950/50 px-4 py-2 text-sm text-zinc-300 font-mono">
                             {{ experience.period }}
                         </span>
                     </div>
 
-                    <ul class="space-y-3">
-                        <li v-for="item in experience.description" :key="item" class="flex gap-3 text-zinc-400">
-                            <span class="mt-2 h-2 w-2 rounded-full bg-zinc-500" />
-
-                            <span>
-                                {{ item }}
-                            </span>
+                    <ul class="space-y-4">
+                        <li v-for="item in experience.description" :key="item"
+                            class="relative pl-6 text-sm sm:text-base leading-7 text-zinc-300 font-light before:absolute before:left-1 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-zinc-500">
+                            {{ item }}
                         </li>
                     </ul>
                 </article>
