@@ -35,10 +35,15 @@
                 </div>
             </div>
 
-            <div class="flex items-center justify-center">
-                <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
-                    <NuxtImg src="/images/logo.webp" alt="Jesus Chicho" width="705" height="500" format="webp"
-                        sizes="(max-width: 768px) 100vw, 705px" class="h-[500px] w-full object-cover" />
+            <div class="flex items-center justify-center w-full">
+                <div
+                    class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 w-full aspect-[14/10]">
+                    <a :href="'/images/logo.webp'" class="block w-full h-full cursor-default">
+                        <NuxtImg src="/images/logo.webp" alt="Jesus Chicho" width="705" height="500" format="webp"
+                            quality="80" loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 705px"
+                            class="h-full w-full object-cover object-center transition duration-500 hover:scale-[1.01]" />
+                    </a>
                 </div>
             </div>
         </div>

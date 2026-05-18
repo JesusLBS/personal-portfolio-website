@@ -40,7 +40,7 @@ const architectureItems = [
         <div class="mx-auto max-w-7xl">
 
             <div class="mb-16">
-                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
+                <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-300 font-mono">
                     Architecture
                 </p>
 
@@ -48,7 +48,7 @@ const architectureItems = [
                     System Design & Technical Overview
                 </h2>
 
-                <p class="mt-4 max-w-3xl leading-8 text-zinc-400">
+                <p class="mt-4 max-w-3xl leading-8 text-zinc-300">
                     Diagramas técnicos y visuales sobre la arquitectura,
                     estructura modular y flujo general de los proyectos.
                 </p>
@@ -56,10 +56,10 @@ const architectureItems = [
 
             <div class="grid gap-8 lg:grid-cols-3">
                 <article v-for="item in architectureItems" :key="item.title"
-                    class="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-5">
+                    class="rounded-3xl border border-zinc-800 bg-zinc-900 p-5 shadow-lg">
 
                     <div class="mb-4">
-                        <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                        <p class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">
                             {{ item.category }}
                         </p>
 
@@ -77,13 +77,13 @@ const architectureItems = [
                         </a>
                     </div>
 
-                    <p class="mt-4 text-sm leading-7 text-zinc-400">
+                    <p class="mt-4 text-sm leading-7 text-zinc-300 font-light">
                         {{ item.description }}
                     </p>
 
                     <div class="mt-4 flex flex-wrap gap-2">
                         <span v-for="tech in item.stack" :key="tech"
-                            class="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300">
+                            class="rounded-full border border-zinc-700 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-200">
                             {{ tech }}
                         </span>
                     </div>

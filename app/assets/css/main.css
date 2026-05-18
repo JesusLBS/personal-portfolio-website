@@ -4,10 +4,13 @@
 
 html {
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     background-color: #09090b;
     color: #fafafa;
-    font-family: Inter, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
