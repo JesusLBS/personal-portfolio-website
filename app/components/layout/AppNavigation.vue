@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useNavigationState } from '~/composables/useNavigationState';
 
-const route = useRoute();
-
-const isExactlyAtServices = computed(() => route.path === '/services');
-
-const isClientMode = computed(() => {
-    return isExactlyAtServices.value || route.query.mode === 'client';
-});
+const { isExactlyAtServices, isClientMode } = useNavigationState();
+const logoTarget = computed(() => isClientMode.value ? '/services' : '/');
 
 const technicalLinks = [
     { label: 'Sobre mí', href: '#about' },
@@ -33,7 +28,7 @@ const currentLinks = computed(() => isExactlyAtServices.value ? servicesLinks : 
     <header class="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 
-            <NuxtLink to="/" class="text-sm font-semibold tracking-wide text-white">
+            <NuxtLink :to="logoTarget" class="text-sm font-semibold tracking-wide text-white">
                 Jesus Chicho
             </NuxtLink>
 
