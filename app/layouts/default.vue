@@ -2,6 +2,7 @@
 import AppHeader from '~/components/layout/AppHeader.vue';
 import AppFooter from '~/components/layout/AppFooter.vue';
 import ScrollToTopButton from '~/components/ui/ScrollToTopButton.vue';
+import FloatingWhatsapp from '~/components/ui/FloatingWhatsapp.vue';
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import ScrollToTopButton from '~/components/ui/ScrollToTopButton.vue';
         <main>
             <slot />
         </main>
-
+        <FloatingWhatsapp />
         <AppFooter />
         <ScrollToTopButton />
     </div>
