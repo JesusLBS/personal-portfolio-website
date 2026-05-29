@@ -40,8 +40,7 @@
                     class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 w-full aspect-[14/10]">
                     <a :href="'/images/logo.webp'" class="block w-full h-full cursor-default">
                         <NuxtImg src="/images/logo.webp" alt="Jesus Chicho" width="705" height="500" format="webp"
-                            quality="80" loading="lazy"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 705px"
+                            quality="80" loading="lazy" sizes="xs:88vw sm:450px md:600px lg:705px"
                             class="h-full w-full object-cover object-center transition duration-500 hover:scale-[1.01]" />
                     </a>
                 </div>

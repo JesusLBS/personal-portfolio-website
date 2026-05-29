@@ -2,8 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   css: [
-    '~/assets/css/main.css',
-    '@fancyapps/ui/dist/fancybox/fancybox.css'
+    '~/assets/css/main.css'
   ],
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image'],
@@ -93,7 +92,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap'
         }
       ],
     },
