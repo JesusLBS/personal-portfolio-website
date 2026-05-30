@@ -5,7 +5,17 @@ export default defineNuxtConfig({
     '~/assets/css/main.css'
   ],
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxt/fonts'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
+  site: {
+    url: 'https://jesus-chicho-hernandez.netlify.app',
+    name: 'Jesus Chicho Hernández | Software Engineer',
+  },
+  robots: {
+    allow: '/',
+  },
+  gtag: {
+    enabled: import.meta.env.PROD, // true in production, false in dev
+  },
   nitro: {
     preset: 'netlify',
   },
@@ -42,6 +52,10 @@ export default defineNuxtConfig({
         {
           property: 'og:description',
           content: 'Software Engineer Full Stack especializado en desarrollo web',
+        },
+        {
+          property: 'og:url',
+          content: 'https://jesus-chicho-hernandez.netlify.app'
         },
         {
           property: 'og:image',
