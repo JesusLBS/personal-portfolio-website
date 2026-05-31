@@ -11,7 +11,7 @@ import VisualsSection from '~/components/services/VisualsSection.vue';
     <main>
         <HeroServicesSection id="hero-services" />
         <ServicesSection id="services-list" />
-        <TrustSection />
+        <TrustSection id="trust-section"/>
         <VisualsSection id="visual-cases" />
         <ProcessSection id="process" />
         <ContactCTASection id="contact-cta" />

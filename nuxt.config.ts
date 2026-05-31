@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   },
   gtag: {
     enabled: import.meta.env.PROD, // true in production, false in dev
+    loadingStrategy: 'async',
   },
   nitro: {
     preset: 'netlify',
