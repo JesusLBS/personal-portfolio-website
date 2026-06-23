@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: '¿Cuánto tiempo toma desarrollar un sistema y cuándo veré los primeros resultados?',
-        answer: 'El tiempo depende de la complejidad, pero un MVP o sistema básico suele estar listo entre 3 y 6 semanas depedeindo complejidad.'
+        answer: 'El tiempo depende de la complejidad, pero un MVP o sistema básico suele estar listo entre 3 y 6 semanas segun complejidad.'
     },
     {
         question: '¿Cómo garantizamos que el sistema realmente funcione como yo espero?',
