@@ -1,0 +1,5 @@
+[[redirects]]
+  from   = "https://jesus-chicho-hernandez.netlify.app/*"
+  to     = "https://chichohdz.com/:splat"
+  status = 301
+  force  = true
