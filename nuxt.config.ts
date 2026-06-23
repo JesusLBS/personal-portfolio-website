@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
   site: {
-    url: 'https://jesus-chicho-hernandez.netlify.app',
+    url: 'https://chichohdz.com',
     name: 'Jesus Chicho Hernández | Software Engineer',
   },
   robots: {
@@ -56,11 +56,11 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:url',
-          content: 'https://jesus-chicho-hernandez.netlify.app'
+          content: 'https://chichohdz.com'
         },
         {
           property: 'og:image',
-          content: 'https://jesus-chicho-hernandez.netlify.app/image-web.png',
+          content: 'https://chichohdz.com/image-web.png',
         },
         {
           property: 'og:type',
@@ -82,14 +82,14 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:image',
-          content: 'https://jesus-chicho-hernandez.netlify.app/image-web.png',
+          content: 'https://chichohdz.com/image-web.png',
         },
       ],
 
       link: [
         {
           rel: 'canonical',
-          href: 'https://jesus-chicho-hernandez.netlify.app',
+          href: 'https://chichohdz.com',
         },
         {
           rel: 'icon',
