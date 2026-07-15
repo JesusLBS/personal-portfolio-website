@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const currentYear = new Date().getFullYear();
 
-const lastUpdated = '2026-06-23';
+const lastUpdated = '2026-07-14';
 
 const formattedLastUpdated = computed(() => {
     const date = new Date(`${lastUpdated}T00:00:00`);
