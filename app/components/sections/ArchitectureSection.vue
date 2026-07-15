@@ -32,6 +32,23 @@ const architectureItems = [
         ],
         image: '/images/water-system-backend-architecture-overview.png',
     },
+    {
+        category: 'Document Intelligence',
+        title: 'Document Intelligence Engine - Processing Flow',
+        description:
+            'Diagrama del pipeline documental: recepción API, diagnóstico OCR, preprocesamiento OpenCV, extracción regex/IA y respuesta JSON estructurada.',
+        stack: [
+            'Python',
+            'Flask',
+            'PyMuPDF',
+            'Tesseract',
+            'OpenCV',
+            'Gemini',
+            'Groq',
+            'Docker',
+        ],
+        image: '/images/document_intelligence_engine_flow.png',
+    },
 ];
 </script>
 
