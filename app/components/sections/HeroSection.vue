@@ -3,13 +3,14 @@ import AppContainer from '../ui/AppContainer.vue';
 
 const technologies = [
     'Laravel',
-    'Node.js',
+    'PHP',
     'Vue.js',
     'Angular',
-    'TypeScript',
-    'Python',
+    'Nuxt.js',
+    'Node.js',
+    'MySQL',
     'Azure',
-    'Docker',
+    'Python',
 ];
 </script>
 
@@ -20,30 +21,23 @@ const technologies = [
         <AppContainer>
             <div class="flex flex-col gap-12">
                 <div class="max-w-4xl">
-                    <!-- Badge -->
                     <div
                         class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
                         <span class="h-2 w-2 rounded-full bg-cyan-400" />
-
                         Disponible para nuevas oportunidades
                     </div>
 
-                    <!-- Title -->
                     <h1 class="text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
-                        Software Engineer
-                        construyendo aplicaciones
-                        full stack escalables.
+                        Full Stack Software Engineer
+                        especializado en Laravel, Vue.js y APIs REST.
                     </h1>
 
-                    <!-- Description -->
                     <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                        Ingeniero especializado en arquitectura de sistemas,
-                        modernización de aplicaciones e integración de servicios.
-                        Experiencia desarrollando soluciones backend y frontend
-                        utilizando Laravel, Node.js, Vue.js, Angular y Python.
+                        Ingeniero en Desarrollo y Gestión de Software con más de 5 años de experiencia
+                        en modernización de sistemas legacy, optimización de cargas masivas y
+                        desarrollo de soluciones backend y frontend en entornos productivos.
                     </p>
 
-                    <!-- Actions -->
                     <div class="mt-10 flex flex-wrap gap-4">
                         <a href="#contact"
                             class="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-zinc-950 transition hover:scale-[1.02]">
@@ -57,7 +51,6 @@ const technologies = [
                     </div>
                 </div>
 
-                <!-- Tech stack -->
                 <div class="flex flex-wrap gap-3">
                     <span v-for="technology in technologies" :key="technology"
                         class="rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-2 text-sm text-zinc-300">
