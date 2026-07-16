@@ -4,9 +4,9 @@ const skillGroups = [
     title: 'Frontend',
     skills: [
       { name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
+      { name: 'Angular', icon: 'simple-icons:angular' },
       { name: 'Nuxt.js', icon: 'simple-icons:nuxtdotjs' },
       { name: 'React', icon: 'simple-icons:react' },
-      { name: 'Angular', icon: 'simple-icons:angular' },
       { name: 'TypeScript', icon: 'simple-icons:typescript' },
       { name: 'Tailwind CSS', icon: 'simple-icons:tailwindcss' },
     ],
@@ -26,9 +26,9 @@ const skillGroups = [
     title: 'Database & Cloud',
     skills: [
       { name: 'MySQL', icon: 'simple-icons:mysql' },
-      { name: 'MongoDB', icon: 'simple-icons:mongodb' },
       { name: 'Azure', icon: 'simple-icons:microsoftazure' },
-      { name: 'AWS', icon: 'simple-icons:amazonaws' },
+      { name: 'Docker', icon: 'simple-icons:docker' },
+      { name: 'OpenAPI', icon: 'simple-icons:openapiinitiative' },
     ],
   },
   {
@@ -38,8 +38,6 @@ const skillGroups = [
       { name: 'GitHub', icon: 'simple-icons:github' },
       { name: 'Bitbucket', icon: 'simple-icons:bitbucket' },
       { name: 'Postman', icon: 'simple-icons:postman' },
-      { name: 'OpenAPI', icon: 'simple-icons:openapiinitiative' },
-      { name: 'Docker', icon: 'simple-icons:docker' },
     ],
   },
 ];

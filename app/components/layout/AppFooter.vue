@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const currentYear = new Date().getFullYear();
 
-const lastUpdated = '2026-07-14';
+const lastUpdated = '2026-07-15';
 
 const formattedLastUpdated = computed(() => {
     const date = new Date(`${lastUpdated}T00:00:00`);
@@ -43,9 +43,7 @@ const socialLinks = [
                     </h2>
 
                     <p class="mt-2 max-w-md text-sm leading-relaxed text-zinc-400">
-                        Software Engineer | Full Stack Developer especializado en
-                        arquitectura de sistemas, modernización de aplicaciones e
-                        integración de servicios.
+                        Full Stack Software Engineer · Laravel · Vue.js · Angular · APIs REST
                     </p>
                 </div>
 
