@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CvActions from '../ui/CvActions.vue';
 
 const certifications = [
     {
@@ -90,10 +91,7 @@ const certifications = [
                         Ver proyectos
                     </a>
 
-                    <a href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                        class="rounded-xl border border-zinc-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-zinc-500">
-                        Descargar CV
-                    </a>
+                    <CvActions class="text-sm" />
                 </div>
             </div>
 

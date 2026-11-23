@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppContainer from '../ui/AppContainer.vue';
+import CvActions from '../ui/CvActions.vue';
 
 const technologies = [
     'Laravel',
@@ -46,10 +47,7 @@ const technologies = [
                             Contacto
                         </a>
 
-                        <a href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                            class="rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition hover:border-zinc-500 hover:bg-zinc-900">
-                            Descargar CV
-                        </a>
+                        <CvActions />
                     </div>
                 </div>
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useNavigationState } from '~/composables/useNavigationState';
+import CvActions from '../ui/CvActions.vue';
 
 const { isExactlyAtServices, isClientMode, activeSection, isDrawerOpen, observeSections, stopObserving } = useNavigationState();
 
@@ -80,10 +81,7 @@ onUnmounted(() => {
                         ← Volver a Servicios
                     </NuxtLink>
                     <span v-if="isClientMode" class="h-4 w-[1px] bg-zinc-800" />
-                    <a v-if="!isClientMode" href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                        class="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-white transition hover:border-zinc-500 hover:bg-zinc-900">
-                        Descargar CV
-                    </a>
+                    <CvActions v-if="!isClientMode" variant="compact" align="right" />
                     <a v-else :href="isExactlyAtServices ? '#contact-cta' : '/services#contact-cta'"
                         class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500">
                         Cotizar Proyecto
@@ -138,11 +136,8 @@ onUnmounted(() => {
                     @click="isDrawerOpen = false">
                     ← Volver a Servicios
                 </NuxtLink>
-                <a v-if="!isClientMode" href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                    class="rounded-lg border border-zinc-700 px-4 py-3 text-center text-sm font-medium text-white transition hover:border-zinc-500 hover:bg-zinc-900"
-                    @click="isDrawerOpen = false">
-                    Descargar CV
-                </a>
+                <CvActions v-if="!isClientMode" variant="drawer" placement="top"
+                    @action="isDrawerOpen = false" />
                 <a v-else :href="isExactlyAtServices ? '#contact-cta' : '/services#contact-cta'"
                     class="rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-medium text-white transition hover:bg-blue-500"
                     @click="isDrawerOpen = false">
