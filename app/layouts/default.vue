@@ -3,6 +3,7 @@ import AppHeader from '~/components/layout/AppHeader.vue';
 import AppFooter from '~/components/layout/AppFooter.vue';
 import ScrollToTopButton from '~/components/ui/ScrollToTopButton.vue';
 import FloatingWhatsapp from '~/components/ui/FloatingWhatsapp.vue';
+import CvPreviewModal from '~/components/ui/CvPreviewModal.vue';
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import FloatingWhatsapp from '~/components/ui/FloatingWhatsapp.vue';
         <FloatingWhatsapp />
         <AppFooter />
         <ScrollToTopButton />
+        <CvPreviewModal />
     </div>
 </template>
