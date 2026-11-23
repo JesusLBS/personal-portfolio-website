@@ -28,7 +28,7 @@ const technologies = [
                         Disponible para nuevas oportunidades
                     </div>
 
-                    <h1 class="text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
+                    <h1 class="break-words text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-7xl">
                         Full Stack Software Engineer
                         especializado en Laravel, Vue.js y APIs REST.
                     </h1>

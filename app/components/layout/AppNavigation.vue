@@ -58,7 +58,7 @@ onUnmounted(() => {
                 Jesus Chicho
             </NuxtLink>
 
-            <nav aria-label="Navegación principal" class="hidden items-center gap-8 md:flex">
+            <nav aria-label="Navegación principal" class="hidden items-center gap-8 lg:flex">
                 <a v-for="link in currentLinks" :key="link.href" :href="link.href" :class="[
                     'text-sm transition',
                     activeSection === link.href
@@ -70,7 +70,7 @@ onUnmounted(() => {
             </nav>
 
             <div class="flex items-center gap-4">
-                <div class="hidden items-center gap-6 md:flex">
+                <div class="hidden items-center gap-6 lg:flex">
                     <NuxtLink v-if="isExactlyAtServices" :to="{ path: '/', query: { mode: 'client' } }"
                         class="text-sm font-medium text-zinc-400 transition hover:text-white">
                         Ver Perfil Técnico →
@@ -91,7 +91,7 @@ onUnmounted(() => {
                 </div>
 
                 <button id="drawer-toggle" type="button" aria-label="Toggle menu"
-                    class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700 text-zinc-400 transition hover:border-zinc-500 hover:text-white md:hidden"
+                    class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700 text-zinc-400 transition hover:border-zinc-500 hover:text-white lg:hidden"
                     @click="isDrawerOpen = !isDrawerOpen">
                     <Icon :name="isDrawerOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="h-5 w-5" />
                 </button>
@@ -100,13 +100,13 @@ onUnmounted(() => {
     </header>
 
     <Transition name="backdrop">
-        <div v-if="isDrawerOpen" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+        <div v-if="isDrawerOpen" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
             @click="isDrawerOpen = false" />
     </Transition>
 
     <Transition name="drawer">
         <div v-if="isDrawerOpen" id="mobile-drawer"
-            class="fixed right-0 top-0 z-50 flex h-full w-72 flex-col border-l border-zinc-800 bg-zinc-950 md:hidden">
+            class="fixed right-0 top-0 z-50 flex h-full w-72 flex-col border-l border-zinc-800 bg-zinc-950 lg:hidden">
 
             <div class="flex h-16 items-center justify-between border-b border-zinc-800 px-6">
                 <span class="text-sm font-semibold text-white">Jesus Chicho</span>

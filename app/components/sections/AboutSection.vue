@@ -20,14 +20,14 @@ const certifications = [
 
 <template>
     <section id="about" class="border-b border-zinc-900 px-6 py-24">
-        <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
-            <div class="space-y-6">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2">
+            <div class="min-w-0 space-y-6">
                 <div>
                     <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
                         Sobre mí
                     </p>
 
-                    <h2 class="text-4xl font-bold text-white">
+                    <h2 class="text-3xl font-bold text-white sm:text-4xl">
                         Ingeniero en Desarrollo y Gestión de Software
                     </h2>
                 </div>
@@ -97,7 +97,7 @@ const certifications = [
                 </div>
             </div>
 
-            <div class="flex w-full items-center justify-center">
+            <div class="flex min-w-0 w-full items-center justify-center">
                 <div
                     class="relative aspect-[14/10] w-full overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
                     <a :href="'/images/logo.webp'" class="block h-full w-full cursor-default">
