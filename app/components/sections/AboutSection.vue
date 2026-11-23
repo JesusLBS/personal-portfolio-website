@@ -35,14 +35,16 @@ const certifications = [
                 <p class="leading-8 text-zinc-400">
                     Desarrollador full stack con más de 5 años de experiencia en Laravel, Vue.js,
                     Angular y Node.js. Me especializo en APIs REST, modernización de sistemas legacy
-                    y optimización de procesos críticos con cargas masivas de datos en Azure.
+                    y optimización de procesos críticos, con enfoque en estabilidad, rendimiento
+                    y seguridad en entornos productivos.
                 </p>
 
                 <p class="leading-8 text-zinc-400">
                     He reducido tiempos de procesamiento de cargas de más de 40,000 registros
-                    de 20-60 minutos a pocos minutos mediante chunks, tablas temporales,
-                    validaciones por lotes y jobs asíncronos. También desarrollo soluciones con
-                    Python/Flask e integración de IA aplicada a documentos.
+                    de 20-40 minutos a pocos minutos mediante chunks, tablas temporales,
+                    validaciones por lotes y jobs asíncronos. Mi experiencia también incluye
+                    despliegues en Azure y AWS, automatización con Python/Flask e integración
+                    de IA aplicada a documentos.
                 </p>
 
                 <div class="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">

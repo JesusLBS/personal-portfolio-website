@@ -10,6 +10,7 @@ const technologies = [
     'Node.js',
     'MySQL',
     'Azure',
+    'AWS',
     'Python',
 ];
 </script>
@@ -34,8 +35,9 @@ const technologies = [
 
                     <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
                         Ingeniero en Desarrollo y Gestión de Software con más de 5 años de experiencia
-                        en modernización de sistemas legacy, optimización de cargas masivas y
-                        desarrollo de soluciones backend y frontend en entornos productivos.
+                        en desarrollo full stack, modernización de sistemas legacy y estabilización
+                        de aplicaciones en producción. Desarrollo APIs REST, procesos asíncronos
+                        y soluciones desplegadas en Azure y AWS.
                     </p>
 
                     <div class="mt-10 flex flex-wrap gap-4">
