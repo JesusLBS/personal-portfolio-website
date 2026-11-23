@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppContainer from '../ui/AppContainer.vue';
+import CvActions from '../ui/CvActions.vue';
 
 const technologies = [
     'Laravel',
@@ -10,6 +11,7 @@ const technologies = [
     'Node.js',
     'MySQL',
     'Azure',
+    'AWS',
     'Python',
 ];
 </script>
@@ -27,15 +29,16 @@ const technologies = [
                         Disponible para nuevas oportunidades
                     </div>
 
-                    <h1 class="text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
+                    <h1 class="break-words text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-7xl">
                         Full Stack Software Engineer
                         especializado en Laravel, Vue.js y APIs REST.
                     </h1>
 
                     <p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
                         Ingeniero en Desarrollo y Gestión de Software con más de 5 años de experiencia
-                        en modernización de sistemas legacy, optimización de cargas masivas y
-                        desarrollo de soluciones backend y frontend en entornos productivos.
+                        en desarrollo full stack, modernización de sistemas legacy y estabilización
+                        de aplicaciones en producción. Desarrollo APIs REST, procesos asíncronos
+                        y soluciones desplegadas en Azure y AWS.
                     </p>
 
                     <div class="mt-10 flex flex-wrap gap-4">
@@ -44,10 +47,7 @@ const technologies = [
                             Contacto
                         </a>
 
-                        <a href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                            class="rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition hover:border-zinc-500 hover:bg-zinc-900">
-                            Descargar CV
-                        </a>
+                        <CvActions />
                     </div>
                 </div>
 

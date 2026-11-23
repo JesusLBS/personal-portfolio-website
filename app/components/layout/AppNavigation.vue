@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useNavigationState } from '~/composables/useNavigationState';
+import CvActions from '../ui/CvActions.vue';
 
 const { isExactlyAtServices, isClientMode, activeSection, isDrawerOpen, observeSections, stopObserving } = useNavigationState();
 
@@ -58,7 +59,7 @@ onUnmounted(() => {
                 Jesus Chicho
             </NuxtLink>
 
-            <nav aria-label="Navegación principal" class="hidden items-center gap-8 md:flex">
+            <nav aria-label="Navegación principal" class="hidden items-center gap-8 lg:flex">
                 <a v-for="link in currentLinks" :key="link.href" :href="link.href" :class="[
                     'text-sm transition',
                     activeSection === link.href
@@ -70,7 +71,7 @@ onUnmounted(() => {
             </nav>
 
             <div class="flex items-center gap-4">
-                <div class="hidden items-center gap-6 md:flex">
+                <div class="hidden items-center gap-6 lg:flex">
                     <NuxtLink v-if="isExactlyAtServices" :to="{ path: '/', query: { mode: 'client' } }"
                         class="text-sm font-medium text-zinc-400 transition hover:text-white">
                         Ver Perfil Técnico →
@@ -80,10 +81,7 @@ onUnmounted(() => {
                         ← Volver a Servicios
                     </NuxtLink>
                     <span v-if="isClientMode" class="h-4 w-[1px] bg-zinc-800" />
-                    <a v-if="!isClientMode" href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                        class="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-white transition hover:border-zinc-500 hover:bg-zinc-900">
-                        Descargar CV
-                    </a>
+                    <CvActions v-if="!isClientMode" variant="compact" align="right" />
                     <a v-else :href="isExactlyAtServices ? '#contact-cta' : '/services#contact-cta'"
                         class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500">
                         Cotizar Proyecto
@@ -91,7 +89,7 @@ onUnmounted(() => {
                 </div>
 
                 <button id="drawer-toggle" type="button" aria-label="Toggle menu"
-                    class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700 text-zinc-400 transition hover:border-zinc-500 hover:text-white md:hidden"
+                    class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700 text-zinc-400 transition hover:border-zinc-500 hover:text-white lg:hidden"
                     @click="isDrawerOpen = !isDrawerOpen">
                     <Icon :name="isDrawerOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="h-5 w-5" />
                 </button>
@@ -100,13 +98,13 @@ onUnmounted(() => {
     </header>
 
     <Transition name="backdrop">
-        <div v-if="isDrawerOpen" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+        <div v-if="isDrawerOpen" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
             @click="isDrawerOpen = false" />
     </Transition>
 
     <Transition name="drawer">
         <div v-if="isDrawerOpen" id="mobile-drawer"
-            class="fixed right-0 top-0 z-50 flex h-full w-72 flex-col border-l border-zinc-800 bg-zinc-950 md:hidden">
+            class="fixed right-0 top-0 z-50 flex h-full w-72 flex-col border-l border-zinc-800 bg-zinc-950 lg:hidden">
 
             <div class="flex h-16 items-center justify-between border-b border-zinc-800 px-6">
                 <span class="text-sm font-semibold text-white">Jesus Chicho</span>
@@ -138,11 +136,8 @@ onUnmounted(() => {
                     @click="isDrawerOpen = false">
                     ← Volver a Servicios
                 </NuxtLink>
-                <a v-if="!isClientMode" href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                    class="rounded-lg border border-zinc-700 px-4 py-3 text-center text-sm font-medium text-white transition hover:border-zinc-500 hover:bg-zinc-900"
-                    @click="isDrawerOpen = false">
-                    Descargar CV
-                </a>
+                <CvActions v-if="!isClientMode" variant="drawer" placement="top"
+                    @action="isDrawerOpen = false" />
                 <a v-else :href="isExactlyAtServices ? '#contact-cta' : '/services#contact-cta'"
                     class="rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-medium text-white transition hover:bg-blue-500"
                     @click="isDrawerOpen = false">

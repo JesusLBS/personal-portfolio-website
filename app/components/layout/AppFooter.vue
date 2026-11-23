@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import CvActions from '../ui/CvActions.vue';
 
 const currentYear = new Date().getFullYear();
 
-const lastUpdated = '2026-07-15';
+const lastUpdated = '2026-11-23';
 
 const formattedLastUpdated = computed(() => {
     const date = new Date(`${lastUpdated}T00:00:00`);
@@ -68,11 +69,7 @@ const socialLinks = [
                     +52 55 2998 3634
                 </a>
 
-                <a href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                    class="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400 px-4 py-2 text-cyan-400 transition hover:bg-cyan-400 hover:text-zinc-950">
-                    Descargar CV
-                    <Icon name="i-heroicons-arrow-down-tray" class="h-4 w-4" />
-                </a>
+                <CvActions variant="footer" placement="top" />
             </div>
         </div>
 

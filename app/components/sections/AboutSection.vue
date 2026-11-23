@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CvActions from '../ui/CvActions.vue';
 
 const certifications = [
     {
@@ -20,14 +21,14 @@ const certifications = [
 
 <template>
     <section id="about" class="border-b border-zinc-900 px-6 py-24">
-        <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
-            <div class="space-y-6">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2">
+            <div class="min-w-0 space-y-6">
                 <div>
                     <p class="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
                         Sobre mí
                     </p>
 
-                    <h2 class="text-4xl font-bold text-white">
+                    <h2 class="text-3xl font-bold text-white sm:text-4xl">
                         Ingeniero en Desarrollo y Gestión de Software
                     </h2>
                 </div>
@@ -35,14 +36,16 @@ const certifications = [
                 <p class="leading-8 text-zinc-400">
                     Desarrollador full stack con más de 5 años de experiencia en Laravel, Vue.js,
                     Angular y Node.js. Me especializo en APIs REST, modernización de sistemas legacy
-                    y optimización de procesos críticos con cargas masivas de datos en Azure.
+                    y optimización de procesos críticos, con enfoque en estabilidad, rendimiento
+                    y seguridad en entornos productivos.
                 </p>
 
                 <p class="leading-8 text-zinc-400">
                     He reducido tiempos de procesamiento de cargas de más de 40,000 registros
-                    de 20-60 minutos a pocos minutos mediante chunks, tablas temporales,
-                    validaciones por lotes y jobs asíncronos. También desarrollo soluciones con
-                    Python/Flask e integración de IA aplicada a documentos.
+                    de 20-40 minutos a pocos minutos mediante chunks, tablas temporales,
+                    validaciones por lotes y jobs asíncronos. Mi experiencia también incluye
+                    despliegues en Azure y AWS, automatización con Python/Flask e integración
+                    de IA aplicada a documentos.
                 </p>
 
                 <div class="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
@@ -88,14 +91,11 @@ const certifications = [
                         Ver proyectos
                     </a>
 
-                    <a href="/files/cv_jesus_chicho_hernandez.pdf" target="_blank"
-                        class="rounded-xl border border-zinc-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-zinc-500">
-                        Descargar CV
-                    </a>
+                    <CvActions class="text-sm" />
                 </div>
             </div>
 
-            <div class="flex w-full items-center justify-center">
+            <div class="flex min-w-0 w-full items-center justify-center">
                 <div
                     class="relative aspect-[14/10] w-full overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
                     <a :href="'/images/logo.webp'" class="block h-full w-full cursor-default">
