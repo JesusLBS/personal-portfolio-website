@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import ContactPrivacyNotice from '~/components/privacy/ContactPrivacyNotice.vue';
+</script>
+
 <template>
     <section id="contact-cta" class="px-6 py-28 relative overflow-hidden">
 
@@ -31,6 +35,8 @@
                     WhatsApp directo
                 </a>
             </div>
+
+            <ContactPrivacyNotice />
 
             <div class="mt-10 flex items-center justify-center gap-6 text-xs text-zinc-500 font-mono">
                 <span class="flex items-center gap-1.5">

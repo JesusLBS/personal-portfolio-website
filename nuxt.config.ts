@@ -1,10 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { PRIVACY_MAX_AGE_SECONDS } from './app/utils/privacyConsent';
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   css: [
     '~/assets/css/main.css'
   ],
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      analyticsEnabled: false,
+      privacyAddress: '',
+    },
+  },
+  icon: {
+    // Resolve missing icons on the server, without sending visitors to Iconify.
+    fallbackToApi: 'server-only',
+  },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
   site: {
     url: 'https://chichohdz.com',
@@ -15,7 +27,23 @@ export default defineNuxtConfig({
   },
   gtag: {
     enabled: import.meta.env.PROD, // true in production, false in dev
+    initMode: 'manual',
     loadingStrategy: 'async',
+    initCommands: [
+      ['consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      }],
+    ],
+    config: {
+      send_page_view: false,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      cookie_expires: PRIVACY_MAX_AGE_SECONDS,
+      cookie_update: false,
+    },
   },
   nitro: {
     preset: 'netlify',

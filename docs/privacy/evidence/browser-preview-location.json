@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-11-25T04:12:24.359Z",
+  "browser": "Chrome/158.0.8127.88",
+  "node": "v26.10.0",
+  "analyticsMode": "ui-only",
+  "addressScenario": "location",
+  "environment": "local production build with synthetic Google tag",
+  "cookieScope": "parent domain .portfolio.test",
+  "realGoogleRequests": false,
+  "checks": [
+    {
+      "name": "runtime Analytics switch matches the requested test mode",
+      "passed": true
+    },
+    {
+      "name": "test accepts only an empty or explicitly fictitious address",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "enabled UI without a valid ID starts with tracking blocked",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "UI-only preview can remember acceptance",
+      "passed": true
+    },
+    {
+      "name": "acceptance without a valid ID cannot load Analytics",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "UI-only preview keeps the preferences entry",
+      "passed": true
+    },
+    {
+      "name": "UI-only preview can withdraw acceptance",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "enabled preview shows the optional Analytics information",
+      "passed": true
+    },
+    {
+      "name": "UI-only preview never requests the tag",
+      "passed": true
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "no direct browser requests to Iconify throughout the scenarios",
+      "passed": true
+    }
+  ]
+}
