@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed, nextTick, onMounted, onUnmounted, watch } from 'vue';
 import { useNavigationState } from '~/composables/useNavigationState';
 import CvActions from '../ui/CvActions.vue';
 
 const { isExactlyAtServices, isClientMode, activeSection, isDrawerOpen, observeSections, stopObserving } = useNavigationState();
+const route = useRoute();
 
 const logoTarget = computed(() => isClientMode.value ? '/services' : '/');
 
@@ -23,11 +24,14 @@ const servicesLinks = [
     { label: 'Contacto', href: '#contact-cta' },
 ];
 
-const currentLinks = computed(() => isExactlyAtServices.value ? servicesLinks : technicalLinks);
+const currentLinks = computed(() => isExactlyAtServices.value ? servicesLinks : technicalLinks.map(link => ({
+    ...link,
+    href: route.path === '/' ? link.href : `/${link.href}`,
+})));
 
 const handleMobileNav = (href: string) => {
     isDrawerOpen.value = false;
-    const el = document.querySelector(href);
+    const el = href.startsWith('#') ? document.querySelector(href) : null;
     if (el) el.scrollIntoView({ behavior: 'smooth' });
 };
 
@@ -39,9 +43,20 @@ const handleOutsideClick = (e: MouseEvent) => {
     }
 };
 
-onMounted(() => {
-    const ids = currentLinks.value.map(l => l.href);
+const observeCurrentSections = () => {
+    stopObserving();
+    const ids = currentLinks.value.map(l => l.href).filter(href => href.startsWith('#'));
     observeSections(ids);
+};
+
+watch(currentLinks, async () => {
+    isDrawerOpen.value = false;
+    await nextTick();
+    observeCurrentSections();
+});
+
+onMounted(() => {
+    observeCurrentSections();
     document.addEventListener('click', handleOutsideClick);
 });
 

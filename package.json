@@ -7,6 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "test:privacy": "node --experimental-strip-types --test tests/privacy-consent.test.mjs",
+    "test:privacy:browser": "node --experimental-strip-types scripts/verify-privacy.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

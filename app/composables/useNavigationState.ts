@@ -1,5 +1,5 @@
 import { ref, computed, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute } from '#app';
 
 /**
  * @returns Navigation state refs and observer controls

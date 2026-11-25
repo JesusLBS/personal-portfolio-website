@@ -1,0 +1,537 @@
+{
+  "checkedAt": "2026-11-25T04:13:21.166Z",
+  "browser": "Chrome/158.0.8127.88",
+  "node": "v26.10.0",
+  "analyticsMode": "on",
+  "addressScenario": "example",
+  "environment": "local production build with synthetic Google tag",
+  "cookieScope": "parent domain .portfolio.test",
+  "realGoogleRequests": false,
+  "checks": [
+    {
+      "name": "runtime Analytics switch matches the requested test mode",
+      "passed": true
+    },
+    {
+      "name": "test accepts only an empty or explicitly fictitious address",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "first visit has no tag or Analytics cookies",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "first visit makes no Google tag request",
+      "passed": true
+    },
+    {
+      "name": "initial visit makes only same-origin resource requests",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "legacy parent-domain cookie exists before cleanup",
+      "passed": true
+    },
+    {
+      "name": "undecided visit clears legacy parent-domain Analytics cookies",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "domain cleanup preserves unrelated cookies",
+      "passed": true
+    },
+    {
+      "name": "production build uses the synthetic test tag",
+      "passed": true
+    },
+    {
+      "name": "undecided visitors can navigate freely",
+      "passed": true
+    },
+    {
+      "name": "ignoring the banner never grants tracking",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "closing preferences does not imply consent",
+      "passed": true
+    },
+    {
+      "name": "dismissed preferences keep tracking blocked",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "rejection is saved",
+      "passed": true
+    },
+    {
+      "name": "rejection does not load tracking",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "client-only WhatsApp icon and toggle work with server-only fallback",
+      "passed": true
+    },
+    {
+      "name": "rejection survives navigation and reload",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "rejected visits make no tag request",
+      "passed": true
+    },
+    {
+      "name": "rejection is reflected in preferences",
+      "passed": true
+    },
+    {
+      "name": "Escape restores focus",
+      "passed": true
+    },
+    {
+      "name": "acceptance loads tag once",
+      "passed": true
+    },
+    {
+      "name": "saving acceptance again does not duplicate the tag",
+      "passed": true
+    },
+    {
+      "name": "accepted test tag can create Analytics cookies",
+      "passed": true
+    },
+    {
+      "name": "accepted fixture uses parent-domain Analytics cookies",
+      "passed": true
+    },
+    {
+      "name": "advertising remains denied",
+      "passed": true
+    },
+    {
+      "name": "advertising feature flags remain disabled",
+      "passed": true
+    },
+    {
+      "name": "cookies page loads through SPA navigation",
+      "passed": true
+    },
+    {
+      "name": "legal navigation links return to profile sections",
+      "passed": true
+    },
+    {
+      "name": "withdrawal reload removes tag and cookies",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "withdrawal emits no further measurement or denial ping",
+      "passed": true
+    },
+    {
+      "name": "withdrawal remains effective after reload",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "malformed fails closed",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "expired fails closed",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "old version fails closed",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "future timestamp fails closed",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "an open page expires consent at its deadline",
+      "passed": true
+    },
+    {
+      "name": "active consent expiration removes tracking",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "withdrawal is synchronized across tabs",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "blocked storage keeps tracking disabled",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": true
+      }
+    },
+    {
+      "name": "rejection works without storage",
+      "passed": true
+    },
+    {
+      "name": "blocked storage is explained in preferences",
+      "passed": true
+    },
+    {
+      "name": "all storage blocked: rejection survives visibility without reload",
+      "passed": true
+    },
+    {
+      "name": "all storage blocked: temporary choice and storage warning stay accurate",
+      "passed": true
+    },
+    {
+      "name": "all storage blocked: acceptance survives visibility without reload",
+      "passed": true
+    },
+    {
+      "name": "all storage blocked: temporary choice and storage warning stay accurate",
+      "passed": true
+    },
+    {
+      "name": "all storage blocked: withdrawal disables the simulated tag without reviving stale consent",
+      "passed": true
+    },
+    {
+      "name": "writes blocked with stale acceptance: rejection survives visibility without reload",
+      "passed": true
+    },
+    {
+      "name": "writes blocked with stale acceptance: temporary choice and storage warning stay accurate",
+      "passed": true
+    },
+    {
+      "name": "writes blocked with stale acceptance: acceptance survives visibility without reload",
+      "passed": true
+    },
+    {
+      "name": "writes blocked with stale acceptance: temporary choice and storage warning stay accurate",
+      "passed": true
+    },
+    {
+      "name": "writes blocked with stale acceptance: withdrawal disables the simulated tag without reviving stale consent",
+      "passed": true
+    },
+    {
+      "name": "320 banner fits",
+      "passed": true,
+      "data": {
+        "client": 320,
+        "scroll": 320,
+        "inner": 320,
+        "left": 16,
+        "right": 304,
+        "top": 398.5,
+        "bottom": 813,
+        "height": 829
+      }
+    },
+    {
+      "name": "320 banner uses at most half the viewport",
+      "passed": true
+    },
+    {
+      "name": "320 analytics explanation is fully visible before any summary scroll",
+      "passed": true
+    },
+    {
+      "name": "320 saving from banner restores focus to a stable control",
+      "passed": true
+    },
+    {
+      "name": "320 preferences fit",
+      "passed": true,
+      "data": {
+        "client": 320,
+        "scroll": 320,
+        "inner": 320,
+        "left": 16,
+        "right": 304,
+        "top": 52,
+        "bottom": 777,
+        "height": 829
+      }
+    },
+    {
+      "name": "320 notice has no overflow",
+      "passed": true
+    },
+    {
+      "name": "390 banner fits",
+      "passed": true,
+      "data": {
+        "client": 390,
+        "scroll": 390,
+        "inner": 390,
+        "left": 16,
+        "right": 374,
+        "top": 398.5,
+        "bottom": 813,
+        "height": 829
+      }
+    },
+    {
+      "name": "390 banner uses at most half the viewport",
+      "passed": true
+    },
+    {
+      "name": "390 analytics explanation is fully visible before any summary scroll",
+      "passed": true
+    },
+    {
+      "name": "390 saving from banner restores focus to a stable control",
+      "passed": true
+    },
+    {
+      "name": "390 preferences fit",
+      "passed": true,
+      "data": {
+        "client": 390,
+        "scroll": 390,
+        "inner": 390,
+        "left": 16,
+        "right": 374,
+        "top": 88,
+        "bottom": 741,
+        "height": 829
+      }
+    },
+    {
+      "name": "390 notice has no overflow",
+      "passed": true
+    },
+    {
+      "name": "768 banner fits",
+      "passed": true,
+      "data": {
+        "client": 753,
+        "scroll": 753,
+        "inner": 768,
+        "left": 16,
+        "right": 737,
+        "top": 483,
+        "bottom": 813,
+        "height": 829
+      }
+    },
+    {
+      "name": "768 banner uses at most half the viewport",
+      "passed": true
+    },
+    {
+      "name": "768 analytics explanation is fully visible before any summary scroll",
+      "passed": true
+    },
+    {
+      "name": "768 saving from banner restores focus to a stable control",
+      "passed": true
+    },
+    {
+      "name": "768 preferences fit",
+      "passed": true,
+      "data": {
+        "client": 768,
+        "scroll": 768,
+        "inner": 768,
+        "left": 96,
+        "right": 672,
+        "top": 167,
+        "bottom": 662,
+        "height": 829
+      }
+    },
+    {
+      "name": "768 notice has no overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 banner fits",
+      "passed": true,
+      "data": {
+        "client": 1009,
+        "scroll": 1009,
+        "inner": 1024,
+        "left": 16,
+        "right": 993,
+        "top": 523,
+        "bottom": 813,
+        "height": 829
+      }
+    },
+    {
+      "name": "1024 banner uses at most half the viewport",
+      "passed": true
+    },
+    {
+      "name": "1024 analytics explanation is fully visible before any summary scroll",
+      "passed": true
+    },
+    {
+      "name": "1024 saving from banner restores focus to a stable control",
+      "passed": true
+    },
+    {
+      "name": "1024 preferences fit",
+      "passed": true,
+      "data": {
+        "client": 1024,
+        "scroll": 1024,
+        "inner": 1024,
+        "left": 224,
+        "right": 800,
+        "top": 167,
+        "bottom": 662,
+        "height": 829
+      }
+    },
+    {
+      "name": "1024 notice has no overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 banner fits",
+      "passed": true,
+      "data": {
+        "client": 1425,
+        "scroll": 1425,
+        "inner": 1440,
+        "left": 200.5,
+        "right": 1224.5,
+        "top": 543,
+        "bottom": 813,
+        "height": 829
+      }
+    },
+    {
+      "name": "1440 banner uses at most half the viewport",
+      "passed": true
+    },
+    {
+      "name": "1440 analytics explanation is fully visible before any summary scroll",
+      "passed": true
+    },
+    {
+      "name": "1440 saving from banner restores focus to a stable control",
+      "passed": true
+    },
+    {
+      "name": "1440 preferences fit",
+      "passed": true,
+      "data": {
+        "client": 1440,
+        "scroll": 1440,
+        "inner": 1440,
+        "left": 432,
+        "right": 1008,
+        "top": 167,
+        "bottom": 662,
+        "height": 829
+      }
+    },
+    {
+      "name": "1440 notice has no overflow",
+      "passed": true
+    },
+    {
+      "name": "CV preview remains functional",
+      "passed": true
+    },
+    {
+      "name": "legal header returns to about section",
+      "passed": true
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "no direct browser requests to Iconify throughout the scenarios",
+      "passed": true
+    }
+  ]
+}
