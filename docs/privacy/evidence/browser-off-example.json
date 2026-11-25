@@ -1,0 +1,262 @@
+{
+  "checkedAt": "2026-11-25T04:10:29.386Z",
+  "browser": "Chrome/158.0.8127.88",
+  "node": "v26.10.0",
+  "analyticsMode": "off",
+  "addressScenario": "example",
+  "environment": "local production build with synthetic Google tag",
+  "cookieScope": "parent domain .portfolio.test",
+  "realGoogleRequests": false,
+  "checks": [
+    {
+      "name": "runtime Analytics switch matches the requested test mode",
+      "passed": true
+    },
+    {
+      "name": "test accepts only an empty or explicitly fictitious address",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "/ has no Analytics controls when disabled",
+      "passed": true
+    },
+    {
+      "name": "/ removes inherited cookies without loading a tag",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "/ performs no localStorage reads or writes",
+      "passed": true
+    },
+    {
+      "name": "/ preserves an existing acceptance without consulting it",
+      "passed": true
+    },
+    {
+      "name": "/ cleans legacy cookies and preserves unrelated ones",
+      "passed": true
+    },
+    {
+      "name": "/ keeps a simplified privacy notice at contact",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "/services has no Analytics controls when disabled",
+      "passed": true
+    },
+    {
+      "name": "/services removes inherited cookies without loading a tag",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "/services performs no localStorage reads or writes",
+      "passed": true
+    },
+    {
+      "name": "/services preserves an existing acceptance without consulting it",
+      "passed": true
+    },
+    {
+      "name": "/services cleans legacy cookies and preserves unrelated ones",
+      "passed": true
+    },
+    {
+      "name": "/services keeps a simplified privacy notice at contact",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "/privacidad has no Analytics controls when disabled",
+      "passed": true
+    },
+    {
+      "name": "/privacidad removes inherited cookies without loading a tag",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "/privacidad performs no localStorage reads or writes",
+      "passed": true
+    },
+    {
+      "name": "/privacidad preserves an existing acceptance without consulting it",
+      "passed": true
+    },
+    {
+      "name": "/privacidad cleans legacy cookies and preserves unrelated ones",
+      "passed": true
+    },
+    {
+      "name": "disabled privacy notice excludes GA purpose, provider and retention",
+      "passed": true
+    },
+    {
+      "name": "base privacy notice retains hosting, ARCO and contact protections",
+      "passed": true
+    },
+    {
+      "name": "published contact matches the configured example or general location",
+      "passed": true
+    },
+    {
+      "name": "/cookies has no Analytics controls when disabled",
+      "passed": true
+    },
+    {
+      "name": "/cookies removes inherited cookies without loading a tag",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "/cookies performs no localStorage reads or writes",
+      "passed": true
+    },
+    {
+      "name": "/cookies preserves an existing acceptance without consulting it",
+      "passed": true
+    },
+    {
+      "name": "/cookies cleans legacy cookies and preserves unrelated ones",
+      "passed": true
+    },
+    {
+      "name": "cookies route describes the disabled mode without preference storage",
+      "passed": true
+    },
+    {
+      "name": "320 disabled / has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 disabled /services has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 disabled /privacidad has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 disabled /cookies has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 disabled / has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 disabled /services has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 disabled /privacidad has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 disabled /cookies has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 disabled / has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 disabled /services has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 disabled /privacidad has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768 disabled /cookies has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 disabled / has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 disabled /services has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 disabled /privacidad has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 disabled /cookies has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 disabled / has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 disabled /services has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 disabled /privacidad has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 disabled /cookies has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "CV preview works with Analytics disabled",
+      "passed": true
+    },
+    {
+      "name": "disabled mode makes no Google tag or measurement requests despite a valid ID",
+      "passed": true
+    },
+    {
+      "name": "disabled mode remains clean after all routes and interactions",
+      "passed": true,
+      "data": {
+        "tag": false,
+        "cookies": [],
+        "banner": false
+      }
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "no direct browser requests to Iconify throughout the scenarios",
+      "passed": true
+    }
+  ]
+}

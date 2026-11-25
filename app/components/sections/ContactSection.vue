@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import ContactPrivacyNotice from '~/components/privacy/ContactPrivacyNotice.vue';
+</script>
+
 <template>
   <section id="contact" class="border-b border-zinc-900 px-6 py-24">
     <div class="mx-auto max-w-4xl text-center">
@@ -48,6 +52,8 @@
           Enviar mensaje
         </a>
       </div>
+
+      <ContactPrivacyNotice />
 
     </div>
   </section>

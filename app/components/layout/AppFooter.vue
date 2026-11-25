@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import CvActions from '../ui/CvActions.vue';
+const { openPreferences } = usePrivacyConsent();
+const { analyticsEnabled } = usePrivacySettings();
 
 const currentYear = new Date().getFullYear();
 
@@ -74,6 +76,12 @@ const socialLinks = [
         </div>
 
         <div class="border-t border-zinc-800">
+            <nav aria-label="Privacidad" class="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-3 px-6 pt-5 text-sm text-zinc-400">
+                <NuxtLink to="/privacidad" class="hover:text-white">Aviso de privacidad</NuxtLink>
+                <NuxtLink to="/cookies" class="hover:text-white">Cookies</NuxtLink>
+                <button v-if="analyticsEnabled" id="privacy-footer-preferences" type="button" class="text-left hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400"
+                    @click="openPreferences('privacy-footer-preferences')">Preferencias de privacidad</button>
+            </nav>
             <div
                 class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-xs text-zinc-400 md:flex-row md:items-center md:justify-between">
 
