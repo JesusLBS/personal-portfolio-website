@@ -2,35 +2,30 @@
 
 Actualizado: 2026-11-26.
 
-## Estado entregado
+## Entregas integradas
 
-- Perfil, experiencia, skills y PDF del CV actualizados.
-- Desbordamiento de «Sobre mí» corregido y títulos adaptados a móvil; menú compacto hasta `lg`.
+- Perfil, experiencia, skills y PDF del CV actualizados; responsive de «Sobre mí» y menú corregidos.
 - Acciones compartidas del CV: previsualización en modal, descarga y apertura en otra pestaña.
 - Contexto común `AGENTS.md`, entradas de Claude/Gemini y documentación de arquitectura, despliegue, privacidad y pruebas integrados.
-- Avisos de privacidad/cookies, preferencias y control opcional de Analytics integrados. Las notas N2/N3 quedaron corregidas antes de los commits.
-- La entrega de `feature/privacy-and-ai-context` está confirmada en Git: implementación `62289d2`, documentación `e8c07cc` y merges a `develop` y `master`.
-- El propietario confirmó la revisión visual del Deploy Preview y el despliegue a producción con Analytics en `false`. Eligió mantener vacía la variable de domicilio. La activación del tag se pospuso.
-- El mantenimiento de dependencias quedó integrado: commits `75b93d1` y `7575e80`, PR #32 a `develop` y PR #33 a `master`. El propietario confirmó la revisión del preview y el inicio del build de producción; todavía no comunicó su resultado final. El historial local ya incluye ambos merges.
+- Privacidad: implementación `62289d2`, documentación `e8c07cc` y merges a `develop` y `master`. Las notas N2/N3 quedaron corregidas antes de integrar. El propietario confirmó el preview y la publicación con Analytics apagado y dirección vacía; la prueba del tag real se aplazó.
+- Dependencias: commits `75b93d1` y `7575e80`, PR #32 a `develop` y #33 a `master`. La instalación limpia, builds y regresiones locales están registrados en [testing](../testing/README.md); los avisos restantes se explican en [mantenimiento](MAINTENANCE.md).
+- Agenda y contacto compartido: implementación `68f774e`, documentación `df98feb`, PR #34 a `develop` (`9761378`) y #35 a `master` (`6a93b9b`). El propietario confirmó revisión local, validación del preview y promoción a producción. La agenda y el formulario públicos se revisaron sin confirmar reservas.
+- Calendly Notetaker: desactivado, confirmado expresamente por el propietario el 2026-11-26. Esa confirmación cierra el pendiente de la captura inicial que mostraba On.
 
-La confirmación visual y el despliegue aportados por el propietario no acreditan una inspección independiente de red, cookies o proveedor real. El [registro de cuenta](../privacy/ACCOUNT-CHECKLIST.md) conserva la procedencia y los límites de las comprobaciones.
+Los merges se comprobaron en Git. Las revisiones de cuentas, preview y publicación tienen la procedencia indicada: no equivalen a una inspección independiente de paneles, red o logs de Netlify. No se conservó un informe nuevo de PageSpeed ni se atribuyen al asistente las mediciones aportadas por el propietario.
 
-## Trabajo activo
+## Estado actual
 
-Agenda de contacto en `feature/contact-scheduling`, creada desde `develop` actualizado en `073fe9c`. La [guía de agenda](SCHEDULING.md) mantiene decisiones, configuración y activación. El [plan de mantenimiento](MAINTENANCE.md) conserva la entrega anterior y las migraciones posteriores. Al retomar el trabajo, comprobar primero la rama y el estado real de Git.
+Los bloques funcionales del plan original están integrados. Este cierre documental registra la entrega; no hay una nueva implementación funcional seleccionada. Al retomar trabajo, comprobar rama y estado real de Git antes de editar.
 
-| Bloque | Estado |
+| Tema | Estado |
 |---|---|
-| Mantenimiento anterior | Commits y merges a ambas ramas confirmados en Git; preview validado por el propietario; resultado final de producción no comunicado |
-| Enlace compartido de agenda | Preparado con URL vacía por defecto; enlace público recibido y probado en copia local para perfil/servicios, sin conexiones a Calendly antes del clic |
-| Presentación del contacto | Diseño compartido mediante `ContactPanel.vue`, conservando textos, accesos e IDs; build y revisión a cinco anchuras aprobados con agenda visible y oculta. El propietario confirmó la revisión local |
-| Visibilidad solo en México | Elección confirmada por el propietario; Edge Function con país de Netlify y fallback cerrado en otros entornos |
-| Configuración de la cuenta | Enlace recibido; evento de 30 minutos, horarios y anticipación documentados. Página pública y formulario revisados sin reserva; Notetaker y permisos de cuenta no confirmados. Detalle en [agenda](SCHEDULING.md#evento-recibido-y-configuración-local) |
-| Validación y despliegue de agenda | Unitarias, navegador, simulación de desarrollo y builds locales aprobados con Node 22.23.2; revisión pública del evento realizada, preview con Edge Function pendiente |
-| Migraciones mayores de módulos | Evaluadas como trabajo separado; no aplicadas |
-| SEO general | Acordado para la siguiente etapa: revisar metadatos por ruta y el canonical que `/services` hereda de la raíz; sin cambios aplicados en esta rama |
+| Agenda y diseño de contacto | Integrados y validados por el propietario; configuración, operación y límites en [SCHEDULING.md](SCHEDULING.md) |
+| SEO general | Aplazado por decisión del propietario tras sus mediciones de móvil/escritorio. La observación previa sobre el canonical de `/services` se conserva; no se aplicó una corrección |
+| Migraciones mayores de módulos | Opcionales, fuera de la actualización compatible; sin implementación seleccionada |
+| Analytics real | Sigue apagado por elección del propietario. La activación y sus pruebas reales están aplazadas |
 
-El propietario solicitó cerrar la revisión documental y preparar los commits. Los cambios siguen locales y sin staging; la entrega de agenda todavía no se ha integrado ni desplegado. Preparar la implementación y documentación en commits separados, manteniendo la validación del preview como paso posterior.
+Para una nueva medición, usar [PageSpeed Insights](https://pagespeed.web.dev/) con `https://chichohdz.com/` y `/services`. Los enlaces antiguos a un informe del dominio Netlify no son la referencia de validación actual. Las capturas históricas no representan resultados de cada publicación.
 
 ## Confirmaciones del propietario
 
@@ -38,26 +33,24 @@ El propietario solicitó cerrar la revisión documental y preparar los commits. 
 - GA4 sirve para aprender su integración y medir el alcance del portfolio. Los informes generales no identifican reclutadores.
 - La revisión de cuenta del 2026-11-24 ajustó conservación, uso compartido y medición; se eliminó una vinculación de Ads no utilizada. No se utilizan campañas.
 - Se reutilizan el nombre y los medios de contacto ya públicos. El domicilio completo permanece fuera de Git y puede configurarse mediante una variable pública de entorno.
-- El propietario creó las variables nuevas en Netlify, revisó el preview y publicó con Analytics apagado. Una activación posterior y la publicación de domicilio completo son decisiones futuras.
+- Analytics se publicó apagado y la dirección vacía fue la opción elegida. Su activación y la publicación de domicilio completo son decisiones futuras.
+- Calendly utiliza un evento individual de 30 minutos en español, con horarios y formulario documentados. Notetaker quedó desactivado según la confirmación del propietario; los demás permisos y plazos de cuenta no se deducen de esa confirmación.
 
-Codex no accedió a los paneles de Analytics o Netlify; el registro de cuenta identifica la procedencia de cada confirmación.
+Codex no accedió a los paneles de Analytics, Calendly o Netlify. El [registro de cuenta](../privacy/ACCOUNT-CHECKLIST.md) y el de [agenda](SCHEDULING.md#configuración-observada-y-confirmada) identifican cada procedencia.
 
-## Seguimiento
+## Seguimiento conservado
 
-| Tema | Estado |
+| Tema | Alcance |
 |---|---|
-| Red y cookies en producción con modo apagado | Pendiente de inspección independiente; el propietario confirmó publicación y presentación |
-| Producción del mantenimiento | Build iniciado según el propietario; comprobar su resultado antes de registrar la entrega como publicada |
-| Google tag real | Prueba aplazada por el propietario. Si decide activarlo, redesplegar y comprobar consentimiento, retirada y vistas por ruta |
+| Red y cookies del alojamiento real | No se realizó una inspección independiente posterior a la publicación; se conserva como límite de la evidencia, sin repetir como pendientes las revisiones del propietario |
+| Google tag real | Si el propietario decide activarlo, redesplegar y verificar consentimiento, retirada y vistas por ruta con proveedor real |
 | Domicilio | La opción C elegida muestra ubicación general y mantiene E1 abierto; la entrega técnica no acredita cumplimiento jurídico completo |
-| Logs de Netlify y contacto de la adenda | Información no aportada; no inventar plazos ni tratarla como fallo del repositorio |
-| Contexto global de Dev | Actualizar su mapa por separado en ese repositorio; el portfolio ya tiene AGENTS/CLAUDE/GEMINI |
-| Handoff temporal de privacidad | Conserva el historial de QA; el estado del proyecto se mantiene aquí y el plan en MAINTENANCE |
+| Datos de cuentas no aportados | Logs operativos de Netlify, contacto de la adenda de GA y otros permisos/conservación de Calendly: no inventar valores ni presentarlos como fallos del código |
+| Contexto global de Dev | Se mantiene por separado en ese repositorio; el portfolio ya tiene AGENTS/CLAUDE/GEMINI |
+| Handoff temporal de privacidad | Conserva el historial de QA; el estado actual se mantiene aquí y las decisiones operativas en sus documentos |
 
-El [flujo de despliegue](../deployment/README.md) sigue siendo rama de trabajo → `develop` → `master`. La URL permanente de develop no se ha habilitado según la última configuración aportada.
+## Fuentes y futuras entregas
 
-## Evidencia y mantenimiento del estado
+La [documentación de pruebas](../testing/README.md) distingue las ejecuciones de privacidad, mantenimiento y agenda, los scripts temporales y los límites de la etiqueta simulada. El [flujo de despliegue](../deployment/README.md) sigue siendo rama de trabajo → `develop` → `master`; GitHub recibe las ramas principales ya integradas. La URL permanente de develop no está habilitada según la última configuración aportada.
 
-La [documentación de pruebas](../testing/README.md) conserva por separado los resultados de la entrega de privacidad y la nueva validación del mantenimiento: lógica local y etiqueta simulada, sin certificar Google real. Se repitieron las regresiones de responsive, menú, CV, galerías y recursos con las dependencias actualizadas. El detalle de los avisos moderados restantes está en el plan; no presentar la auditoría como libre de avisos.
-
-Cuando se complete un paso del plan, actualizar su resultado allí y este resumen. Al integrar o publicar, sustituir los pasos pendientes por el resultado y su procedencia; no dejar como trabajo activo una rama ya entregada. Las versiones instaladas se consultan en el manifiesto/lockfile, no en este resumen.
+Las versiones se consultan en manifiesto/lockfile, no en este resumen. Actualizar el documento correspondiente cuando cambie un tema y conservar los resultados históricos con su fecha y procedencia; no convertir una confirmación de cuenta en una prueba técnica ni dejar como activa una rama funcional ya integrada.

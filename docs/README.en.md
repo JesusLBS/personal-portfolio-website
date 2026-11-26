@@ -92,7 +92,9 @@ netlify.toml      redirect from the previous hostname
 
 ## Check performance
 
-Run a fresh measurement for the current domain with [PageSpeed Insights](https://pagespeed.web.dev/). Files under `docs/screenshots/` are historical redesign references, not new measurements for every release.
+Open [PageSpeed Insights](https://pagespeed.web.dev/) and enter `https://chichohdz.com/` or `https://chichohdz.com/services` to generate a fresh mobile and desktop assessment. This link opens the tool without depending on a saved report or the previous Netlify hostname.
+
+Files under `docs/screenshots/` are historical redesign references, not new measurements for every release.
 
 ## Spanish Documentation
 

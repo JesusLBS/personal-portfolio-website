@@ -6,10 +6,10 @@ Actualizado: 2026-11-26. El estado resumido y la entrada para retomar trabajo es
 
 | Orden | Rama | Alcance y estado |
 |---|---|---|
-| Integrada | `fix/dependency-security` | Commits `75b93d1` y `7575e80`, PR #32 a `develop` y #33 a `master`. Preview validado por el propietario; build de producción iniciado, sin resultado final comunicado |
-| Actual | `feature/contact-scheduling` | Creada desde `develop` en `073fe9c`. Enlace y formulario público revisados; agenda y contacto compartido verificados técnicamente y validados en local por el propietario. Ajustes privados y preview pendientes. Detalle en [agenda](SCHEDULING.md) |
-| Posterior | `fix/seo-metadata` | Acordada la revisión de SEO después de agenda: metadatos propios de perfil/servicios, canonical de `/services` y auditoría con Lighthouse/PageSpeed. Todavía no implementada |
-| Según necesidad | `chore/nuxt-module-upgrades` | Propuesta: migraciones mayores de módulos con revisión de cambios y pruebas propias |
+| Integrada | `fix/dependency-security` | Commits `75b93d1` y `7575e80`, PR #32 a `develop` y #33 a `master`. Validación local y revisión de preview registradas; historial integrado en ambas ramas |
+| Integrada | `feature/contact-scheduling` | Commits `68f774e` y `df98feb`, PR #34 a `develop` y #35 a `master` (`6a93b9b`). El propietario confirmó revisión local, preview y promoción a producción; Notetaker desactivado. Detalle y límites en [agenda](SCHEDULING.md) |
+| Aplazada | `fix/seo-metadata` | El propietario decidió omitir esta fase tras sus mediciones de móvil/escritorio. La observación sobre el canonical de `/services` queda registrada; no se corrigió ni se usa la puntuación como prueba de esa corrección |
+| Opcional | `chore/nuxt-module-upgrades` | Migraciones mayores de módulos fuera de la actualización compatible; sin implementación seleccionada |
 
 Crear las ramas posteriores desde `develop` actualizado después de integrar el trabajo que corresponda. Los commits de cierre documental y de actualización de paquetes se realizaron por separado. El mapa global de Dev pertenece a otro repositorio y se actualiza fuera de esta entrega.
 
@@ -71,12 +71,12 @@ La actualización cambió la CLI de 3.35.2 a 4.1.0. La nueva CLI avisa si hereda
 
 El primer build local heredaba `DEBUG` y activaba la instrumentación de Nitro, que generó una referencia ausente a `vue/timing.js` y respuestas 500. Recompilar con `DEBUG=''` resolvió el fallo; las pruebas registradas corresponden al build sin esa instrumentación. No se añadió un workaround al código de la aplicación. Permanece una advertencia de `@nuxt/fonts` 0.14 sobre `addCustomTab` obsoleto; se revisará con la migración del módulo y no impidió compilar. La [guía de DevTools](https://nuxt.com/modules/devtools/module-migration#ndt_dep_0005) confirma que esa API conserva compatibilidad durante el ciclo v4.
 
-## Agenda de contacto: fase actual
+## Agenda de contacto: entrega integrada
 
-El propietario autorizó preparar «Agendar una conversación» en perfil y servicios y eligió mostrarla solo para México. La implementación usa un enlace opcional de Calendly y una decisión basada en el país proporcionado por Netlify. La configuración vacía conserva la función desactivada. Después creó su cuenta, compartió el enlace y se revisaron página, muestra de horarios y formulario públicos sin reservar. Los ajustes privados no se deducen de esa visita. El alcance, los límites y la lista de activación están en [SCHEDULING.md](SCHEDULING.md).
+«Agendar una conversación» quedó integrado en perfil y servicios con enlace opcional de Calendly y visibilidad basada en el país proporcionado por Netlify. El propietario confirmó las revisiones local y de preview, la promoción a producción y la desactivación de Notetaker. Se revisaron la página, una muestra de horarios y el formulario públicos sin reservar. Los demás ajustes privados no se deducen de esa visita. El alcance, las fuentes y la operación de futuras entregas están en [SCHEDULING.md](SCHEDULING.md).
 
-El [plan gratuito de Calendly](https://calendly.com/pricing) contempla un tipo de evento y un calendario. Su [API de reservas](https://developer.calendly.com/api-docs/overview/rate-limits) limita la creación de invitados en Free a cinco peticiones por usuario al día. El enlace externo es la propuesta inicial para reducir mantenimiento; la elección sigue abierta.
+Se eligió el enlace externo para este flujo, sin API de reservas ni calendario incrustado. El [plan gratuito de Calendly](https://calendly.com/pricing) consultado contempla un tipo de evento y un calendario; las características de la cuenta no se certifican mediante el código del portfolio.
 
 Netlify ofrece [país en el contexto de Edge Functions](https://docs.netlify.com/build/edge-functions/api/). Se eligió esa señal para mostrar el botón; otro país, una ubicación desconocida o un fallo lo mantienen oculto. La ubicación no garantiza idioma ni residencia y no restringe las reservas desde un enlace de Calendly compartido.
 
-Al implementar la agenda, revisar proveedor, finalidad de gestionar citas, datos realmente solicitados, aviso e inventario de privacidad. Un embed carga recursos externos y requiere comprobar su comportamiento; no asumir que el consentimiento de Analytics cubre ese servicio. La activación de Google tag real y la decisión del domicilio permanecen independientes de esta mejora.
+La entrega actualizó los avisos y el inventario para describir el proveedor, la finalidad de gestionar citas y los datos solicitados en el formulario revisado. Un futuro embed requeriría una evaluación propia; la elección de Analytics no autoriza otros servicios. La activación de Google tag real y la decisión del domicilio permanecen independientes de esta mejora.

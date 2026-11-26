@@ -1,6 +1,6 @@
 # Comprobaciones manuales de cuentas y producción
 
-Estado actualizado: 2026-11-25. El propietario revisó los paneles de GA4 y Netlify con Claude Code el 2026-11-24 y confirmó los ajustes de la tabla siguiente. Posteriormente creó las variables nuevas, revisó visualmente el preview y confirmó la publicación con Analytics en `false`. Codex recibió esos estados, sin acceso directo a cuentas ni a las capturas originales. La documentación oficial respalda el significado de las opciones; no prueba el estado de una cuenta. La inspección independiente de red y cookies del despliegue publicado sigue pendiente; las pruebas del tag activo fueron aplazadas por el propietario.
+Estado actualizado: 2026-11-26. El propietario revisó los paneles de GA4 y Netlify con Claude Code el 2026-11-24 y confirmó los ajustes de la tabla siguiente. Posteriormente creó las variables nuevas, revisó visualmente el preview y confirmó la publicación con Analytics en `false`. El 2026-11-26 también confirmó Notetaker desactivado en Calendly. Codex recibió esos estados, sin acceso directo a cuentas ni a las capturas originales. La documentación oficial respalda el significado de las opciones; no prueba el estado de una cuenta. La inspección independiente de red y cookies del despliegue publicado sigue pendiente; las pruebas del tag activo fueron aplazadas por el propietario.
 
 No copiar IDs de medición, IDs de visitantes, nombres privados de cuentas, credenciales ni capturas completas del panel. Bastan los estados y opciones descritos aquí. Las etiquetas del panel pueden variar: usar la búsqueda del administrador si no coincide un nombre.
 
@@ -33,6 +33,12 @@ El propietario informó la creación de las variables nuevas y después confirm�
 La revisión de cuenta anterior permanece válida como registro. La dirección vacía muestra la ubicación general y corresponde a la opción C, que mantiene incompleto el domicilio legal; no se cambia esta conclusión por apagar el servicio. Una activación posterior de GA y publicación de domicilio completo son posibilidades por decidir, no configuraciones ya aplicadas.
 
 Si se modifica la conservación en GA4, actualizar también el párrafo condicional de `privacidad.vue` y su fecha: hoy publica dos meses únicamente con el servicio activo.
+
+## Calendly: confirmación del propietario
+
+El 2026-11-26 el propietario confirmó expresamente que desactivó Notetaker. Se cierra la duda de la captura inicial que mostraba On. No se accedió directamente al panel ni se infieren otros permisos, funciones o plazos de conservación de la cuenta.
+
+El evento, los campos y horarios observados en la página pública, junto con las confirmaciones de preview y promoción a producción, están en [SCHEDULING.md](../project/SCHEDULING.md#configuración-observada-y-confirmada). Se revisó el formulario sin introducir datos ni confirmar una reserva; no se verificó mediante esa visita la generación de invitaciones o enlaces de videoconferencia.
 
 ## Referencia para revisiones futuras de GA4
 
