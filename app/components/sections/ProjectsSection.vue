@@ -139,7 +139,7 @@ const projects = [
 
                                 <div v-if="project.gallery.length > 1"
                                     class="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md border border-zinc-800 bg-zinc-950/90 px-2.5 py-1 font-mono text-[10px] text-zinc-400 shadow-xl">
-                                    <Icon name="ri:images-line" class="text-xs text-blue-400" />
+                                    <Icon name="ri:multi-image-line" class="text-xs text-blue-400" />
                                     {{ project.gallery.length }} capturas
                                 </div>
                             </div>
