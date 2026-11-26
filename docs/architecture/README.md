@@ -22,6 +22,7 @@ La aplicación usa Nuxt, Vue con componentes SFC y TypeScript, y Tailwind CSS. E
 - `app/components/sections/`: contenido del perfil técnico. Los arrays de experiencia, skills y proyectos se mantienen en sus respectivos componentes; no existe un CMS.
 - `app/components/services/`: contenido de la página de servicios.
 - `app/components/ui/`: contenedores y controles reutilizables, incluidos los del CV.
+- [`ContactPanel.vue`](../../app/components/ui/ContactPanel.vue): presentación compartida del contacto, basada en la tarjeta de servicios. Perfil y servicios conservan sus textos e IDs de sección; el perfil añade LinkedIn/GitHub y servicios sus detalles de atención. El panel monta correo, WhatsApp, agenda opcional y aviso breve una sola vez.
 - [`useNavigationState.ts`](../../app/composables/useNavigationState.ts): modo de navegación, menú móvil y observación de secciones.
 
 El enlace «Ver Perfil Técnico» de servicios navega a `/?mode=client`. Esa consulta conserva acciones de contacto orientadas a clientes en la cabecera. Las pruebas deben cubrir tanto esa entrada como `/` sin consulta.
@@ -51,6 +52,9 @@ La visualización del PDF depende del soporte del navegador. Comprobar móvil, t
 | `@fancyapps/ui` | Galerías de imágenes, configuradas en [`fancybox.client.ts`](../../app/plugins/fancybox.client.ts) |
 | Sitemap y robots | Generación y configuración mediante módulos de Nuxt |
 | Correo y WhatsApp | Enlaces externos de contacto; no hay un formulario propio ni un chat de WhatsApp incrustado |
+| Calendly | Enlace opcional compartido por perfil y servicios, visible tras confirmar México; sin iframe ni API de reservas. Configuración y límites en [agenda](../project/SCHEDULING.md) |
+
+`/api/scheduling-country` es una comprobación técnica de visibilidad, no una API de negocio. Netlify la atiende mediante una Edge Function independiente, declarada en `netlify/edge-functions/scheduling-country.js`. El fallback de Nitro permite simular el país solo durante desarrollo y devuelve `false` en otros servidores de producción. La UI consulta el endpoint solo con URL configurada y no guarda país en almacenamiento del navegador. Los textos de agenda aparecen en las páginas legales cuando hay un enlace válido, independientemente del país del lector.
 
 ## Despliegue
 

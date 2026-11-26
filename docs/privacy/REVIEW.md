@@ -46,6 +46,14 @@ El acuerdo público [Self-Serve de Netlify, sección 6.5](https://www.netlify.co
 
 La atención de solicitudes exige una operación real del correo, verificación proporcional de identidad y gestión de datos históricos. El [procedimiento interno de GA4](ACCOUNT-CHECKLIST.md#atención-operativa-de-solicitudes-sobre-datos-de-ga4) describe localización, eliminación y limitaciones sin exigir cookies como requisito general; el código no automatiza ese trabajo.
 
+## Ampliación de agenda — 2026-11-26
+
+La preparación de Calendly añade una finalidad de organizar reuniones y un uso transitorio del país aproximado de Netlify para mostrar la acción solo para México. Los avisos informan de ambos cuando existe un enlace válido. La respuesta al navegador contiene solo elegibilidad, sin país, coordenadas ni IP; no se añade persistencia al navegador. Esto minimiza el dato usado por la aplicación, sin afirmar que el alojamiento deje de procesar la conexión. Véanse el [contexto geo de Netlify](https://docs.netlify.com/build/edge-functions/api/#geo) y el contenido informado en el aviso conforme a los artículos 14–16 de la [ley consultada](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf).
+
+El [aviso de Calendly](https://calendly.com/legal/privacy-notice) distingue la gestión de reservas por cuenta de sus clientes de los usos propios de su web. Se revisó el formulario público: nombre y correo obligatorios y pregunta abierta opcional, sin enviar una reserva. La configuración privada, Notetaker, permisos y conservación no se deducen de esa página. El [registro de agenda](../project/SCHEDULING.md#evento-recibido-y-configuración-local) identifica las confirmaciones pendientes antes de activar el enlace. No se presume que un enlace externo elimine las obligaciones del responsable ni se inventa un plazo de conservación del proveedor.
+
+La elección de Analytics no se amplía ni autoriza Calendly. El control por país solo decide mostrar el botón; no impide acceder al enlace compartido ni acredita idioma o residencia. Esta ampliación no cambia la limitación ya documentada del domicilio omitido ni certifica cumplimiento completo.
+
 ## Alcance internacional y evidencia
 
 El dominio .com no determina la ley aplicable. El propietario se dirige principalmente a México. La accesibilidad desde Europa no acredita por sí sola oferta dirigida a ese mercado; el seguimiento del comportamiento merece un análisis separado según finalidad. Referencia: [criterios territoriales del EDPB](https://www.edpb.europa.eu/system/files/documents/files/file1/edpb_guidelines_3_2018_territorial_scope_after_public_consultation_en_1.pdf). Reevaluar si cambian mercados, servicios o seguimiento.

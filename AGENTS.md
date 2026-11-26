@@ -19,6 +19,7 @@ Orden de lectura al comenzar:
 | Validación previa, previews y promoción | [`docs/deployment/README.md`](docs/deployment/README.md) |
 | Estado y próximos pasos | [`docs/project/STATUS.md`](docs/project/STATUS.md) |
 | Mantenimiento de dependencias y fases posteriores | [`docs/project/MAINTENANCE.md`](docs/project/MAINTENANCE.md) |
+| Agenda de contacto, país y activación | [`docs/project/SCHEDULING.md`](docs/project/SCHEDULING.md) |
 | Componentes, rutas, CV e integraciones | [`docs/architecture/README.md`](docs/architecture/README.md) |
 | Datos, proveedores, evidencia y decisiones de privacidad | [`docs/privacy/README.md`](docs/privacy/README.md) |
 | Comprobaciones manuales de cuentas | [`docs/privacy/ACCOUNT-CHECKLIST.md`](docs/privacy/ACCOUNT-CHECKLIST.md) |
@@ -77,6 +78,7 @@ Ejemplos de parejas: `feat`/`:sparkles:`, `fix`/`:bug:`, `docs`/`:memo:`, `chore
 - Aplicación: ejecutar `npm run build` y comprobar en navegador los comportamientos afectados. `package.json` no define scripts de lint ni typecheck independiente; no afirmar que se ejecutaron.
 - Privacidad: ejecutar `npm run test:privacy` para la política de preferencias. Este script utiliza el test runner de Node y requiere una versión con soporte para `--experimental-strip-types`.
 - Integración de privacidad: seguir [`docs/testing/README.md`](docs/testing/README.md) para ejecutar `npm run test:privacy:browser` contra un build local de producción con etiqueta simulada. Chrome debe estar instalado. Los artefactos son temporales por defecto; actualizar `docs/privacy/evidence/` solo deliberadamente.
+- Agenda: ejecutar `npm run test:scheduling` cuando cambien la validación de URL o la decisión por país. La simulación local no acredita la Edge Function desplegada; seguir [SCHEDULING.md](docs/project/SCHEDULING.md) para el preview y la activación del enlace.
 - Añadir pruebas para reglas, límites o fallos relevantes. No duplicar marcado estático ni instalar otro runner sin necesidad. Documentar comandos y límites al incorporar pruebas.
 - Responsive: cubrir 320, 390, 768, 1024 y 1440 px, entrada directa, recarga y navegación desde `/services` a `/?mode=client`. Comprobar desbordamiento horizontal y apertura/cierre del menú.
 - CV: comprobar los cinco accesos, foco, teclado, cierre del modal, descarga del archivo actual y apertura en otra pestaña. El PDF solo debe cargarse al solicitar su previsualización.
