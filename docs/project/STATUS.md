@@ -11,22 +11,26 @@ Actualizado: 2026-11-26.
 - Avisos de privacidad/cookies, preferencias y control opcional de Analytics integrados. Las notas N2/N3 quedaron corregidas antes de los commits.
 - La entrega de `feature/privacy-and-ai-context` está confirmada en Git: implementación `62289d2`, documentación `e8c07cc` y merges a `develop` y `master`.
 - El propietario confirmó la revisión visual del Deploy Preview y el despliegue a producción con Analytics en `false`. Eligió mantener vacía la variable de domicilio. La activación del tag se pospuso.
+- El mantenimiento de dependencias quedó integrado: commits `75b93d1` y `7575e80`, PR #32 a `develop` y PR #33 a `master`. El propietario confirmó la revisión del preview y el inicio del build de producción; todavía no comunicó su resultado final. El historial local ya incluye ambos merges.
 
 La confirmación visual y el despliegue aportados por el propietario no acreditan una inspección independiente de red, cookies o proveedor real. El [registro de cuenta](../privacy/ACCOUNT-CHECKLIST.md) conserva la procedencia y los límites de las comprobaciones.
 
 ## Trabajo activo
 
-Mantenimiento de dependencias en `fix/dependency-security`, creada desde `develop` en `b8be0e9`. El [plan de mantenimiento](MAINTENANCE.md) conserva alcance, diagnóstico, pasos y criterios de cierre. Al retomar el trabajo, comprobar primero la rama y el estado real de Git.
+Agenda de contacto en `feature/contact-scheduling`, creada desde `develop` actualizado en `073fe9c`. La [guía de agenda](SCHEDULING.md) mantiene decisiones, configuración y activación. El [plan de mantenimiento](MAINTENANCE.md) conserva la entrega anterior y las migraciones posteriores. Al retomar el trabajo, comprobar primero la rama y el estado real de Git.
 
 | Bloque | Estado |
 |---|---|
-| Crear rama y cerrar el estado documental de la entrega anterior | Realizado; cambios documentales pendientes de commit |
-| Diagnóstico de dependencias y versiones | Repetido después de actualizar y reinstalar; resultados y límites en el plan |
-| Actualizar dependencias compatibles y resolver avisos | Aplicado en manifiesto/lockfile, con versión de Node declarada; sin avisos altos ni críticos en la auditoría registrada |
-| Validar actualización | Instalación limpia, unitarias, builds y regresiones locales aprobados con Node 22.23.2, fijado en `.nvmrc` para coincidir con el propietario; arranque normal con `npm run dev` y cierre verificados en terminal PTY; evidencia nueva en testing |
-| Revisar preview de mantenimiento | Pendiente de commits, PR y despliegue; el preview de privacidad anterior no lo sustituye |
-| Agenda de contacto | Evaluada; implementación posterior en su propia rama |
+| Mantenimiento anterior | Commits y merges a ambas ramas confirmados en Git; preview validado por el propietario; resultado final de producción no comunicado |
+| Enlace compartido de agenda | Preparado con URL vacía por defecto; enlace público recibido y probado en copia local para perfil/servicios, sin conexiones a Calendly antes del clic |
+| Presentación del contacto | Diseño compartido mediante `ContactPanel.vue`, conservando textos, accesos e IDs; build y revisión a cinco anchuras aprobados con agenda visible y oculta. El propietario confirmó la revisión local |
+| Visibilidad solo en México | Elección confirmada por el propietario; Edge Function con país de Netlify y fallback cerrado en otros entornos |
+| Configuración de la cuenta | Enlace recibido; evento de 30 minutos, horarios y anticipación documentados. Página pública y formulario revisados sin reserva; Notetaker y permisos de cuenta no confirmados. Detalle en [agenda](SCHEDULING.md#evento-recibido-y-configuración-local) |
+| Validación y despliegue de agenda | Unitarias, navegador, simulación de desarrollo y builds locales aprobados con Node 22.23.2; revisión pública del evento realizada, preview con Edge Function pendiente |
 | Migraciones mayores de módulos | Evaluadas como trabajo separado; no aplicadas |
+| SEO general | Acordado para la siguiente etapa: revisar metadatos por ruta y el canonical que `/services` hereda de la raíz; sin cambios aplicados en esta rama |
+
+El propietario solicitó cerrar la revisión documental y preparar los commits. Los cambios siguen locales y sin staging; la entrega de agenda todavía no se ha integrado ni desplegado. Preparar la implementación y documentación en commits separados, manteniendo la validación del preview como paso posterior.
 
 ## Confirmaciones del propietario
 
@@ -43,6 +47,7 @@ Codex no accedió a los paneles de Analytics o Netlify; el registro de cuenta id
 | Tema | Estado |
 |---|---|
 | Red y cookies en producción con modo apagado | Pendiente de inspección independiente; el propietario confirmó publicación y presentación |
+| Producción del mantenimiento | Build iniciado según el propietario; comprobar su resultado antes de registrar la entrega como publicada |
 | Google tag real | Prueba aplazada por el propietario. Si decide activarlo, redesplegar y comprobar consentimiento, retirada y vistas por ruta |
 | Domicilio | La opción C elegida muestra ubicación general y mantiene E1 abierto; la entrega técnica no acredita cumplimiento jurídico completo |
 | Logs de Netlify y contacto de la adenda | Información no aportada; no inventar plazos ni tratarla como fallo del repositorio |

@@ -93,7 +93,7 @@ La primera ejecución del 2026-11-25 utilizó Node 26.10.0 y aprobó 314 comprob
 
 Son 318 comprobaciones de navegador acumuladas entre escenarios en la ejecución final. Las primeras cuatro ejecuciones usan el runner versionado. Las dos últimas utilizaron scripts temporales para comprobar carga directa y navegación desde servicios a `/?mode=client` en las cinco anchuras, menú, los cinco accesos al CV, foco, cierre, descarga efectiva y apertura en otra pestaña, imágenes renderizadas, apertura/cierre de galerías y respuestas de robots/sitemap. Las cuatro comprobaciones añadidas en la ejecución final verifican el icono de galería en inicio y servicios a 320 y 1440 px. Esos scripts adicionales no forman parte de `test:privacy:browser`; sus resultados no amplían automáticamente el alcance del runner versionado.
 
-Los resultados de esta ejecución quedaron en artefactos temporales; no se regeneraron las capturas ni los JSON históricos de `docs/privacy/evidence/`. El tag se sustituyó por un fixture, con dirección e ID ficticios; Google real, Safari/iOS y el alojamiento real siguen fuera de esta validación. El preview de la rama de mantenimiento está pendiente.
+Los resultados de esta ejecución quedaron en artefactos temporales; no se regeneraron las capturas ni los JSON históricos de `docs/privacy/evidence/`. El tag se sustituyó por un fixture, con dirección e ID ficticios; Google real, Safari/iOS y el alojamiento real siguen fuera de esta validación. El propietario confirmó después la revisión del preview de mantenimiento y el inicio del build de producción; su resultado final no se ha comunicado.
 
 Los builds registrados se ejecutaron con `DEBUG=''`. Un `DEBUG` heredado activaba la instrumentación de Nitro y generaba un import ausente de `timing.js` en la salida de Vue, causando un 500 aunque compilara. Se confirmó la causa con el hook de error del servidor y se recompiló sin ese flag. No se modificó la aplicación para ocultar el error. La prueba temporal de navegación espera la finalización de la transición del menú antes de exigir su ausencia en el DOM.
 
@@ -102,6 +102,38 @@ Los builds registrados se ejecutaron con `DEBUG=''`. Un `DEBUG` heredado activab
 El 2026-11-26 se verificó `npm run dev` con `NODE_ENV=local` heredado. La primera comprobación capturaba stdout y validaba el aviso, pero no la presentación de una terminal interactiva. Después se probó en una PTY con tamaño de terminal real y `NUXT_TUI=1` heredado: el script establece `NODE_ENV=development` y pasa `--no-tui`, mostrando logs tradicionales. La comprobación final utilizó Node 22.23.2. Inicio y servicios respondieron con HTTP 200, sin la advertencia de NODE_ENV, el panel TUI, el volcado `ObjectRefImpl` ni avisos de iconos ausentes. El cierre mediante SIGINT terminó con código 130 y no reprodujo «Something went wrong». Se utilizó una copia temporal del código y las dependencias instaladas, sin archivos locales de entorno, con Analytics apagado y un puerto separado. El proceso de prueba se cerró al terminar, sin intervenir el servidor del usuario.
 
 Esta comprobación corresponde al servidor de desarrollo; no sustituye la matriz de privacidad contra un build de producción. La ejecución final del mantenimiento también comprobó los builds y regresiones descritos arriba.
+
+## Agenda de contacto
+
+```zsh
+npm run test:scheduling
+```
+
+[`tests/scheduling.test.mjs`](../../tests/scheduling.test.mjs) cubre el rechazo de enlaces inseguros, México y países no elegibles, contextos desconocidos, minimización de la respuesta y aislamiento de caché. Importa directamente la Edge Function con un contexto simulado: no acredita geolocalización ni despliegue reales de Netlify.
+
+La [guía de agenda](../project/SCHEDULING.md) describe cómo probar con `npm run dev`, URL de demostración y `NUXT_SCHEDULING_TEST_COUNTRY`. Para un build de producción fuera de Netlify, el fallback de Nitro debe devolver `allowed: false` incluso si esa variable contiene `MX`. Las pruebas de navegador pueden sustituir solo la respuesta del endpoint local por escenarios México, otro país, desconocido o error para comprobar presentación y fallos sin enviar datos a Calendly.
+
+Ejecución del 2026-11-26 con Node 22.23.2: aprobaron las 6 unitarias de agenda y las 15 de privacidad, los builds node-server y Netlify y la simulación del endpoint con `npm run dev` para `MX` y `US`. El fallback de producción rechazó la simulación `MX` y la respuesta SSR mantuvo oculta la agenda antes de decidir el país.
+
+| Navegador local | Comprobaciones aprobadas |
+|---|---|
+| URL vacía: sin agenda, aviso específico ni consulta de país | 8 |
+| URL inválida: mismo comportamiento cerrado | 8 |
+| URL ficticia configurada: países, errores, responsive y enlaces | 64 |
+| Regresión de privacidad apagada, con URL ficticia | 56 |
+| Regresión de privacidad activa, con URL e ID ficticios | 87 |
+
+Son 223 comprobaciones acumuladas, no casos independientes. Las 80 de agenda utilizaron un script temporal con respuestas controladas del endpoint. Cubrieron perfil/servicios a 320, 390, 768, 1024 y 1440 px, México, otro país, desconocido, respuesta malformada y fallo HTTP, medios alternativos de contacto y los avisos en ambas páginas legales. Se revisaron capturas de escritorio y móvil y ausencia de solicitudes de Calendly. El teclado abrió una pestaña con un destino local sustituido para evitar contactar al proveedor; el destino público configurado se verificó en el enlace. Las 143 de privacidad usan el runner versionado y etiqueta simulada, sin demostrar Google real.
+
+Los informes y capturas de esta ejecución son temporales; no se reemplazó la evidencia histórica. El build Nuxt no ejecuta el empaquetado de la Edge Function que realiza Netlify al desplegar.
+
+Después de recibir el enlace público el 2026-11-26, se revisaron en Chrome la página, una muestra de horarios de viernes/lunes y los campos del formulario. Nombre y correo eran obligatorios y la pregunta en español era opcional; no se introdujeron datos ni se confirmó una reserva. Las [observaciones de cuenta](../project/SCHEDULING.md#configuración-observada-y-confirmada) distinguen la página pública de los ajustes privados que no acredita.
+
+Una copia temporal del portfolio con `npm run dev`, Node 22.23.2, URL real y simulación `MX` aprobó otras 6 comprobaciones: enlace y anchura en perfil/servicios a 390 y 1440 px, ausencia de solicitudes de Calendly antes del clic y ausencia de excepciones no capturadas. Se utilizó el endpoint real de desarrollo, sin sustituir su respuesta. No se leyó ni modificó el archivo de entorno local del propietario.
+
+Queda comprobar la Edge Function en Netlify y confirmar Notetaker antes de activar el enlace en Production. No se inspeccionó la cuenta privada ni se verificó el envío de invitaciones o la generación del enlace de conferencia mediante una reserva.
+
+Tras compartir el diseño de contacto con `ContactPanel.vue`, el 2026-11-26 aprobó un nuevo build Netlify con Node 22.23.2. La revisión de presentación utilizó copias temporales de desarrollo y el enlace recibido: 44 comprobaciones con país simulado `MX` y 44 con `US`, cubriendo perfil/servicios a 320, 390, 768, 1024 y 1440 px. Se verificaron anchuras de enlaces, IDs de sección, contenidos específicos por página, contactos y aviso presentes, iconos resueltos, agenda visible/oculta y ausencia de conexiones a Calendly o excepciones no capturadas. Se revisaron capturas de escritorio y móvil. Estas 88 comprobaciones corresponden a un script temporal de presentación; no se añadieron unitarias de marcado ni se repitió la suite de consentimiento por este ajuste visual.
 
 ## Capturas y límites
 
