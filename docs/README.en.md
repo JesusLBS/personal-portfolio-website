@@ -38,6 +38,7 @@ The previous Netlify hostname redirects to this domain through `netlify.toml`.
 |---|---|
 | [AGENTS.md](../AGENTS.md) | Shared instructions for AI assistants, workflow, and validation |
 | [Status](./project/STATUS.md) | Delivered work, active scope, and pending items |
+| [Maintenance](./project/MAINTENANCE.md) | Dependency maintenance, baseline findings, and upcoming work by branch |
 | [Architecture](./architecture/README.md) | Routes, components, CV, modules, and hosting |
 | [Deployment](./deployment/README.md) | Review before release, previews, and production promotion |
 | [Privacy inventory](./privacy/README.md) | Technical inventory and implemented controls |
@@ -100,7 +101,7 @@ The Spanish version of this documentation is available in:
 
 ## Local Development
 
-Use a Node.js version compatible with the project's Nuxt dependencies and npm. The repository does not currently pin Node through `.nvmrc` or `engines`; verify compatibility before installation. See the [official Nuxt prerequisites](https://nuxt.com/docs/4.x/getting-started/installation).
+Use the Node.js version specified in [`.nvmrc`](../.nvmrc). `package.json` declares the range compatible with Nuxt; with nvm, run `nvm install` and `nvm use` before installing dependencies. See the [official Nuxt prerequisites](https://nuxt.com/docs/4.x/getting-started/installation).
 
 This example clones the public repository. The regular contribution workflow uses a checkout with the Bitbucket and GitHub remotes described below.
 
@@ -111,7 +112,7 @@ npm ci
 npm run dev
 ```
 
-The development URL is normally `http://localhost:3000`. Run project commands from the repository root.
+The development URL is normally `http://localhost:3000`. Run project commands from the repository root. `npm run dev` sets `NODE_ENV=development` internally and disables the TUI panel to stream traditional logs, without command prefixes or extra arguments. The process stays open while serving the app. After changing the npm script, stop the previous process with Ctrl+C and run the command again.
 
 ### Analytics Configuration
 

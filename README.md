@@ -38,6 +38,7 @@ El dominio anterior de Netlify redirige al dominio actual mediante `netlify.toml
 |---|---|
 | [AGENTS.md](./AGENTS.md) | Entrada común para asistentes: fuentes de verdad, flujo de trabajo y validación |
 | [Estado](./docs/project/STATUS.md) | Trabajo entregado, tarea activa y pendientes |
+| [Mantenimiento](./docs/project/MAINTENANCE.md) | Plan de dependencias, diagnóstico y próximas mejoras por rama |
 | [Arquitectura](./docs/architecture/README.md) | Rutas, componentes, CV, módulos y alojamiento |
 | [Despliegue](./docs/deployment/README.md) | Revisión previa, previews y promoción a producción |
 | [Privacidad](./docs/privacy/README.md) | Inventario técnico y controles implementados |
@@ -102,7 +103,7 @@ La documentación en inglés se encuentra en:
 
 ## Desarrollo local
 
-Se necesita una versión de Node.js compatible con las dependencias de Nuxt y npm. El repositorio todavía no fija Node mediante `.nvmrc` o `engines`; verificar compatibilidad antes de instalar. [Requisitos oficiales de Nuxt](https://nuxt.com/docs/4.x/getting-started/installation).
+Utilizar la versión de Node.js indicada en [`.nvmrc`](./.nvmrc). `package.json` declara el rango compatible con Nuxt; con nvm, `nvm install` y `nvm use` preparan la versión elegida antes de instalar dependencias. [Requisitos oficiales de Nuxt](https://nuxt.com/docs/4.x/getting-started/installation).
 
 El siguiente ejemplo clona la copia pública de consulta. Para contribuir al flujo habitual de PRs se usa el checkout con los remotos de Bitbucket y GitHub descritos más abajo.
 
@@ -113,7 +114,7 @@ npm ci
 npm run dev
 ```
 
-La aplicación se sirve normalmente en `http://localhost:3000`. Ejecutar los comandos desde la raíz de este repositorio.
+La aplicación se sirve normalmente en `http://localhost:3000`. Ejecutar los comandos desde la raíz de este repositorio. `npm run dev` fija internamente `NODE_ENV=development` y desactiva el panel TUI para mostrar logs tradicionales; no requiere prefijos ni argumentos adicionales. El proceso permanece abierto mientras sirve la web. Si cambia el script npm, detener el proceso anterior con Ctrl+C y volver a ejecutar el comando.
 
 ### Configuración de Analytics
 
