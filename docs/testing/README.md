@@ -23,7 +23,7 @@ El runner acepta `--mode on`, `off` o `ui-only`, y `--address location` o `examp
 Desde la raíz del repo, compilar y arrancar en una terminal:
 
 ```zsh
-NUXT_PUBLIC_ANALYTICS_ENABLED=false NUXT_PUBLIC_PRIVACY_ADDRESS='' NUXT_PUBLIC_GTAG_ID=G-TEST123456 npm run build -- --preset=node-server
+DEBUG='' NUXT_PUBLIC_ANALYTICS_ENABLED=false NUXT_PUBLIC_PRIVACY_ADDRESS='' NUXT_PUBLIC_GTAG_ID=G-TEST123456 npm run build -- --preset=node-server
 HOST=127.0.0.1 PORT=3108 NUXT_PUBLIC_ANALYTICS_ENABLED=false NUXT_PUBLIC_PRIVACY_ADDRESS='' NUXT_PUBLIC_GTAG_ID=G-TEST123456 node .output/server/index.mjs
 ```
 
@@ -42,7 +42,7 @@ Para probar dirección configurada, utilizar en build y servidor exclusivamente 
 Detener el servidor antes de recompilar; el build reemplaza sus artefactos:
 
 ```zsh
-NUXT_PUBLIC_ANALYTICS_ENABLED=true NUXT_PUBLIC_PRIVACY_ADDRESS='Calle Ejemplo 123, Colonia Prueba, C. P. 00000' NUXT_PUBLIC_GTAG_ID=G-TEST123456 npm run build -- --preset=node-server
+DEBUG='' NUXT_PUBLIC_ANALYTICS_ENABLED=true NUXT_PUBLIC_PRIVACY_ADDRESS='Calle Ejemplo 123, Colonia Prueba, C. P. 00000' NUXT_PUBLIC_GTAG_ID=G-TEST123456 npm run build -- --preset=node-server
 HOST=127.0.0.1 PORT=3108 NUXT_PUBLIC_ANALYTICS_ENABLED=true NUXT_PUBLIC_PRIVACY_ADDRESS='Calle Ejemplo 123, Colonia Prueba, C. P. 00000' NUXT_PUBLIC_GTAG_ID=G-TEST123456 node .output/server/index.mjs
 ```
 
@@ -77,6 +77,31 @@ Fecha: 2026-11-24. Pasaron las unitarias, los builds node-server de ambos modos 
 | UI activa, sin ID, ubicación general | 14 | [ui-only/location](../privacy/evidence/browser-preview-location.json) |
 
 Son 213 comprobaciones acumuladas de escenarios, no 213 casos independientes. Los cambios de variables no incrementan la versión de consentimiento: el modo apagado conserva la preferencia sin leerla; al reactivar, la lógica vigente puede recuperar una aceptación válida. Esta transición se sustenta en esos escenarios y las reglas existentes, no en una prueba contra redespliegues de Netlify reales.
+
+## Validación del mantenimiento de dependencias
+
+La primera ejecución del 2026-11-25 utilizó Node 26.10.0 y aprobó 314 comprobaciones de navegador. La validación final del 2026-11-26 se repitió con Node 22.23.2 y npm 10.9.8 para coincidir con el entorno del propietario y el valor actual de `.nvmrc`. Aprobaron la instalación limpia con `npm ci`, las 15 pruebas unitarias y los builds node-server y Netlify. La matriz usa un build de producción node-server con overrides de runtime por escenario. La revisión de seguridad y sus avisos restantes se registran en [MAINTENANCE](../project/MAINTENANCE.md#resultado-de-la-actualización).
+
+| Escenario ejecutado | Comprobaciones aprobadas |
+|---|---|
+| Apagado, ubicación general | 56 |
+| Apagado, dirección ficticia | 56 |
+| Activo, ID y dirección ficticios | 87 |
+| UI activa, sin ID, ubicación general | 14 |
+| Regresiones de aplicación con Analytics apagado | 99 |
+| CV desde el menú móvil, teclado y archivo PDF | 6 |
+
+Son 318 comprobaciones de navegador acumuladas entre escenarios en la ejecución final. Las primeras cuatro ejecuciones usan el runner versionado. Las dos últimas utilizaron scripts temporales para comprobar carga directa y navegación desde servicios a `/?mode=client` en las cinco anchuras, menú, los cinco accesos al CV, foco, cierre, descarga efectiva y apertura en otra pestaña, imágenes renderizadas, apertura/cierre de galerías y respuestas de robots/sitemap. Las cuatro comprobaciones añadidas en la ejecución final verifican el icono de galería en inicio y servicios a 320 y 1440 px. Esos scripts adicionales no forman parte de `test:privacy:browser`; sus resultados no amplían automáticamente el alcance del runner versionado.
+
+Los resultados de esta ejecución quedaron en artefactos temporales; no se regeneraron las capturas ni los JSON históricos de `docs/privacy/evidence/`. El tag se sustituyó por un fixture, con dirección e ID ficticios; Google real, Safari/iOS y el alojamiento real siguen fuera de esta validación. El preview de la rama de mantenimiento está pendiente.
+
+Los builds registrados se ejecutaron con `DEBUG=''`. Un `DEBUG` heredado activaba la instrumentación de Nitro y generaba un import ausente de `timing.js` en la salida de Vue, causando un 500 aunque compilara. Se confirmó la causa con el hook de error del servidor y se recompiló sin ese flag. No se modificó la aplicación para ocultar el error. La prueba temporal de navegación espera la finalización de la transición del menú antes de exigir su ausencia en el DOM.
+
+## Arranque habitual de desarrollo
+
+El 2026-11-26 se verificó `npm run dev` con `NODE_ENV=local` heredado. La primera comprobación capturaba stdout y validaba el aviso, pero no la presentación de una terminal interactiva. Después se probó en una PTY con tamaño de terminal real y `NUXT_TUI=1` heredado: el script establece `NODE_ENV=development` y pasa `--no-tui`, mostrando logs tradicionales. La comprobación final utilizó Node 22.23.2. Inicio y servicios respondieron con HTTP 200, sin la advertencia de NODE_ENV, el panel TUI, el volcado `ObjectRefImpl` ni avisos de iconos ausentes. El cierre mediante SIGINT terminó con código 130 y no reprodujo «Something went wrong». Se utilizó una copia temporal del código y las dependencias instaladas, sin archivos locales de entorno, con Analytics apagado y un puerto separado. El proceso de prueba se cerró al terminar, sin intervenir el servidor del usuario.
+
+Esta comprobación corresponde al servidor de desarrollo; no sustituye la matriz de privacidad contra un build de producción. La ejecución final del mantenimiento también comprobó los builds y regresiones descritos arriba.
 
 ## Capturas y límites
 
