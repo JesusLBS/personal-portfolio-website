@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PrivacyPage from '~/components/privacy/PrivacyPage.vue';
 const { analyticsEnabled, privacyContact } = usePrivacySettings();
+const { calendlyUrl } = useScheduling();
 
 const { openPreferences } = usePrivacyConsent();
 useSeoMeta({ title: 'Cookies y preferencias | Jesus Chicho Hernández', description: () => analyticsEnabled.value ? 'Cómo se guarda tu elección de privacidad y cuándo se utiliza Google Analytics en este portfolio.' : 'Información sobre cookies y servicios externos de este portfolio, sin analítica activa.' });
@@ -51,5 +52,10 @@ useHead({ link: [{ rel: 'canonical', href: 'https://chichohdz.com/cookies' }] })
                 <p>Consulta el <NuxtLink to="/privacidad">aviso de privacidad integral</NuxtLink> para conocer el tratamiento de solicitudes profesionales y los datos técnicos del alojamiento.</p>
             </section>
         </template>
+        <section v-if="calendlyUrl" data-scheduling-notice>
+            <h2>Agenda externa</h2>
+            <p>El botón de agenda abre Calendly en otra pestaña. El portfolio no carga scripts, formularios ni cookies de Calendly; ese servicio aplica sus propias preferencias cuando lo visitas. La comprobación de disponibilidad por país se realiza con Netlify y no se guarda en cookies ni almacenamiento local.</p>
+            <p>Consulta la <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">información de privacidad de Calendly</a> antes de reservar. Las preferencias de Analytics de este sitio no se trasladan a esa plataforma.</p>
+        </section>
     </PrivacyPage>
 </template>

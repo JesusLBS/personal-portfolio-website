@@ -1,7 +1,7 @@
 export const privacyContact = {
     name: 'Jesus Chicho Hernández',
     email: 'chichohdzjesus@gmail.com',
-    updatedAt: '24 de noviembre de 2026',
+    updatedAt: '26 de noviembre de 2026',
 };
 
 export const PRIVACY_LOCATION = 'Huixquilucan, Estado de México, México';

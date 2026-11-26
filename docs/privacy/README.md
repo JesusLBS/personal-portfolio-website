@@ -18,11 +18,15 @@ El nombre y los medios de contacto proceden del contenido público existente. El
 | Netlify | Entrega de páginas, recursos y funciones de Nuxt/Nitro | Alojamiento en plan Free, sin Netlify Analytics; métricas de funciones declaradas por el propietario. Sin plazo confirmado de logs operativos |
 | Correo | Información que una persona decida enviar al abrir el enlace de contacto | Responder solicitudes profesionales; sin formulario de captura propio en este repositorio |
 | WhatsApp | Interacción en un servicio externo cuando el visitante decide abrir el enlace | Contacto para servicios; no se identificó un chat incrustado en el sitio |
+| Calendly | Enlace opcional; nombre/correo obligatorios y pregunta abierta opcional en el formulario público revisado | Organizar una conversación de 30 minutos. Enlace recibido; URL de producción todavía sin configurar. No se carga su formulario, scripts ni cookies desde el portfolio |
+| País para la agenda | País aproximado proporcionado por Netlify; la respuesta al navegador contiene solo un booleano | Mostrar la agenda solo para México. Consulta del mismo sitio, sin persistir el país en cookies/localStorage ni imprimirlo en logs de la aplicación; no excluye logs propios del alojamiento |
 | CV | Datos profesionales y de contacto que el propietario publica deliberadamente | Consulta, descarga y previsualización de un PDF del mismo sitio |
 | Galerías | Capturas y material de proyectos con datos ficticios, según confirmación del propietario | Demostración de funcionalidades |
 | Iconos, fuentes e imágenes | Recursos visuales gestionados por módulos de Nuxt | Iconos con fallback solo de servidor; el navegador usa el endpoint local. Verificar fuentes e imágenes en el build y la red de cada entorno |
 
 No se encontraron formularios propios, cuentas de usuario ni una base de datos de visitantes en el código de esta revisión. Esto no implica ausencia de tratamiento de datos por analítica, alojamiento o contacto externo.
+
+La preparación de agenda del 2026-11-26 añade `NUXT_PUBLIC_CALENDLY_URL`, vacía por defecto, y un filtro de visibilidad con el país de Netlify. Sin URL válida no se consulta el país ni se muestra contenido de Calendly. La simulación privada `NUXT_SCHEDULING_TEST_COUNTRY` solo funciona en desarrollo. Se recibieron el enlace y las confirmaciones del propietario y se revisó el formulario público sin reservar. Notetaker, permisos y conservación de cuenta siguen sin confirmarse; el [registro de agenda](../project/SCHEDULING.md#configuración-observada-y-confirmada) distingue cada procedencia. Esta integración no amplía el consentimiento de GA ni activa una etiqueta.
 
 ## Evidencia inicial de producción — antes de estos cambios
 

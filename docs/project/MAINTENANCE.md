@@ -6,11 +6,12 @@ Actualizado: 2026-11-26. El estado resumido y la entrada para retomar trabajo es
 
 | Orden | Rama | Alcance y estado |
 |---|---|---|
-| Actual | `fix/dependency-security` | Creada desde `develop` en `b8be0e9`. Documentación y actualización compatible aplicadas y validadas localmente; pendientes de commit y preview |
-| Posterior | `feature/contact-scheduling` | Propuesta: agenda de contacto, inicialmente mediante enlace externo; proveedor y configuración por confirmar |
+| Integrada | `fix/dependency-security` | Commits `75b93d1` y `7575e80`, PR #32 a `develop` y #33 a `master`. Preview validado por el propietario; build de producción iniciado, sin resultado final comunicado |
+| Actual | `feature/contact-scheduling` | Creada desde `develop` en `073fe9c`. Enlace y formulario público revisados; agenda y contacto compartido verificados técnicamente y validados en local por el propietario. Ajustes privados y preview pendientes. Detalle en [agenda](SCHEDULING.md) |
+| Posterior | `fix/seo-metadata` | Acordada la revisión de SEO después de agenda: metadatos propios de perfil/servicios, canonical de `/services` y auditoría con Lighthouse/PageSpeed. Todavía no implementada |
 | Según necesidad | `chore/nuxt-module-upgrades` | Propuesta: migraciones mayores de módulos con revisión de cambios y pruebas propias |
 
-Crear las ramas posteriores desde `develop` actualizado después de integrar el trabajo que corresponda. Los commits de cierre documental y de actualización de paquetes se preparan por separado, aunque pertenezcan a la rama actual. El mapa global de Dev pertenece a otro repositorio y se actualiza fuera de esta entrega.
+Crear las ramas posteriores desde `develop` actualizado después de integrar el trabajo que corresponda. Los commits de cierre documental y de actualización de paquetes se realizaron por separado. El mapa global de Dev pertenece a otro repositorio y se actualiza fuera de esta entrega.
 
 ## Diagnóstico inicial de dependencias
 
@@ -43,12 +44,12 @@ Fuentes de contraste:
 
 | Paso | Acción | Estado |
 |---|---|---|
-| 1 | Crear rama, registrar la publicación anterior y conservar un punto de entrada común | Realizado en el working tree; pendiente de commit |
+| 1 | Crear rama, registrar la publicación anterior y conservar un punto de entrada común | Realizado e integrado en `7575e80` |
 | 2 | Repetir diagnóstico y revisar avisos, dependencias de origen y compatibilidad | Realizado; auditoría final después de instalación limpia |
 | 3 | Actualizar paquetes dentro de sus rangos declarados y revisar manifiesto/lockfile | Realizado; Nuxt tiene un mínimo explícito de 4.7 y se declaró Node |
 | 4 | Revisar avisos restantes y justificar cualquier limitación con su alcance y fuente | Realizado; cadena moderada documentada a continuación |
-| 5 | Ejecutar regresiones locales y revisar el preview | Local aprobado; preview de esta rama pendiente |
-| 6 | Preparar mensajes y rutas de cada commit; PR a develop cuando lo autorice el propietario | Preparación local; sin staging, commits ni push |
+| 5 | Ejecutar regresiones locales y revisar el preview | Local aprobado; propietario confirmó revisión del preview antes de iniciar producción |
+| 6 | Preparar commits y promover mediante PR | Completado por el propietario; commits y merges presentes en el historial local |
 
 Durante la actualización, conservar Analytics apagado por defecto, la activación manual del tag, la política de consentimiento y la dirección opcional. No ejecutar `npm audit fix --force` ni activar funcionalidades experimentales para cerrar la auditoría. Los comandos de instalación/actualización se ejecutan conforme a la autorización y reglas de [AGENTS.md](../../AGENTS.md).
 
@@ -70,12 +71,12 @@ La actualización cambió la CLI de 3.35.2 a 4.1.0. La nueva CLI avisa si hereda
 
 El primer build local heredaba `DEBUG` y activaba la instrumentación de Nitro, que generó una referencia ausente a `vue/timing.js` y respuestas 500. Recompilar con `DEBUG=''` resolvió el fallo; las pruebas registradas corresponden al build sin esa instrumentación. No se añadió un workaround al código de la aplicación. Permanece una advertencia de `@nuxt/fonts` 0.14 sobre `addCustomTab` obsoleto; se revisará con la migración del módulo y no impidió compilar. La [guía de DevTools](https://nuxt.com/modules/devtools/module-migration#ndt_dep_0005) confirma que esa API conserva compatibilidad durante el ciclo v4.
 
-## Agenda de contacto: decisión posterior
+## Agenda de contacto: fase actual
 
-La propuesta inicial es una acción secundaria «Agendar una conversación», con reuniones en español y servicios orientados a México. Se reutilizaría la configuración entre perfil y servicios, manteniendo correo y WhatsApp disponibles. No hay una cuenta/enlace de agenda confirmado ni una integración implementada.
+El propietario autorizó preparar «Agendar una conversación» en perfil y servicios y eligió mostrarla solo para México. La implementación usa un enlace opcional de Calendly y una decisión basada en el país proporcionado por Netlify. La configuración vacía conserva la función desactivada. Después creó su cuenta, compartió el enlace y se revisaron página, muestra de horarios y formulario públicos sin reservar. Los ajustes privados no se deducen de esa visita. El alcance, los límites y la lista de activación están en [SCHEDULING.md](SCHEDULING.md).
 
 El [plan gratuito de Calendly](https://calendly.com/pricing) contempla un tipo de evento y un calendario. Su [API de reservas](https://developer.calendly.com/api-docs/overview/rate-limits) limita la creación de invitados en Free a cinco peticiones por usuario al día. El enlace externo es la propuesta inicial para reducir mantenimiento; la elección sigue abierta.
 
-La restricción por país sigue sin decidirse. Netlify ofrece [país en el contexto de Edge Functions](https://docs.netlify.com/build/edge-functions/api/), pero ocultar el botón no impide utilizar un enlace de Calendly compartido. La ubicación no garantiza idioma ni residencia. No implementar esa ocultación como si restringiera las reservas del proveedor.
+Netlify ofrece [país en el contexto de Edge Functions](https://docs.netlify.com/build/edge-functions/api/). Se eligió esa señal para mostrar el botón; otro país, una ubicación desconocida o un fallo lo mantienen oculto. La ubicación no garantiza idioma ni residencia y no restringe las reservas desde un enlace de Calendly compartido.
 
 Al implementar la agenda, revisar proveedor, finalidad de gestionar citas, datos realmente solicitados, aviso e inventario de privacidad. Un embed carga recursos externos y requiere comprobar su comportamiento; no asumir que el consentimiento de Analytics cubre ese servicio. La activación de Google tag real y la decisión del domicilio permanecen independientes de esta mejora.

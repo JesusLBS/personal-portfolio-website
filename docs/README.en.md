@@ -39,6 +39,7 @@ The previous Netlify hostname redirects to this domain through `netlify.toml`.
 | [AGENTS.md](../AGENTS.md) | Shared instructions for AI assistants, workflow, and validation |
 | [Status](./project/STATUS.md) | Delivered work, active scope, and pending items |
 | [Maintenance](./project/MAINTENANCE.md) | Dependency maintenance, baseline findings, and upcoming work by branch |
+| [Scheduling](./project/SCHEDULING.md) | Booking link configuration, Mexico visibility, and Calendly activation |
 | [Architecture](./architecture/README.md) | Routes, components, CV, modules, and hosting |
 | [Deployment](./deployment/README.md) | Review before release, previews, and production promotion |
 | [Privacy inventory](./privacy/README.md) | Technical inventory and implemented controls |
@@ -116,11 +117,15 @@ The development URL is normally `http://localhost:3000`. Run project commands fr
 
 ### Analytics Configuration
 
-[`.env.example`](../.env.example) lists three public runtime variables: `NUXT_PUBLIC_ANALYTICS_ENABLED` (false by default), `NUXT_PUBLIC_GTAG_ID` and `NUXT_PUBLIC_PRIVACY_ADDRESS`. The switch enables privacy controls; tracking additionally needs a valid ID, a production build and valid consent. Without an ID, an enabled preview can show the UI without loading Google. The development server never loads Analytics.
+[`.env.example`](../.env.example) documents the privacy variables: `NUXT_PUBLIC_ANALYTICS_ENABLED` (false by default), `NUXT_PUBLIC_GTAG_ID` and `NUXT_PUBLIC_PRIVACY_ADDRESS`. The switch enables privacy controls; tracking additionally needs a valid ID, a production build and valid consent. Without an ID, an enabled preview can show the UI without loading Google. The development server never loads Analytics.
 
 An empty address displays only the general location from the CV. This option omits the legally required notification address; document the limitation instead of claiming full compliance. A complete address can be supplied in Netlify without changing source code. Public runtime values remain visible on the website: this removes the literal from Git, not from the rendered notice. Redeploy after changing deployment variables.
 
 The [inventory](./privacy/README.md) describes both modes and the [account record](./privacy/ACCOUNT-CHECKLIST.md) preserves owner-confirmed settings. Never commit real addresses, private credentials or local environment files.
+
+### Scheduling Configuration
+
+An empty `NUXT_PUBLIC_CALENDLY_URL` hides scheduling. With a valid link, Netlify must confirm Mexico before the scheduling action appears on the profile and services pages; errors or unknown countries keep it hidden. Booking opens Calendly in a new tab. In development, `NUXT_SCHEDULING_TEST_COUNTRY=MX` simulates visibility with the regular `npm run dev` command; production ignores this override. Do not configure the simulation in Netlify. See [scheduling](./project/SCHEDULING.md) for account requirements, filter limitations, and preview validation.
 
 ## Commands and Validation
 
@@ -132,6 +137,7 @@ The [inventory](./privacy/README.md) describes both modes and the [account recor
 | `npm run generate` | Static generation; not the normal deployment workflow |
 | `npm run preview` | Nuxt's preview script; verify compatibility with the preset's build artifacts before relying on it for a specific check |
 | `npm run test:privacy` | Preference policy tests using Node's test runner; requires support for `--experimental-strip-types` |
+| `npm run test:scheduling` | Booking link validation and Edge Function country rules with simulated contexts |
 | `npm run test:privacy:browser` | Chrome integration with a synthetic tag against a local production build; see the testing setup |
 
 There are currently no lint, formatting, or standalone typecheck scripts in `package.json`. Unit tests cover validation, expiration, cookie selection, and storage failures. The [testing guide](./testing/README.md) explains reproducible browser scenarios and the limits of screenshots and reports. Documentation-only changes require path, link, and consistency checks plus `git diff --check`.

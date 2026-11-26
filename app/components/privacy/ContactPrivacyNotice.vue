@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { privacyContact } = usePrivacySettings();
+const { calendlyUrl } = useScheduling();
 </script>
 
 <template>
@@ -7,6 +8,7 @@ const { privacyContact } = usePrivacySettings();
         class="mx-auto mt-8 max-w-3xl border-t border-zinc-800/80 pt-4 text-left text-xs leading-5 text-zinc-400">
         <p>
             {{ privacyContact.name }} utiliza tu nombre, correo o teléfono y la información que compartas para responder solicitudes profesionales.
+            <template v-if="calendlyUrl">Si reservas mediante Calendly, los datos de la reserva se utilizan para organizar la reunión.</template>
             No se solicitan datos sensibles.
         </p>
         <div class="mt-3 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-8">

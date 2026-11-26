@@ -39,6 +39,7 @@ El dominio anterior de Netlify redirige al dominio actual mediante `netlify.toml
 | [AGENTS.md](./AGENTS.md) | Entrada común para asistentes: fuentes de verdad, flujo de trabajo y validación |
 | [Estado](./docs/project/STATUS.md) | Trabajo entregado, tarea activa y pendientes |
 | [Mantenimiento](./docs/project/MAINTENANCE.md) | Plan de dependencias, diagnóstico y próximas mejoras por rama |
+| [Agenda](./docs/project/SCHEDULING.md) | Configuración del enlace, visibilidad para México y activación de Calendly |
 | [Arquitectura](./docs/architecture/README.md) | Rutas, componentes, CV, módulos y alojamiento |
 | [Despliegue](./docs/deployment/README.md) | Revisión previa, previews y promoción a producción |
 | [Privacidad](./docs/privacy/README.md) | Inventario técnico y controles implementados |
@@ -118,11 +119,15 @@ La aplicación se sirve normalmente en `http://localhost:3000`. Ejecutar los com
 
 ### Configuración de Analytics
 
-[`.env.example`](./.env.example) contiene tres variables públicas: `NUXT_PUBLIC_ANALYTICS_ENABLED` (false por defecto), `NUXT_PUBLIC_GTAG_ID` y `NUXT_PUBLIC_PRIVACY_ADDRESS`. El interruptor activa los controles de privacidad; medir requiere además ID válido, build de producción y aceptación vigente. Un preview con interruptor activo y sin ID permite revisar la interfaz sin cargar Google. El servidor de desarrollo no carga Analytics.
+[`.env.example`](./.env.example) documenta las variables de privacidad: `NUXT_PUBLIC_ANALYTICS_ENABLED` (false por defecto), `NUXT_PUBLIC_GTAG_ID` y `NUXT_PUBLIC_PRIVACY_ADDRESS`. El interruptor activa los controles de privacidad; medir requiere además ID válido, build de producción y aceptación vigente. Un preview con interruptor activo y sin ID permite revisar la interfaz sin cargar Google. El servidor de desarrollo no carga Analytics.
 
 La dirección vacía muestra solo la ubicación general del CV. Esa opción omite el domicilio notificable exigido legalmente; se registra la limitación sin afirmar cumplimiento completo. Puedes establecerlo en Netlify sin cambiar código. Los valores públicos seguirán siendo visibles en la web: se evita el literal en Git, no en el aviso renderizado. Los cambios de variables del despliegue requieren redesplegar.
 
 El [inventario](./docs/privacy/README.md) detalla ambos modos y el [registro de cuenta](./docs/privacy/ACCOUNT-CHECKLIST.md) conserva los estados confirmados por el propietario. No versionar direcciones reales, credenciales ni archivos locales de entorno.
+
+### Configuración de la agenda
+
+`NUXT_PUBLIC_CALENDLY_URL` vacía oculta la opción de agenda. Con un enlace válido, Netlify debe confirmar México para mostrar «Agendar una conversación» en perfil y servicios; un fallo o país desconocido la mantiene oculta. La reserva se abre en una pestaña de Calendly. En desarrollo, `NUXT_SCHEDULING_TEST_COUNTRY=MX` permite simular esa visibilidad usando el mismo `npm run dev`; se ignora en producción. La simulación no se configura en Netlify. Consulta [agenda](./docs/project/SCHEDULING.md) para los requisitos de cuenta, los límites del filtro y la validación en preview.
 
 ## Comandos y validación
 
@@ -134,6 +139,7 @@ El [inventario](./docs/privacy/README.md) detalla ambos modos y el [registro de 
 | `npm run generate` | Generación estática; no es el flujo de despliegue habitual |
 | `npm run preview` | Script de previsualización de Nuxt; verificar compatibilidad con los artefactos del preset antes de usarlo para una prueba concreta |
 | `npm run test:privacy` | Pruebas de la política de preferencias con el test runner de Node; requiere soporte para `--experimental-strip-types` |
+| `npm run test:scheduling` | Validación del enlace y reglas de país de la Edge Function con contextos simulados |
 | `npm run test:privacy:browser` | Integración con Chrome y etiqueta simulada contra un build local de producción; preparación en la documentación de pruebas |
 
 Actualmente `package.json` no incluye scripts de lint, formato ni typecheck independiente. Las pruebas unitarias cubren validación, caducidad, selección de cookies y fallos de almacenamiento. La [documentación de pruebas](./docs/testing/README.md) explica cómo reproducir los escenarios de navegador y qué no acreditan sus capturas e informes. Para cambios solo documentales, revisar rutas, enlaces y `git diff --check`.

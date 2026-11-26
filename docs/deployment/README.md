@@ -52,6 +52,8 @@ Al adoptarla, mantener GA real fuera de ese contexto, revisar la indexación de 
 
 ## Alcance de las verificaciones
 
+Para la entrega de agenda, seguir [SCHEDULING.md](../project/SCHEDULING.md): comprobar que Netlify descubra `netlify/edge-functions/scheduling-country.js`, que `/api/scheduling-country` responda desde el edge y que sus respuestas no se compartan mediante caché. La simulación `NUXT_SCHEDULING_TEST_COUNTRY` no se configura en Netlify y no habilita el fallback de producción. Mantener la URL vacía hasta revisar el evento y configurar `NUXT_PUBLIC_CALENDLY_URL` en el contexto elegido. Un build Nuxt local aprobado no acredita esa función desplegada.
+
 Las pruebas unitarias comprueban reglas y fallos de almacenamiento. El navegador comprueba presentación e interacción; el build y el preview comprueban además la integración con el alojamiento. Ninguno sustituye los otros.
 
 El repositorio no declara un pipeline que ejecute automáticamente `test:privacy` o `test:privacy:browser`. Tener scripts o un build automático de Netlify no acredita que las pruebas se ejecuten en CI; registrar qué se ejecutó realmente.
