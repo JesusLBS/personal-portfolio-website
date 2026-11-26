@@ -1,14 +1,14 @@
 # Revisión previa y despliegue
 
-Estado revisado: 2026-11-26. Este documento explica el flujo; el [estado de la entrega](../project/STATUS.md) indica qué pasos están completados. El propietario confirmó el despliegue de privacidad a producción con Analytics apagado. Codex no modificó la configuración de Netlify ni realizó una inspección independiente del despliegue.
+Estado revisado: 2026-11-26. Este documento explica el flujo; el [estado de la entrega](../project/STATUS.md) conserva los commits y PR integrados. El propietario confirmó la publicación de privacidad con Analytics apagado y las revisiones de preview y promoción a producción de mantenimiento y agenda. Codex no modificó la configuración de Netlify ni realizó una inspección independiente del despliegue.
 
 ## Configuración confirmada
 
 | Elemento | Estado aportado por el propietario |
 |---|---|
-| Producción | Bitbucket, rama `master`; entrega de privacidad publicada según confirmación del propietario |
+| Producción | Bitbucket, rama `master`; privacidad, mantenimiento y agenda integrados en Git, con revisión y promoción comunicadas por el propietario |
 | `develop` | Integración, sin despliegue permanente habilitado |
-| Deploy Previews | Habilitados para PR; propietario confirmó la revisión visual del preview de privacidad |
+| Deploy Previews | Habilitados para PR; el propietario confirmó las revisiones de privacidad, mantenimiento y agenda |
 | Variables | ID real de Analytics limitado a Production; el propietario informó la creación de las variables nuevas y eligió Analytics apagado y dirección vacía para la primera validación |
 
 El registro de cuenta y la procedencia de estas confirmaciones están en [ACCOUNT-CHECKLIST.md](../privacy/ACCOUNT-CHECKLIST.md). `netlify.toml` solo declara la redirección del dominio anterior; no configura esas asociaciones.
@@ -52,7 +52,7 @@ Al adoptarla, mantener GA real fuera de ese contexto, revisar la indexación de 
 
 ## Alcance de las verificaciones
 
-Para la entrega de agenda, seguir [SCHEDULING.md](../project/SCHEDULING.md): comprobar que Netlify descubra `netlify/edge-functions/scheduling-country.js`, que `/api/scheduling-country` responda desde el edge y que sus respuestas no se compartan mediante caché. La simulación `NUXT_SCHEDULING_TEST_COUNTRY` no se configura en Netlify y no habilita el fallback de producción. Mantener la URL vacía hasta revisar el evento y configurar `NUXT_PUBLIC_CALENDLY_URL` en el contexto elegido. Un build Nuxt local aprobado no acredita esa función desplegada.
+En futuras entregas de agenda, seguir [SCHEDULING.md](../project/SCHEDULING.md): comprobar que Netlify descubra `netlify/edge-functions/scheduling-country.js`, que `/api/scheduling-country` responda desde el edge y que sus respuestas no se compartan mediante caché. La simulación `NUXT_SCHEDULING_TEST_COUNTRY` no se configura en Netlify y no habilita el fallback de producción. Configurar `NUXT_PUBLIC_CALENDLY_URL` en el contexto elegido tras revisar el evento; vacía conserva la agenda oculta. El propietario ya confirmó la revisión del preview de esta entrega. Un build Nuxt local aprobado no acredita una inspección independiente de la función desplegada.
 
 Las pruebas unitarias comprueban reglas y fallos de almacenamiento. El navegador comprueba presentación e interacción; el build y el preview comprueban además la integración con el alojamiento. Ninguno sustituye los otros.
 
