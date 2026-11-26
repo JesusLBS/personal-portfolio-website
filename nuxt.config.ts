@@ -8,9 +8,11 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   runtimeConfig: {
+    schedulingTestCountry: '',
     public: {
       analyticsEnabled: false,
       privacyAddress: '',
+      calendlyUrl: '',
     },
   },
   icon: {
