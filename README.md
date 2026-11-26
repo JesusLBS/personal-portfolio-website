@@ -93,7 +93,9 @@ netlify.toml      redirección del dominio anterior
 
 ## Verificar rendimiento
 
-Analiza el dominio actual en [PageSpeed Insights](https://pagespeed.web.dev/). Las capturas de `docs/screenshots/` son referencias históricas del rediseño; no representan una medición nueva de cada entrega.
+Abre [PageSpeed Insights](https://pagespeed.web.dev/) e introduce `https://chichohdz.com/` o `https://chichohdz.com/services` para generar una evaluación nueva en móvil y escritorio. Este enlace abre la herramienta, sin depender de un informe guardado ni del dominio anterior de Netlify.
+
+Las capturas de `docs/screenshots/` son referencias históricas del rediseño; no representan una medición nueva de cada entrega.
 
 
 ## Versión en inglés

@@ -1,12 +1,12 @@
 # Agenda de contacto
 
-Actualizado: 2026-11-26. Rama `feature/contact-scheduling`, creada desde `develop` en `073fe9c`. El propietario creó su cuenta y proporcionó el enlace público del evento. Se revisó su página y formulario sin introducir datos ni confirmar reservas. El [estado](STATUS.md) distingue esta revisión de la activación y el despliegue del portfolio.
+Actualizado: 2026-11-26. Entrega de `feature/contact-scheduling`, creada desde `develop` en `073fe9c`, integrada mediante los commits `68f774e` y `df98feb`, PR #34 a `develop` y #35 a `master` (`6a93b9b`). El propietario confirmó las revisiones local y de preview, la promoción a producción y la desactivación de Notetaker. Se revisó la página pública sin introducir datos ni confirmar reservas. El [estado](STATUS.md) conserva el cierre y los límites de las verificaciones.
 
 ## Decisión y alcance
 
-Se prepara un enlace externo de Calendly compartido por contacto del perfil y servicios. No se integra un formulario, SDK, iframe, API de reservas ni una base de datos propia. La URL vacía deja la acción oculta y no consulta el país. El propietario confirmó que debe mostrarse solo para México y delegó el mecanismo técnico.
+La integración utiliza un enlace externo de Calendly compartido por contacto del perfil y servicios. No se integra un formulario, SDK, iframe, API de reservas ni una base de datos propia. La URL vacía deja la acción oculta y no consulta el país. El propietario confirmó que debe mostrarse solo para México y delegó el mecanismo técnico.
 
-A petición del propietario, el contacto de ambas páginas usa la presentación de servicios mediante [`ContactPanel.vue`](../../app/components/ui/ContactPanel.vue): tarjeta con borde y degradado, botones de correo/WhatsApp, agenda y aviso breve compartidos. El perfil conserva «Trabajemos juntos», la descripción profesional y los accesos a LinkedIn/GitHub; los textos comerciales de servicios permanecen en su página. Los IDs de navegación siguen siendo `contact` y `contact-cta`. El propietario confirmó la revisión local y el funcionamiento de la agenda y de la nueva presentación compartida. La revisión general de SEO se acordó para una etapa posterior.
+A petición del propietario, el contacto de ambas páginas usa la presentación de servicios mediante [`ContactPanel.vue`](../../app/components/ui/ContactPanel.vue): tarjeta con borde y degradado, botones de correo/WhatsApp, agenda y aviso breve compartidos. El perfil conserva «Trabajemos juntos», la descripción profesional y los accesos a LinkedIn/GitHub; los textos comerciales de servicios permanecen en su página. Los IDs de navegación siguen siendo `contact` y `contact-cta`. El propietario confirmó la revisión local y el funcionamiento de la agenda y de la nueva presentación compartida. Después decidió posponer la revisión general de SEO tras sus mediciones de móvil/escritorio.
 
 La acción solo aparece después de recibir `{ allowed: true }` del endpoint del mismo sitio `/api/scheduling-country`. Una respuesta negativa, desconocida, fallida o que excede el tiempo de espera la mantiene oculta. El resto de los medios de contacto continúa disponible. La petición no depende de aceptar Analytics ni guarda país o preferencia en cookies/localStorage.
 
@@ -25,7 +25,7 @@ La configuración pública se resuelve en [`useScheduling.ts`](../../app/composa
 
 El servidor Nuxt incluye un [fallback](../../server/api/scheduling-country.get.ts) para `npm run dev` y otros alojamientos: en desarrollo admite la simulación; en producción responde siempre `false`. En Netlify, la Edge Function atiende esa ruta antes del servidor Nuxt. Un build local de Nuxt no acredita el despliegue de esa función: comprobarla en el preview.
 
-Para probar localmente, el propietario puede configurar las dos variables en su archivo de entorno local y reiniciar con el comando habitual `npm run dev`. La comprobación con el enlace recibido utilizó una copia temporal sin leer ni modificar sus archivos de entorno. No configurar la simulación en Netlify. La URL real se añade al contexto elegido del panel después de confirmar los ajustes pendientes; el cambio exige un nuevo deploy.
+Para probar localmente, el propietario puede configurar las dos variables en su archivo de entorno local y reiniciar con el comando habitual `npm run dev`. La comprobación con el enlace recibido utilizó una copia temporal sin leer ni modificar sus archivos de entorno. No configurar la simulación en Netlify. En futuras entregas, la URL se proporciona mediante el contexto elegido del panel y los cambios exigen un nuevo deploy.
 
 ## Evento recibido y configuración local
 
@@ -38,7 +38,7 @@ NUXT_PUBLIC_CALENDLY_URL=https://calendly.com/chichohdzjesus/30min
 NUXT_SCHEDULING_TEST_COUNTRY=MX
 ```
 
-No se leyó ni modificó el archivo local de entorno. En Netlify se configura solo `NUXT_PUBLIC_CALENDLY_URL`, inicialmente en el contexto de preview; el país lo determina la Edge Function. La URL es pública. La activación en Production se realiza después de revisar el evento y el preview.
+No se leyó ni modificó el archivo local de entorno. En Netlify se configura solo `NUXT_PUBLIC_CALENDLY_URL`; el país lo determina la Edge Function. La URL es pública. Para futuras entregas, revisar el evento y el preview antes de promover a Production. La revisión y promoción de esta entrega fueron confirmadas por el propietario; no se inspeccionó el panel de Netlify ni sus valores de entorno.
 
 ### Configuración observada y confirmada
 
@@ -51,7 +51,7 @@ No se leyó ni modificó el archivo local de entorno. En Netlify se configura so
 | Muestra de disponibilidad pública | Viernes 27: inicios 15:00 y 15:30; lunes 30: inicios cada 30 minutos entre 15:00 y 17:30. Es una muestra observada el 2026-11-26, no una garantía futura de disponibilidad |
 | Anticipación | El propietario confirmó guardar 24 horas. En la revisión pública no había horarios para el día 26; esto es compatible con la configuración, pero no prueba por sí solo el umbral exacto |
 | Formulario | Nombre y correo obligatorios; «¿Sobre qué te gustaría conversar?» opcional. La página también permite añadir invitados; no se introdujeron datos ni se envió el formulario |
-| Notetaker | La captura inicial mostraba On. Desactivación pendiente de confirmación del propietario; no deducirla del formulario público |
+| Notetaker | Desactivado, confirmado expresamente por el propietario el 2026-11-26. La captura inicial mostraba On; la confirmación posterior cierra ese pendiente sin atribuir acceso directo al panel |
 | Permisos y conservación de la cuenta | Sin inspección directa ni valores confirmados; no asumirlos de la vinculación del correo o de la página pública |
 
 Calendly mostró sus propios controles y aviso de cookies. La navegación pública de revisión rechazó las cookies opcionales; las preferencias de esa plataforma son independientes de las del portfolio. Los informes de inspección quedaron temporales, sin credenciales ni datos de invitados.
