@@ -100,7 +100,7 @@ const projects = [
                                 <!-- Badge Flotante indicador de galería -->
                                 <div
                                     class="absolute bottom-3 right-3 bg-zinc-950/90 border border-zinc-800 text-zinc-400 text-[10px] px-2.5 py-1 rounded-md flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-all shadow-xl font-mono">
-                                    <Icon name="ri:images-line" class="text-xs text-blue-400" />
+                                    <Icon name="ri:multi-image-line" class="text-xs text-blue-400" />
                                     {{ project.gallery.length }} capturas
                                 </div>
                             </div>

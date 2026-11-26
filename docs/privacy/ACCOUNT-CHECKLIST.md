@@ -1,6 +1,6 @@
 # Comprobaciones manuales de cuentas y producción
 
-Estado actualizado: 2026-11-24. El propietario revisó los paneles de GA4 y Netlify con Claude Code y confirmó los ajustes de la tabla siguiente. Codex recibió los estados documentados, sin acceso directo a cuentas ni a las capturas originales. La documentación oficial respalda el significado de las opciones; no prueba el estado de una cuenta. La comprobación real del próximo despliegue sigue pendiente. Las variables nuevas de interruptor y dirección son posteriores a este registro y aún deben configurarse según la decisión del propietario.
+Estado actualizado: 2026-11-25. El propietario revisó los paneles de GA4 y Netlify con Claude Code el 2026-11-24 y confirmó los ajustes de la tabla siguiente. Posteriormente creó las variables nuevas, revisó visualmente el preview y confirmó la publicación con Analytics en `false`. Codex recibió esos estados, sin acceso directo a cuentas ni a las capturas originales. La documentación oficial respalda el significado de las opciones; no prueba el estado de una cuenta. La inspección independiente de red y cookies del despliegue publicado sigue pendiente; las pruebas del tag activo fueron aplazadas por el propietario.
 
 No copiar IDs de medición, IDs de visitantes, nombres privados de cuentas, credenciales ni capturas completas del panel. Bastan los estados y opciones descritos aquí. Las etiquetas del panel pueden variar: usar la búsqueda del administrador si no coincide un nombre.
 
@@ -20,15 +20,15 @@ Fecha de comprobación y ajustes: 2026-11-24. Se conserva únicamente informaci�
 | Ocultación de datos | Ocultación de correos activada; parámetros de URL sin cambios | No constituye garantía de que cualquier dato personal quede eliminado |
 | Panel de consentimiento | Sin problemas indicados; señales inactivas con la versión anterior; valor predeterminado para EEE indicado como «No» | Reevaluar tras desplegar; el panel no reemplaza el consentimiento explícito del código |
 | Confirmación de recogida de datos de usuario | No aceptada deliberadamente | No aceptarla automáticamente al desplegar; reconsiderar solo si se pretende habilitar una función que la requiera y pueden cumplirse sus condiciones |
-| Variable GA4 en Netlify | Limitada a Production; demás contextos sin valor | Ajuste confirmado; entra en el siguiente build/deploy de cada contexto |
-| Contextos Netlify | Producción en master, sin ramas adicionales de despliegue; previews de PR habilitadas | Verificar ausencia de medición real en el siguiente preview |
+| Variable GA4 en Netlify | Limitada a Production; demás contextos sin valor | Separación declarada; comprobar su efecto en la red del contexto correspondiente |
+| Contextos Netlify | Producción en master, sin ramas adicionales de despliegue; previews de PR habilitadas | Preview revisado visualmente por el propietario; ausencia de medición sin inspección independiente |
 | Plan y observabilidad Netlify | Free, Function Metrics disponible, sin Netlify Analytics | Confirmado; no permite deducir ausencia ni plazo de logs operativos |
 
 Información externa no aportada: plazo específico de retención de logs de Netlify y contacto de notificación de la adenda de GA. No representa una corrección de código pendiente ni requiere repetir los estados ya confirmados. No inventar esos valores ni tratar Function Metrics como prueba de ausencia de tratamiento técnico de solicitudes.
 
-## Variables nuevas para el próximo despliegue
+## Variables y publicación confirmadas por el propietario
 
-El 2026-11-24 el propietario informó que ya creó las nuevas variables en Netlify y eligió `NUXT_PUBLIC_ANALYTICS_ENABLED=false` y `NUXT_PUBLIC_PRIVACY_ADDRESS` vacía para la primera validación. Es el escenario acordado; no se accedió directamente al panel ni se verificó todavía su efecto en un despliegue. Los contextos concretos de estas dos variables no se reconfirmaron; revisar sus valores en el contexto que se vaya a desplegar siguiendo [despliegue](../deployment/README.md).
+El propietario informó la creación de las variables nuevas y después confirmó la publicación con `NUXT_PUBLIC_ANALYTICS_ENABLED=false`. La dirección vacía fue la configuración elegida. También confirmó la revisión visual del preview y aplazó las pruebas con el interruptor activo. No se accedió directamente al panel ni se verificaron de forma independiente la red, las cookies o la dirección renderizada. Conservar esta distinción al registrar el resultado de la comprobación real descrita en [despliegue](../deployment/README.md).
 
 La revisión de cuenta anterior permanece válida como registro. La dirección vacía muestra la ubicación general y corresponde a la opción C, que mantiene incompleto el domicilio legal; no se cambia esta conclusión por apagar el servicio. Una activación posterior de GA y publicación de domicilio completo son posibilidades por decidir, no configuraciones ya aplicadas.
 

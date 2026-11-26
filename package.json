@@ -2,9 +2,12 @@
   "name": "personal-portfolio-website",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "NODE_ENV=development nuxt dev --no-tui",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "test:privacy": "node --experimental-strip-types --test tests/privacy-consent.test.mjs",
@@ -12,16 +15,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@fancyapps/ui": "^6.1.14",
+    "@fancyapps/ui": "^6.1.15",
     "@nuxt/fonts": "^0.14.0",
-    "@nuxt/icon": "^2.2.2",
-    "@nuxt/image": "^2.0.0",
-    "@nuxtjs/robots": "^6.0.9",
-    "@nuxtjs/sitemap": "^8.0.15",
+    "@nuxt/icon": "^2.6.3",
+    "@nuxt/image": "^2.2.1",
+    "@nuxtjs/robots": "^6.2.4",
+    "@nuxtjs/sitemap": "^8.6.2",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "nuxt": "^4.4.4",
+    "nuxt": "^4.7.0",
     "nuxt-gtag": "^4.1.0",
-    "vue": "^3.5.33",
-    "vue-router": "^5.0.6"
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.1"
   }
 }

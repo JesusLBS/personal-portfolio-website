@@ -15,7 +15,6 @@ const scrollAction = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 };
-console.log(isDrawerOpen)
 onMounted(() => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);

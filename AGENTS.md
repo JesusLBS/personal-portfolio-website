@@ -18,6 +18,7 @@ Orden de lectura al comenzar:
 | Uso del proyecto, comandos y despliegue | [`README.md`](README.md) |
 | Validación previa, previews y promoción | [`docs/deployment/README.md`](docs/deployment/README.md) |
 | Estado y próximos pasos | [`docs/project/STATUS.md`](docs/project/STATUS.md) |
+| Mantenimiento de dependencias y fases posteriores | [`docs/project/MAINTENANCE.md`](docs/project/MAINTENANCE.md) |
 | Componentes, rutas, CV e integraciones | [`docs/architecture/README.md`](docs/architecture/README.md) |
 | Datos, proveedores, evidencia y decisiones de privacidad | [`docs/privacy/README.md`](docs/privacy/README.md) |
 | Comprobaciones manuales de cuentas | [`docs/privacy/ACCOUNT-CHECKLIST.md`](docs/privacy/ACCOUNT-CHECKLIST.md) |
